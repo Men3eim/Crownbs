@@ -50,7 +50,7 @@ export default function Footer() {
             <div className="flex items-center mb-6">
               <div className="bg-gold-light rounded-2xl p-2 flex items-center justify-center" style={{width: '140px', height: '140px'}}>
                 <img
-                  src="/src/logos/Crownbs.png"
+                  src="/logos/Crownbs.png"
                   alt="Crown Business Solutions Logo"
                   className="w-32 h-32 object-contain drop-shadow-lg"
                 />

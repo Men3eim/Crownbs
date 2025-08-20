@@ -24,7 +24,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img
-                src="/src/logos/Crownbs.png"
+                src="/logos/Crownbs.png"
                 alt="Crown Business Solutions Logo"
                 className="w-32 h-32 object-contain mr-3 drop-shadow-lg"
               />
