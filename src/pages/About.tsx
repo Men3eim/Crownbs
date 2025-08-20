@@ -1,0 +1,235 @@
+export default function About() {
+  const team = [
+    {
+      name: "Michael Crown",
+      position: "Chief Executive Officer",
+      bio: "20+ years in international hospitality management with expertise in luxury hotel operations and revenue optimization.",
+      initials: "MC"
+    },
+    {
+      name: "Sarah Chen",
+      position: "Chief Operating Officer",
+      bio: "Former VP of Operations at leading global hotel chain, specializing in multi-property management and operational excellence.",
+      initials: "SC"
+    },
+    {
+      name: "David Rodriguez",
+      position: "Head of Revenue Management",
+      bio: "Revenue management expert with proven track record of increasing property revenues across diverse international markets.",
+      initials: "DR"
+    },
+    {
+      name: "Emma Thompson",
+      position: "Director of Partnerships",
+      bio: "Strategic partnership specialist with extensive network across global hospitality and technology sectors.",
+      initials: "ET"
+    }
+  ];
+
+  const values = [
+    {
+      icon: "🎯",
+      title: "Excellence",
+      description: "We strive for perfection in every aspect of property management, delivering results that exceed expectations."
+    },
+    {
+      icon: "🤝",
+      title: "Partnership",
+      description: "We believe in building long-term relationships based on trust, transparency, and mutual success."
+    },
+    {
+      icon: "🌍",
+      title: "Global Perspective",
+      description: "Our international experience enables us to navigate diverse markets and cultural nuances effectively."
+    },
+    {
+      icon: "💡",
+      title: "Innovation",
+      description: "We leverage cutting-edge technology and innovative strategies to stay ahead of industry trends."
+    }
+  ];
+
+  const milestones = [
+    { year: "2015", event: "Founded Crown Business Solutions", description: "Started with a vision to revolutionize property management" },
+    { year: "2017", event: "International Expansion", description: "Expanded operations to 10 countries across Europe and Asia" },
+    { year: "2019", event: "Technology Partnership", description: "Formed strategic alliances with leading hospitality technology providers" },
+    { year: "2021", event: "Global Network", description: "Reached 500+ properties under management across 50+ countries" },
+    { year: "2023", event: "Industry Recognition", description: "Awarded 'Global Property Management Company of the Year'" },
+    { year: "2024", event: "Continued Growth", description: "Expanding into new markets with innovative service offerings" }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              About <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Crown Business Solutions</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              A global leader in property and hotel management, delivering exceptional results 
+              through innovative strategies, cutting-edge technology, and unparalleled expertise 
+              across international markets.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 mb-2">2015</div>
+              <div className="text-gray-600 text-sm">Founded</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 mb-2">500+</div>
+              <div className="text-gray-600 text-sm">Properties</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 mb-2">50+</div>
+              <div className="text-gray-600 text-sm">Countries</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 mb-2">200+</div>
+              <div className="text-gray-600 text-sm">Team Members</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                To revolutionize property and hotel management by delivering innovative solutions 
+                that maximize revenue, enhance guest experiences, and create sustainable value 
+                for property owners worldwide.
+              </p>
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-6 border border-amber-200">
+                <h3 className="font-semibold text-gray-900 mb-2">Global Impact</h3>
+                <p className="text-gray-700 text-sm">
+                  We're committed to setting new standards in hospitality management across 
+                  diverse cultures and markets, ensuring every property reaches its full potential.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                To be the world's most trusted property management partner, known for our 
+                expertise, innovation, and commitment to delivering exceptional results 
+                across every market we serve.
+              </p>
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-6 border border-amber-200">
+                <h3 className="font-semibold text-gray-900 mb-2">Future Focus</h3>
+                <p className="text-gray-700 text-sm">
+                  We're building the future of property management through technology innovation, 
+                  sustainable practices, and global collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Values</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              The principles that guide everything we do and drive our success worldwide
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Leadership Team</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet the experienced professionals leading Crown Business Solutions to new heights
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300">
+                <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-bold text-2xl">{member.initials}</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                <p className="text-amber-600 font-medium mb-4">{member.position}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Timeline */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Journey</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From a small startup to a global leader in property management
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-amber-200"></div>
+            <div className="space-y-12">
+              {milestones.map((milestone, index) => (
+                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                      <div className="text-2xl font-bold text-amber-600 mb-2">{milestone.year}</div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.event}</h3>
+                      <p className="text-gray-600 text-sm">{milestone.description}</p>
+                    </div>
+                  </div>
+                  <div className="w-4 h-4 bg-amber-500 rounded-full border-4 border-white shadow-lg relative z-10"></div>
+                  <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-r from-amber-500 to-amber-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Partner with Industry Leaders?
+          </h2>
+          <p className="text-xl text-amber-100 mb-8">
+            Join the Crown Business Solutions family and experience the difference 
+            that expertise and dedication can make.
+          </p>
+          <a
+            href="/contact"
+            className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Start Your Journey
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+}
