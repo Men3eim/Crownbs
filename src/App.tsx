@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Toaster } from "sonner";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,9 +16,18 @@ import EngineeringMaintenance from "./pages/EngineeringMaintenance";
 import CustomerExcellence from "./pages/CustomerExcellence";
 
 export default function App() {
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [pathname]);
+    return null;
+  }
+
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <ScrollToTop />
+      <div className="min-h-screen bg-white animate-pagefade">
         <Header />
         <main className="pt-20">
           <Routes>
