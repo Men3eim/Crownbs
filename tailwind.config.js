@@ -45,6 +45,15 @@ export default {
           'sans-serif',
         ],
       },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        scroll: 'scroll 16s linear infinite',
+      },
     },
   },
   plugins: [],

@@ -3,7 +3,6 @@ import { api } from "../../convex/_generated/api";
 
 export default function Partnerships() {
   const partnerships = useQuery(api.partnerships.list, { featured: true });
-
   // Example partnerships for demonstration - Global focus
   const examplePartnerships = [
     { name: "Marriott International", category: "Hotel Group", description: "Global hotel chain partnership" },
@@ -14,7 +13,9 @@ export default function Partnerships() {
     { name: "Agoda", category: "OTA Platform", description: "Asia-Pacific market leader partnership" }
   ];
 
-  const partnerData = partnerships || examplePartnerships;
+  // Loading state: only show fallback if query is undefined (not loading or error)
+  const isLoading = partnerships === undefined;
+  const partnerData = !isLoading && partnerships ? partnerships : examplePartnerships;
 
   return (
     <section id="partnerships" className="py-20 bg-white">
@@ -31,62 +32,75 @@ export default function Partnerships() {
         </div>
 
         {/* Partnership Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🏨</span>
+        {!isLoading && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🏨</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hotel Groups</h3>
+              <p className="text-gray-600 text-sm">Global hotel chains and independent properties</p>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Hotel Groups</h3>
-            <p className="text-gray-600 text-sm">Global hotel chains and independent properties</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🌐</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🌐</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">OTA Platforms</h3>
+              <p className="text-gray-600 text-sm">Leading online travel agencies worldwide</p>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">OTA Platforms</h3>
-            <p className="text-gray-600 text-sm">Leading online travel agencies worldwide</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🏢</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🏢</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Property Firms</h3>
+              <p className="text-gray-600 text-sm">International real estate and property management</p>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Property Firms</h3>
-            <p className="text-gray-600 text-sm">International real estate and property management</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">⚡</span>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Technology</h3>
+              <p className="text-gray-600 text-sm">Global hospitality technology providers</p>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Technology</h3>
-            <p className="text-gray-600 text-sm">Global hospitality technology providers</p>
           </div>
-        </div>
+        )}
 
         {/* Featured Partners */}
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12 border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Global Partners</h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {partnerData.slice(0, 6).map((partner, index) => (
-              <div
-                key={index}
-                className="group text-center"
-              >
-                <div className="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-4 group-hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {partner.name.charAt(0)}
-                    </span>
+          {/* Animated Logo Scroll */}
+          <div className="relative h-36 overflow-hidden rounded-2xl bg-white border border-amber-200 mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="flex animate-scroll space-x-16 px-8" style={{ minWidth: '1200px' }}>
+                {/* Prepare for 5 logos. Add more logo filenames as needed. */}
+                {["Stayz.png", "Irwin.png", "Logo3.png", "Logo4.png", "Logo5.png"].map((logo, idx) => (
+                  <div
+                    key={logo + idx}
+                    className="flex-shrink-0 w-40 h-24 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
+                  >
+                    <img
+                      src={`/src/logos-partnerships/${logo}`}
+                      alt={logo.replace('.png', '') + " logo"}
+                      className="max-h-20 max-w-36 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                </div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-1">{partner.name}</h4>
-                <p className="text-xs text-gray-500">{partner.category}</p>
+                ))}
+                {["Stayz.png", "Irwin.png", "Logo3.png", "Logo4.png", "Logo5.png"].map((logo, idx) => (
+                  <div
+                    key={logo + "repeat" + idx}
+                    className="flex-shrink-0 w-40 h-24 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
+                  >
+                    <img
+                      src={`/src/logos-partnerships/${logo}`}
+                      alt={logo.replace('.png', '') + " logo"}
+                      className="max-h-20 max-w-36 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+          {/* End Animated Logo Scroll */}
         </div>
 
         {/* Partnership Benefits */}
