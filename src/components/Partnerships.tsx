@@ -79,7 +79,7 @@ export default function Partnerships() {
                     className="flex-shrink-0 w-40 h-24 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
                   >
                     <img
-                      src={`/src/logos-partnerships/${logo}`}
+                      src={`/logos-partnerships/${logo}`}
                       alt={logo.replace('.png', '') + " logo"}
                       className="max-h-20 max-w-36 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
