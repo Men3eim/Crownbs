@@ -12,31 +12,31 @@ export default function OTAPartners() {
   const fallbackOTAs = [
     {
       name: "Booking.com",
-      logoUrl: "https://logos-world.net/wp-content/uploads/2021/02/Booking-com-Logo.png",
+      logoUrl: "/logos-ota/booking.svg",
       website: "https://booking.com",
       description: "World's leading accommodation booking platform with global reach"
     },
     {
       name: "Expedia",
-      logoUrl: "https://logos-world.net/wp-content/uploads/2021/02/Expedia-Logo.png",
+      logoUrl: "/logos-ota/expedia.svg",
       website: "https://expedia.com",
       description: "Premier travel technology company and booking platform"
     },
     {
       name: "Agoda",
-      logoUrl: "https://logos-world.net/wp-content/uploads/2021/02/Agoda-Logo.png",
+      logoUrl: "/logos-ota/agoda.svg",
       website: "https://agoda.com",
       description: "Asia-Pacific's leading online travel agency and booking platform"
     },
     {
       name: "Hotels.com",
-      logoUrl: "https://logos-world.net/wp-content/uploads/2021/02/Hotels-com-Logo.png",
+      logoUrl: "/logos-ota/hotels.svg",
       website: "https://hotels.com",
       description: "Trusted hotel booking platform with worldwide coverage"
     },
     {
       name: "Airbnb",
-      logoUrl: "https://logos-world.net/wp-content/uploads/2020/10/Airbnb-Logo.png",
+      logoUrl: "/logos-ota/airbnb.svg",
       website: "https://airbnb.com",
       description: "Global vacation rental and unique stays marketplace"
     }
