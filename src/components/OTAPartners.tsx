@@ -221,6 +221,10 @@ export default function OTAPartners() {
                   <img
                     src={ota.logoUrl || undefined}
                     alt={`${ota.name} logo`}
+                    loading="lazy"
+                    decoding="async"
+                    width={80}
+                    height={32}
                     className="max-h-8 max-w-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

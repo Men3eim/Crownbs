@@ -26,6 +26,10 @@ export default function Header() {
               <img
                 src="/logos/Crownbs.png"
                 alt="Crown Business Solutions Logo"
+                width={128}
+                height={128}
+                decoding="async"
+                fetchPriority="high"
                 className="w-32 h-32 object-contain mr-3 drop-shadow-lg"
               />
             </Link>
@@ -54,9 +58,23 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="bg-gold text-charcoal px-6 py-2 rounded-lg font-medium hover:bg-gold-light transition-all duration-200 shadow-lg hover:shadow-xl border border-platinum"
+              className="relative inline-flex items-center gap-2 bg-gold text-charcoal px-6 py-2 rounded-full font-semibold border border-platinum shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal overflow-hidden group"
             >
-              Get Started
+              <span>Get Started</span>
+              <svg
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <span
+                className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 group-hover:translate-x-full"
+                aria-hidden="true"
+              />
             </Link>
           </div>
 
@@ -97,10 +115,14 @@ export default function Header() {
               ))}
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-amber-500 to-amber-600 text-white block px-3 py-2 rounded-lg font-medium mt-4"
+                className="relative group inline-flex items-center justify-center gap-2 w-full bg-gold text-charcoal px-4 py-2 rounded-full font-semibold border border-platinum shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Started
+                <span>Get Started</span>
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 group-hover:translate-x-full" aria-hidden="true" />
               </Link>
             </div>
           </div>
