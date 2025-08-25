@@ -80,11 +80,11 @@ export default function OTAPartners() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Strategic <span className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">OTA Partnerships</span>
+            <span className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">OTA Channels</span> we list on
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We maintain exclusive partnerships with the world's leading online travel agencies, 
-            ensuring maximum visibility and revenue optimization for your properties across global markets.
+            We advertise and manage listings for client properties across major online travel agency (OTA) platforms
+            to maximize visibility and bookings. These OTAs are independent platforms we list on — not our partners.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function OTAPartners() {
                       {ota.name}
                     </h3>
                     <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                      {ota.description || `Strategic partnership with ${ota.name} for global distribution and revenue optimization.`}
+                      {ota.description || `We list select properties on ${ota.name} to enhance distribution and revenue performance.`}
                     </p>
                     
                     {/* Partnership Stats */}
@@ -210,13 +210,13 @@ export default function OTAPartners() {
         </div>
 
         {/* Floating Logos Animation */}
-        <div className="relative h-24 overflow-hidden rounded-2xl bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 mb-16">
+        <div className="relative h-24 overflow-hidden rounded-2xl bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 mb-4">
           <div className="absolute inset-0 flex items-center">
             <div className="flex animate-scroll space-x-12">
               {[...otas, ...otas, ...otas].map((ota, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-24 h-16 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-white/50 flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-300"
+                  className="flex-shrink-0 w-24 h-16 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-white/50 flex items-center justify-center"
                 >
                   <img
                     src={ota.logoUrl || undefined}
@@ -225,7 +225,7 @@ export default function OTAPartners() {
                     decoding="async"
                     width={80}
                     height={32}
-                    className="max-h-8 max-w-20 object-contain transition-all duration-300"
+                    className="max-h-8 max-w-20 object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
@@ -240,11 +240,12 @@ export default function OTAPartners() {
             </div>
           </div>
         </div>
+        <p className="text-center text-sm text-gray-500 mb-16">Logos shown are trademarks of their respective owners. We list properties on these independent OTA platforms and do not claim any partnership or endorsement.</p>
 
         {/* Partnership Benefits */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -254,7 +255,7 @@ export default function OTAPartners() {
           </div>
           
           <div className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
@@ -264,7 +265,7 @@ export default function OTAPartners() {
           </div>
           
           <div className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
               </svg>
