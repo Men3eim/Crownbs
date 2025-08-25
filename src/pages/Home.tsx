@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Portfolio from "../components/Portfolio";
-import OTAChannels from "../components/OTAChannels";
+import OTAMarquee from "../components/OTAMarquee";
 import Testimonials from "../components/Testimonials";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Portfolio />
-      <OTAChannels />
+      <OTAMarquee />
       <Testimonials />
       
       {/* Quick Contact CTA */}

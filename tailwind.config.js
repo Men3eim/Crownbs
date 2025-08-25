@@ -50,9 +50,19 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        'marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
-        scroll: 'scroll 16s linear infinite',
+        scroll: 'scroll 18s linear infinite',
+        'marquee-left': 'marquee-left 55s linear infinite',
+        'marquee-right': 'marquee-right 55s linear infinite',
       },
     },
   },
