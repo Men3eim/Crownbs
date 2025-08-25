@@ -8,10 +8,10 @@ export default function Partnerships() {
   const examplePartnerships = [
     { name: "Marriott International", category: "Hotel Group", description: "Global hotel chain partnership" },
     { name: "Hilton Worldwide", category: "Hotel Group", description: "Strategic alliance with luxury hotel brand" },
-    { name: "Booking.com", category: "OTA Platform", description: "Premier global distribution partner" },
-    { name: "Expedia Group", category: "OTA Platform", description: "Strategic distribution alliance" },
-    { name: "Airbnb", category: "OTA Platform", description: "Preferred property management partner" },
-    { name: "Agoda", category: "OTA Platform", description: "Asia-Pacific market leader partnership" },
+    { name: "Booking.com", category: "OTA Platform", description: "Global listing channel we utilize" },
+    { name: "Expedia Group", category: "OTA Platform", description: "Major OTA we list properties on" },
+    { name: "Airbnb", category: "OTA Platform", description: "Marketplace where we publish listings" },
+    { name: "Agoda", category: "OTA Platform", description: "APAC OTA channel we distribute to" },
     { name: "Oracle Hospitality", category: "Technology", description: "PMS and technology integration" },
     { name: "Salesforce", category: "Technology", description: "CRM and customer experience platform" }
   ];
@@ -26,9 +26,9 @@ export default function Partnerships() {
       partners: partnerData.filter(p => p.category === "Hotel Group")
     },
     {
-      title: "OTA Platforms",
+      title: "OTA Distribution Channels (not partners)",
       icon: "🌐",
-      description: "Leading online travel agencies and booking platforms worldwide",
+      description: "Listing channels we use to advertise properties — not partnerships",
       partners: partnerData.filter(p => p.category === "OTA Platform")
     },
     {
@@ -213,7 +213,7 @@ export default function Partnerships() {
             <div className="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200">
               <h3 className="text-xl font-bold text-gray-900 mb-4">OTA Distribution Network</h3>
               <p className="text-gray-600 mb-6">
-                Expanded a boutique hotel group's reach through strategic OTA partnerships, 
+                Expanded a boutique hotel group's reach through strategic OTA distribution,
                 increasing international bookings by 200% within 12 months.
               </p>
               <div className="grid grid-cols-3 gap-4 text-center">

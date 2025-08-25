@@ -10,10 +10,10 @@ export default function Partnerships() {
   const examplePartnerships = [
     { name: "Marriott International", category: "Hotel Group", description: "Global hotel chain partnership" },
     { name: "Hilton Worldwide", category: "Hotel Group", description: "Strategic alliance with luxury hotel brand" },
-    { name: "Booking.com", category: "OTA Platform", description: "Premier global distribution partner" },
-    { name: "Expedia Group", category: "OTA Platform", description: "Strategic distribution alliance" },
-    { name: "Airbnb", category: "OTA Platform", description: "Preferred property management partner" },
-    { name: "Agoda", category: "OTA Platform", description: "Asia-Pacific market leader partnership" }
+    { name: "Booking.com", category: "OTA Platform", description: "Global listing channel we utilize" },
+    { name: "Expedia Group", category: "OTA Platform", description: "Major OTA we list properties on" },
+    { name: "Airbnb", category: "OTA Platform", description: "Marketplace where we publish listings" },
+    { name: "Agoda", category: "OTA Platform", description: "APAC OTA channel we distribute to" }
   ];
 
   // Loading state: only show fallback if query is undefined (not loading or error)
@@ -48,8 +48,8 @@ export default function Partnerships() {
               <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌐</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">OTA Platforms</h3>
-              <p className="text-gray-600 text-sm">Leading online travel agencies worldwide</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">OTA Distribution Channels (not partners)</h3>
+              <p className="text-gray-600 text-sm">Listing channels we use to advertise properties — not partnerships</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4">

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 
-export default function OTAPartners() {
+export default function OTAChannels() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
@@ -282,7 +282,7 @@ export default function OTAPartners() {
               Proven Results Across All Channels
             </h3>
             <p className="text-amber-100 text-lg max-w-2xl mx-auto">
-              Our strategic OTA partnerships deliver measurable results for property owners worldwide
+              Our OTA distribution strategy delivers measurable results for property owners worldwide
             </p>
           </div>
           
@@ -309,7 +309,7 @@ export default function OTAPartners() {
         {/* All Partners Grid */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Complete Partner Network
+            Complete OTA Channel List
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {otas.map((ota, index) => (
@@ -376,7 +376,7 @@ export default function OTAPartners() {
                 href="/partnerships"
                 className="inline-flex items-center border-2 border-amber-500 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 hover:text-white transition-all duration-200"
               >
-                View All Partnerships
+                Learn About Our Partnerships
               </a>
             </div>
           </div>
