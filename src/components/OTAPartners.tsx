@@ -80,7 +80,7 @@ export default function OTAPartners() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Strategic <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">OTA Partnerships</span>
+            Strategic <span className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">OTA Partnerships</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We maintain exclusive partnerships with the world's leading online travel agencies, 
@@ -117,7 +117,7 @@ export default function OTAPartners() {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
                             const fallback = document.createElement('div');
-                            fallback.className = 'text-3xl font-bold text-amber-600';
+                            fallback.className = 'text-3xl font-bold text-gray-700';
                             fallback.textContent = ota.name;
                             target.parentNode?.appendChild(fallback);
                           }}
@@ -136,15 +136,15 @@ export default function OTAPartners() {
                     {/* Partnership Stats */}
                     <div className="grid grid-cols-3 gap-6 mt-8">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-amber-600 mb-1">24/7</div>
+                        <div className="text-2xl font-bold text-gray-700 mb-1">24/7</div>
                         <div className="text-sm text-gray-500 uppercase tracking-wider">Integration</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-amber-600 mb-1">Real-time</div>
+                        <div className="text-2xl font-bold text-gray-700 mb-1">Real-time</div>
                         <div className="text-sm text-gray-500 uppercase tracking-wider">Sync</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-amber-600 mb-1">Global</div>
+                        <div className="text-2xl font-bold text-gray-700 mb-1">Global</div>
                         <div className="text-sm text-gray-500 uppercase tracking-wider">Reach</div>
                       </div>
                     </div>
@@ -159,7 +159,7 @@ export default function OTAPartners() {
             onClick={prevSlide}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-white hover:shadow-xl transition-all duration-300 group"
           >
-            <svg className="w-6 h-6 text-gray-600 group-hover:text-amber-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -168,7 +168,7 @@ export default function OTAPartners() {
             onClick={nextSlide}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-white hover:shadow-xl transition-all duration-300 group"
           >
-            <svg className="w-6 h-6 text-gray-600 group-hover:text-amber-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -176,7 +176,7 @@ export default function OTAPartners() {
           {/* Progress Bar */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
             <div 
-              className="h-full bg-gradient-to-r from-amber-500 to-amber-600 transition-all duration-1000 ease-linear"
+              className="h-full bg-gradient-to-r from-gray-400 to-gray-600 transition-all duration-1000 ease-linear"
               style={{ width: `${((currentIndex + 1) / otas.length) * 100}%` }}
             />
           </div>
@@ -194,8 +194,8 @@ export default function OTAPartners() {
             >
               <div className={`w-4 h-4 rounded-full transition-all duration-500 ${
                 index === currentIndex
-                  ? 'bg-amber-500 shadow-lg shadow-amber-500/50'
-                  : 'bg-gray-300 hover:bg-amber-300'
+                  ? 'bg-gray-700 shadow-lg shadow-gray-500/50'
+                  : 'bg-gray-300 hover:bg-gray-400'
               }`} />
               
               {/* Tooltip */}
@@ -210,7 +210,7 @@ export default function OTAPartners() {
         </div>
 
         {/* Floating Logos Animation */}
-        <div className="relative h-24 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-50 to-amber-100 border border-amber-200 mb-16">
+        <div className="relative h-24 overflow-hidden rounded-2xl bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 mb-16">
           <div className="absolute inset-0 flex items-center">
             <div className="flex animate-scroll space-x-12">
               {[...otas, ...otas, ...otas].map((ota, index) => (
@@ -225,12 +225,12 @@ export default function OTAPartners() {
                     decoding="async"
                     width={80}
                     height={32}
-                    className="max-h-8 max-w-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-h-8 max-w-20 object-contain transition-all duration-300"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
                       const fallback = document.createElement('div');
-                      fallback.className = 'text-xs font-bold text-amber-600';
+                      fallback.className = 'text-xs font-bold text-gray-700';
                       fallback.textContent = ota.name;
                       target.parentNode?.appendChild(fallback);
                     }}
