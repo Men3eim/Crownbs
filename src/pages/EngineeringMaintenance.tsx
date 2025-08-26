@@ -10,6 +10,14 @@ export default function EngineeringMaintenance() {
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-emerald-50/80 via-teal-50/60 to-emerald-100/80 overflow-hidden">
+        {/* Luxury Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-emerald-400/20 to-emerald-600/20 rounded-full blur-xl animate-float-slow"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-emerald-500/15 to-emerald-700/15 rounded-full blur-lg animate-float-medium"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-emerald-300/10 to-emerald-500/10 rounded-full blur-2xl animate-float-fast"></div>
+          <div className="absolute top-1/3 right-10 w-16 h-16 border border-emerald-400/30 rotate-45 animate-spin-slow"></div>
+        </div>
+
         {/* Premium Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 

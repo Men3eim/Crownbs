@@ -10,23 +10,32 @@ export default function HotelOperations() {
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-slate-50/80 via-gray-50/60 to-slate-100/80 overflow-hidden">
+        {/* Luxury Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-slate-400/20 to-slate-600/20 rounded-full blur-xl animate-float-slow"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-slate-500/15 to-slate-700/15 rounded-full blur-lg animate-float-medium"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-slate-300/10 to-slate-500/10 rounded-full blur-2xl animate-float-fast"></div>
+          <div className="absolute top-1/3 right-10 w-16 h-16 border border-slate-400/30 rotate-45 animate-spin-slow"></div>
+        </div>
+
         {/* Premium Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/50 mb-8 backdrop-blur-sm">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+              <div className="w-2 h-2 bg-slate-500 rounded-full mr-3 animate-pulse"></div>
               <svg className="w-5 h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
               <span className="text-slate-700 text-sm font-semibold tracking-wide uppercase">Operational Excellence</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              Hotel <span className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">Operations</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in-up-delay-1">
+              Hotel <span className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent animate-gradient-x">Operations</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light animate-fade-in-up-delay-2">
               Streamline your hotel operations with our comprehensive management solutions,
               from front desk operations to housekeeping coordination and guest experience optimization.
             </p>

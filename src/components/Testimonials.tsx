@@ -53,15 +53,26 @@ export default function Testimonials() {
   const testimonialData = testimonials || exampleTestimonials;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-amber-50/20 relative overflow-hidden">
+      {/* Luxury Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-12 w-28 h-28 bg-gradient-to-br from-amber-400/15 to-amber-600/15 rounded-full blur-xl animate-float-slow"></div>
+        <div className="absolute bottom-24 right-20 w-36 h-36 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl animate-float-medium"></div>
+        <div className="absolute top-1/2 left-1/4 w-18 h-18 border border-amber-400/20 rotate-45 animate-spin-slow"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Global <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Success Stories</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+            <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Client Testimonials</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up-delay-1">
+            Global <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent animate-gradient-x">Success Stories</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how Crown Business Solutions has helped property owners and hotel groups worldwide 
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up-delay-2">
+            Discover how Crown Business Solutions has helped property owners and hotel groups worldwide
             achieve exceptional results and sustainable growth across international markets.
           </p>
         </div>
@@ -71,7 +82,8 @@ export default function Testimonials() {
           {testimonialData.slice(0, 6).map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 premium-card animate-fade-in-up"
+              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               {/* Stars */}
               <div className="flex mb-6">

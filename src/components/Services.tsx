@@ -77,6 +77,14 @@ export default function Services() {
 
   return (
     <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden">
+      {/* Luxury Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-10 w-28 h-28 bg-gradient-to-br from-amber-400/15 to-amber-600/15 rounded-full blur-xl animate-float-slow"></div>
+        <div className="absolute bottom-32 left-20 w-36 h-36 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl animate-float-medium"></div>
+        <div className="absolute top-1/2 right-1/4 w-20 h-20 border border-amber-400/20 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-14 h-14 bg-gradient-to-br from-amber-500/15 to-transparent rotate-12 animate-pulse-luxury"></div>
+      </div>
+
       {/* Luxury Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
@@ -87,13 +95,14 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
             <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Premium Services</span>
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Our <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">Expertise</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in-up-delay-1">
+            Our <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent animate-gradient-x">Expertise</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up-delay-2">
             Comprehensive property management solutions designed to maximize revenue,
             optimize operations, and deliver exceptional guest experiences worldwide.
           </p>
@@ -104,7 +113,8 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}
+              className={`group relative overflow-hidden premium-card ${index % 2 === 0 ? '' : 'flex-row-reverse'} animate-fade-in-up`}
+              style={{ animationDelay: `${0.3 + index * 0.2}s` }}
             >
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:grid-flow-col-dense'}`}>
 

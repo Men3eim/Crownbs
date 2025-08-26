@@ -38,31 +38,51 @@ export default function Portfolio() {
   const properties = featuredProperties || exampleProperties;
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-gray-50 via-white to-amber-50/20 relative overflow-hidden">
+      {/* Luxury Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-16 left-16 w-24 h-24 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full blur-xl animate-float-slow"></div>
+        <div className="absolute bottom-20 right-16 w-32 h-32 bg-gradient-to-br from-amber-300/15 to-amber-500/15 rounded-full blur-2xl animate-float-medium"></div>
+        <div className="absolute top-1/3 right-12 w-16 h-16 border border-amber-400/25 rotate-45 animate-spin-slow"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Portfolio</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+            <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Global Portfolio</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up-delay-1">
+            Our <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent animate-gradient-x">Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our diverse collection of premium properties across international markets, 
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up-delay-2">
+            Discover our diverse collection of premium properties across international markets,
             each delivering exceptional returns and guest satisfaction.
           </p>
         </div>
 
         {/* Portfolio Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-            <div className="text-4xl font-bold text-amber-600 mb-2">500+</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="relative">
+              <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
             <div className="text-gray-600 font-medium">Properties Under Management</div>
           </div>
-          <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-            <div className="text-4xl font-bold text-amber-600 mb-2">89%</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="relative">
+              <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">89%</div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
             <div className="text-gray-600 font-medium">Average Occupancy Rate</div>
           </div>
-          <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-            <div className="text-4xl font-bold text-amber-600 mb-2">$150M</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <div className="relative">
+              <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">$150M</div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
             <div className="text-gray-600 font-medium">Annual Revenue Generated</div>
           </div>
         </div>
@@ -72,7 +92,8 @@ export default function Portfolio() {
           {properties.slice(0, 3).map((property, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg premium-card group animate-fade-in-up"
+              style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
               <div className="h-48 bg-gradient-to-br from-amber-100 to-amber-200 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

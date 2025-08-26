@@ -61,71 +61,101 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 relative overflow-hidden">
+        {/* Luxury Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full blur-xl animate-float-slow"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-amber-500/15 to-amber-700/15 rounded-full blur-lg animate-float-medium"></div>
+          <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl animate-float-fast"></div>
+          <div className="absolute top-1/3 right-10 w-16 h-16 border border-amber-400/30 rotate-45 animate-spin-slow"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Crown Business Solutions</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg animate-fade-in-up">
+              <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-amber-800 text-sm font-medium tracking-wide">About Our Company</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up-delay-1">
+              About <span className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent animate-gradient-x">Crown Business Solutions</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              A global leader in property and hotel management, delivering exceptional results 
-              through innovative strategies, cutting-edge technology, and unparalleled expertise 
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto animate-fade-in-up-delay-2">
+              A global leader in property and hotel management, delivering exceptional results
+              through innovative strategies, cutting-edge technology, and unparalleled expertise
               across international markets.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-600 mb-2">2015</div>
-              <div className="text-gray-600 text-sm">Founded</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto animate-fade-in-up-delay-3">
+            <div className="text-center group">
+              <div className="relative">
+                <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">2015</div>
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Founded</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-600 mb-2">500+</div>
-              <div className="text-gray-600 text-sm">Properties</div>
+            <div className="text-center group">
+              <div className="relative">
+                <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Properties</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-600 mb-2">50+</div>
-              <div className="text-gray-600 text-sm">Countries</div>
+            <div className="text-center group">
+              <div className="relative">
+                <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Countries</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-600 mb-2">200+</div>
-              <div className="text-gray-600 text-sm">Team Members</div>
+            <div className="text-center group">
+              <div className="relative">
+                <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">200+</div>
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Team Members</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-white via-gray-50/50 to-amber-50/20 relative overflow-hidden">
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-16 right-16 w-28 h-28 bg-gradient-to-br from-amber-400/15 to-amber-600/15 rounded-full blur-xl animate-float-slow"></div>
+          <div className="absolute bottom-20 left-20 w-36 h-36 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl animate-float-medium"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To revolutionize property and hotel management by delivering innovative solutions 
-                that maximize revenue, enhance guest experiences, and create sustainable value 
+                To revolutionize property and hotel management by delivering innovative solutions
+                that maximize revenue, enhance guest experiences, and create sustainable value
                 for property owners worldwide.
               </p>
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-6 border border-amber-200">
+              <div className="bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 premium-card">
                 <h3 className="font-semibold text-gray-900 mb-2">Global Impact</h3>
                 <p className="text-gray-700 text-sm">
-                  We're committed to setting new standards in hospitality management across 
+                  We're committed to setting new standards in hospitality management across
                   diverse cultures and markets, ensuring every property reaches its full potential.
                 </p>
               </div>
             </div>
 
-            <div>
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To be the world's most trusted property management partner, known for our 
-                expertise, innovation, and commitment to delivering exceptional results 
+                To be the world's most trusted property management partner, known for our
+                expertise, innovation, and commitment to delivering exceptional results
                 across every market we serve.
               </p>
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-6 border border-amber-200">
+              <div className="bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 premium-card">
                 <h3 className="font-semibold text-gray-900 mb-2">Future Focus</h3>
                 <p className="text-gray-700 text-sm">
-                  We're building the future of property management through technology innovation, 
+                  We're building the future of property management through technology innovation,
                   sustainable practices, and global collaboration.
                 </p>
               </div>
