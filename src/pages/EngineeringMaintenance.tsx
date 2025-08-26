@@ -1,27 +1,48 @@
 export default function EngineeringMaintenance() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/30">
+      {/* Luxury Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.8'%3E%3Cpath d='M60 60L0 0h120v120L60 60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Engineering & <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">Technology</span>
+      <section className="relative py-24 bg-gradient-to-br from-emerald-50/80 via-teal-50/60 to-emerald-100/80 overflow-hidden">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100/80 to-teal-100/80 border border-emerald-200/50 mb-8 backdrop-blur-sm">
+              <svg className="w-5 h-5 text-emerald-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span className="text-emerald-700 text-sm font-semibold tracking-wide uppercase">Advanced Technology</span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
+              Engineering & <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent">Technology</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Advanced engineering solutions, predictive maintenance systems, and cutting-edge automation 
+            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light">
+              Advanced engineering solutions, predictive maintenance systems, and cutting-edge automation
               technologies that revolutionize property management workflows and operational efficiency.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="/contact"
-                className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="group relative bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white px-10 py-4 rounded-2xl font-semibold hover:from-emerald-700 hover:via-teal-700 hover:to-emerald-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/40 hover:-translate-y-1 overflow-hidden"
               >
-                Explore Technology Solutions
+                <span className="relative z-10">Explore Technology Solutions</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
               <a
                 href="/portfolio"
-                className="border-2 border-green-500 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-all duration-200"
+                className="group border-2 border-emerald-600/60 text-emerald-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-emerald-600 hover:via-teal-600 hover:to-emerald-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50"
               >
                 View Implementations
               </a>
@@ -31,31 +52,31 @@ export default function EngineeringMaintenance() {
       </section>
 
       {/* Technology Metrics */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">85%</div>
-              <div className="text-gray-600">Maintenance Cost Reduction</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent mb-2">85%</div>
+              <div className="text-gray-700 font-medium">Maintenance Cost Reduction</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">99.8%</div>
-              <div className="text-gray-600">System Reliability</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent mb-2">99.8%</div>
+              <div className="text-gray-700 font-medium">System Reliability</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">24/7</div>
-              <div className="text-gray-600">Automated Monitoring</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent mb-2">24/7</div>
+              <div className="text-gray-700 font-medium">Automated Monitoring</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">50+</div>
-              <div className="text-gray-600">Automation Solutions</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent mb-2">50+</div>
+              <div className="text-gray-700 font-medium">Automation Solutions</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Crown BS Technology Solutions */}
-      <section className="py-16 bg-gradient-to-br from-green-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-emerald-50/80 via-teal-50/60 to-emerald-100/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Crown BS Proprietary Technology
@@ -129,7 +150,7 @@ export default function EngineeringMaintenance() {
                   <ul className="space-y-2">
                     {tech.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-700">
-                        <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         {feature}
@@ -137,10 +158,10 @@ export default function EngineeringMaintenance() {
                     ))}
                   </ul>
                 </div>
-                
-                <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                  <h4 className="font-semibold text-green-800 mb-2">Proven Results:</h4>
-                  <p className="text-green-700 text-sm">{tech.benefits}</p>
+
+                <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                  <h4 className="font-semibold text-emerald-800 mb-2">Proven Results:</h4>
+                  <p className="text-emerald-700 text-sm">{tech.benefits}</p>
                 </div>
               </div>
             ))}
@@ -197,7 +218,7 @@ export default function EngineeringMaintenance() {
                 <ul className="space-y-2">
                   {workflow.automations.map((automation, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-700">
-                      <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       {automation}
@@ -266,24 +287,24 @@ export default function EngineeringMaintenance() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200">
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 border border-emerald-200">
               <h4 className="text-lg font-bold text-gray-900 mb-6">Technology Performance</h4>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700">System Uptime</span>
-                  <span className="font-bold text-green-600">99.98%</span>
+                  <span className="font-bold text-emerald-600">99.98%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700">Response Time</span>
-                  <span className="font-bold text-green-600">&lt;200ms</span>
+                  <span className="font-bold text-emerald-600">&lt;200ms</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700">Automation Coverage</span>
-                  <span className="font-bold text-green-600">95%</span>
+                  <span className="font-bold text-emerald-600">95%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700">Cost Savings</span>
-                  <span className="font-bold text-green-600">£2.3M/year</span>
+                  <span className="font-bold text-emerald-600">£2.3M/year</span>
                 </div>
               </div>
             </div>
@@ -337,7 +358,7 @@ export default function EngineeringMaintenance() {
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-700">
-                      <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       {feature}
@@ -351,14 +372,14 @@ export default function EngineeringMaintenance() {
       </section>
 
       {/* Automation Showcase */}
-      <section className="py-16 bg-gradient-to-r from-green-500 to-green-600">
+      <section className="py-16 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
               Workflow Automation Excellence
             </h2>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Our proprietary automation solutions eliminate manual processes and create seamless, 
+            <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+              Our proprietary automation solutions eliminate manual processes and create seamless,
               intelligent workflows that adapt to your property's unique operational needs.
             </p>
           </div>
@@ -389,7 +410,7 @@ export default function EngineeringMaintenance() {
               <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <div className="text-4xl mb-4">{automation.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-3">{automation.title}</h3>
-                <p className="text-green-100 text-sm">{automation.description}</p>
+                <p className="text-emerald-100 text-sm">{automation.description}</p>
               </div>
             ))}
           </div>
@@ -397,17 +418,17 @@ export default function EngineeringMaintenance() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-500 to-green-600">
+      <section className="py-16 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Automate Your Operations?
           </h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p className="text-xl text-emerald-100 mb-8">
             Discover how our engineering and automation solutions can transform your property management efficiency.
           </p>
           <a
             href="/contact"
-            className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             Schedule Technology Consultation
           </a>

@@ -1,27 +1,47 @@
 export default function CustomerExcellence() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50/30 via-white to-pink-50/30">
+      {/* Luxury Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e11d48' fill-opacity='0.8'%3E%3Cpath d='M60 60L0 0h120v120L60 60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Customer <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Excellence</span>
+      <section className="relative py-24 bg-gradient-to-br from-rose-50/80 via-pink-50/60 to-rose-100/80 overflow-hidden">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-rose-100/80 to-pink-100/80 border border-rose-200/50 mb-8 backdrop-blur-sm">
+              <svg className="w-5 h-5 text-rose-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              <span className="text-rose-700 text-sm font-semibold tracking-wide uppercase">Guest Experience Excellence</span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
+              Customer <span className="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent">Excellence</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Deliver exceptional guest experiences through personalized service, advanced guest intelligence, 
+            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light">
+              Deliver exceptional guest experiences through personalized service, advanced guest intelligence,
               and comprehensive customer relationship management solutions that drive loyalty and satisfaction.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="/contact"
-                className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="group relative bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 text-white px-10 py-4 rounded-2xl font-semibold hover:from-rose-700 hover:via-pink-700 hover:to-rose-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-rose-500/40 hover:-translate-y-1 overflow-hidden"
               >
-                Enhance Guest Experience
+                <span className="relative z-10">Enhance Guest Experience</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
               <a
                 href="/portfolio"
-                className="border-2 border-purple-500 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-200"
+                className="group border-2 border-rose-600/60 text-rose-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50"
               >
                 View Guest Stories
               </a>
@@ -31,31 +51,31 @@ export default function CustomerExcellence() {
       </section>
 
       {/* Excellence Metrics */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-br from-white via-rose-50/30 to-pink-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">9.6/10</div>
-              <div className="text-gray-600">Guest Satisfaction Score</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-200/50 shadow-lg hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">9.6/10</div>
+              <div className="text-gray-700 font-medium">Guest Satisfaction Score</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">95%</div>
-              <div className="text-gray-600">Guest Retention Rate</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-200/50 shadow-lg hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">95%</div>
+              <div className="text-gray-700 font-medium">Guest Retention Rate</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">&lt;2min</div>
-              <div className="text-gray-600">Average Response Time</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-200/50 shadow-lg hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">&lt;2min</div>
+              <div className="text-gray-700 font-medium">Average Response Time</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
-              <div className="text-gray-600">Languages Supported</div>
+            <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-200/50 shadow-lg hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-500">
+              <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">50+</div>
+              <div className="text-gray-700 font-medium">Languages Supported</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Customer Excellence Services */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-rose-50/80 via-pink-50/60 to-rose-100/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Comprehensive Guest Experience Solutions
@@ -100,7 +120,7 @@ export default function CustomerExcellence() {
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-700">
-                      <svg className="w-4 h-4 text-purple-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-rose-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       {feature}
@@ -127,31 +147,31 @@ export default function CustomerExcellence() {
                   phase: "Pre-Arrival",
                   title: "Anticipation Building",
                   description: "Personalized pre-arrival communications and preference collection",
-                  color: "from-purple-400 to-purple-500"
+                  color: "from-rose-400 to-rose-500"
                 },
                 {
                   phase: "Arrival",
                   title: "Seamless Check-in",
                   description: "Express check-in with personalized welcome and room customization",
-                  color: "from-purple-500 to-purple-600"
+                  color: "from-rose-500 to-rose-600"
                 },
                 {
                   phase: "Stay",
                   title: "Exceptional Service",
                   description: "Proactive service delivery and real-time guest satisfaction monitoring",
-                  color: "from-purple-600 to-purple-700"
+                  color: "from-rose-600 to-rose-700"
                 },
                 {
                   phase: "Departure",
                   title: "Memorable Farewell",
                   description: "Efficient checkout with personalized thank you and future booking incentives",
-                  color: "from-purple-700 to-purple-800"
+                  color: "from-rose-700 to-rose-800"
                 },
                 {
                   phase: "Post-Stay",
                   title: "Lasting Relationships",
                   description: "Follow-up communications and loyalty program engagement",
-                  color: "from-purple-800 to-purple-900"
+                  color: "from-rose-800 to-rose-900"
                 }
               ].map((phase, index) => (
                 <div key={index} className="text-center">
@@ -159,7 +179,7 @@ export default function CustomerExcellence() {
                     <span className="text-white font-bold text-lg">{index + 1}</span>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{phase.title}</h3>
-                  <p className="text-sm text-purple-600 font-medium mb-3">{phase.phase}</p>
+                  <p className="text-sm text-rose-600 font-medium mb-3">{phase.phase}</p>
                   <p className="text-gray-600 text-sm">{phase.description}</p>
                 </div>
               ))}
@@ -201,8 +221,8 @@ export default function CustomerExcellence() {
             ].map((story, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{story.property}</h3>
-                <div className="text-3xl font-bold text-purple-600 mb-2">{story.improvement}</div>
-                <p className="text-purple-600 font-medium mb-4">{story.metric}</p>
+                <div className="text-3xl font-bold text-rose-600 mb-2">{story.improvement}</div>
+                <p className="text-rose-600 font-medium mb-4">{story.metric}</p>
                 <p className="text-gray-600 mb-6">{story.description}</p>
                 <div className="space-y-2">
                   {story.results.map((result, idx) => (
@@ -221,17 +241,17 @@ export default function CustomerExcellence() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-500 to-purple-600">
+      <section className="py-16 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Elevate Your Guest Experience
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl text-rose-100 mb-8">
             Transform your guest relationships with our proven customer excellence strategies and technologies.
           </p>
           <a
             href="/contact"
-            className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-white text-rose-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             Start Guest Experience Transformation
           </a>
