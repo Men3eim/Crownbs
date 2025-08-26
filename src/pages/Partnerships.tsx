@@ -4,6 +4,14 @@ import { api } from "../../convex/_generated/api";
 export default function Partnerships() {
   const partnerships = useQuery(api.partnerships.list, { featured: true });
 
+  // Partner logos for the carousel
+  const partnerLogos = [
+    { name: "HFS", src: "/logos-partnerships/HFS.png" },
+    { name: "Irwin", src: "/logos-partnerships/Irwin.png" },
+    { name: "KMA", src: "/logos-partnerships/KMA.png" },
+    { name: "Stayz", src: "/logos-partnerships/Stayz.png" }
+  ];
+
   // Example partnerships for demonstration - Global focus
   const examplePartnerships = [
     { name: "Marriott International", category: "Hotel Group", description: "Global hotel chain partnership" },
@@ -79,8 +87,44 @@ export default function Partnerships() {
         </div>
       </section>
 
+      {/* Our Global Partners - Logo Carousel */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Global Partners</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Trusted by industry leaders worldwide, we collaborate with the best to deliver exceptional results
+          </p>
+        </div>
+
+        {/* Enhanced Logo Carousel - Full Width */}
+        <div className="relative overflow-hidden w-full">
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+
+            {/* Scrolling Container */}
+            <div className="flex space-x-12 animate-scroll" style={{ minWidth: '100vw' }}>
+              {/* Create three sets of logos for seamless infinite scroll */}
+              {[...Array(3)].map((_, setIndex) => (
+                partnerLogos.map((logo, logoIndex) => (
+                  <div
+                    key={`${setIndex}-${logoIndex}`}
+                    className="logo-container flex items-center justify-center min-w-[200px] h-24 bg-white rounded-xl shadow-sm hover:shadow-lg p-4 flex-shrink-0"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="max-h-16 max-w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
+                    />
+                  </div>
+                ))
+              ))}
+            </div>
+          </div>
+      </section>
+
       {/* Partnership Categories */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-16 text-center">Partnership Categories</h2>
           

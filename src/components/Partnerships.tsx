@@ -1,11 +1,17 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import StayzLogo from "../logos-partnerships/Stayz.png";
-import IrwinLogo from "../logos-partnerships/Irwin.png";
-import KMALogo from "../logos-partnerships/KMA.png";
 
 export default function Partnerships() {
   const partnerships = useQuery(api.partnerships.list, { featured: true });
+
+  // Partner logos for the carousel
+  const partnerLogos = [
+    { src: "/logos-partnerships/HFS.png", alt: "HFS" },
+    { src: "/logos-partnerships/Irwin.png", alt: "Irwin" },
+    { src: "/logos-partnerships/KMA.png", alt: "KMA" },
+    { src: "/logos-partnerships/Stayz.png", alt: "Stayz" }
+  ];
+
   // Example partnerships for demonstration - Global focus
   const examplePartnerships = [
     { name: "Marriott International", category: "Hotel Group", description: "Global hotel chain partnership" },
@@ -69,21 +75,21 @@ export default function Partnerships() {
         )}
 
         {/* Featured Partners */}
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12 border border-gray-100">
+        <div className="w-full">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Global Partners</h3>
           {/* Animated Logo Scroll */}
-          <div className="relative h-36 overflow-hidden rounded-2xl bg-white mb-8">
+          <div className="relative h-36 overflow-hidden bg-white mb-8 w-full">
             <div className="absolute inset-0 flex items-center">
-              <div className="flex animate-scroll space-x-16 px-8" style={{ minWidth: '1200px' }}>
-                {/* Prepare for 5 logos. Add more logo filenames as needed. */}
-                {[{src: StayzLogo, alt: "Stayz"}, {src: IrwinLogo, alt: "Irwin"}, {src: KMALogo, alt: "KMA"}].map((l, idx) => (
+              <div className="flex animate-scroll space-x-16" style={{ minWidth: '100vw' }}>
+                {/* First set of logos */}
+                {partnerLogos.map((logo, idx) => (
                   <div
-                    key={l.alt + idx}
+                    key={logo.alt + idx}
                     className="flex-shrink-0 w-40 h-24 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
                   >
                     <img
-                      src={l.src}
-                      alt={`${l.alt} logo`}
+                      src={logo.src}
+                      alt={`${logo.alt} logo`}
                       loading="lazy"
                       decoding="async"
                       width={144}
@@ -92,14 +98,15 @@ export default function Partnerships() {
                     />
                   </div>
                 ))}
-                {[{src: StayzLogo, alt: "Stayz"}, {src: IrwinLogo, alt: "Irwin"}, {src: KMALogo, alt: "KMA"}].map((l, idx) => (
+                {/* Second set for seamless loop */}
+                {partnerLogos.map((logo, idx) => (
                   <div
-                    key={l.alt + "repeat" + idx}
+                    key={logo.alt + "repeat" + idx}
                     className="flex-shrink-0 w-40 h-24 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
                   >
                     <img
-                      src={l.src}
-                      alt={`${l.alt} logo`}
+                      src={logo.src}
+                      alt={`${logo.alt} logo`}
                       loading="lazy"
                       decoding="async"
                       width={144}
