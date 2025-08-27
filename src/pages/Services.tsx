@@ -184,12 +184,20 @@ export default function Services() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-100/50 premium-card group animate-fade-in-up"
-                style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+                className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-100/50 premium-card group"
+                variants={cardVariants}
+                whileHover="hover"
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
@@ -221,69 +229,122 @@ export default function Services() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Process Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Our <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Process</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A proven methodology that delivers results from day one
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {[
               { step: "01", title: "Assessment", description: "Comprehensive property and market analysis" },
               { step: "02", title: "Strategy", description: "Custom management plan development" },
               { step: "03", title: "Implementation", description: "Seamless system integration and setup" },
               { step: "04", title: "Optimization", description: "Continuous monitoring and improvement" }
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div 
+                key={index} 
+                className="text-center"
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div 
+                  className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
                   <span className="text-white font-bold text-lg">{item.step}</span>
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-2xl p-12 border border-amber-200">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <motion.div 
+            className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-2xl p-12 border border-amber-200"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.h2 
+              className="text-3xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Ready to Maximize Your Property's Potential?
-            </h2>
-            <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              className="text-gray-700 mb-8 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Let our experts create a customized management strategy that drives results 
               and exceeds your expectations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <motion.a
                 href="/contact"
                 className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
               >
                 Schedule Consultation
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="/portfolio"
                 className="border-2 border-amber-500 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 hover:text-white transition-all duration-200"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
               >
                 View Case Studies
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </PageWrapper>

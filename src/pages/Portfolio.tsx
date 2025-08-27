@@ -3,7 +3,7 @@ import { api } from "../../convex/_generated/api";
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
-import { containerVariants, itemVariants, cardVariants, floatingVariants, statsVariants } from '../utils/animations';
+import { containerVariants, itemVariants, cardVariants, floatingVariants } from '../utils/animations';
 
 export default function Portfolio() {
   const featuredProperties = useQuery(api.properties.list, { featured: true });
@@ -85,20 +85,41 @@ export default function Portfolio() {
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full blur-xl"
-            variants={floatingVariants}
-            animate="animate"
+            animate={{
+              y: [-20, 20, -20],
+              rotate: [0, 180, 360],
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
           />
           <motion.div
             className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-amber-500/15 to-amber-700/15 rounded-full blur-lg"
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: 1, duration: 4, repeat: Infinity }}
+            animate={{
+              y: [-15, 15, -15],
+              rotate: [0, 180, 360],
+              transition: {
+                delay: 1,
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
           />
           <motion.div
             className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl"
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: 2, duration: 3, repeat: Infinity }}
+            animate={{
+              y: [-25, 25, -25],
+              rotate: [0, 180, 360],
+              transition: {
+                delay: 2,
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
           />
           <motion.div
             className="absolute top-1/3 right-10 w-16 h-16 border border-amber-400/30 rotate-45"
@@ -115,7 +136,9 @@ export default function Portfolio() {
         >
           <motion.div
             className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-6 sm:mb-8 backdrop-blur-sm shadow-lg"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.div
               className="w-2 h-2 bg-amber-500 rounded-full mr-3"
@@ -135,7 +158,9 @@ export default function Portfolio() {
 
           <motion.p
             className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 px-4"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             Discover our diverse collection of premium properties across international markets,
             each delivering exceptional returns and guest satisfaction.
@@ -178,16 +203,57 @@ export default function Portfolio() {
       {/* Property Types */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Property Types We Manage</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <motion.h2 
+            className="text-3xl font-bold text-gray-900 mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            Property Types We Manage
+          </motion.h2>
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {propertyTypes.map((type, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors">
-                <div className="text-3xl mb-3">{type.icon}</div>
-                <div className="text-2xl font-bold text-amber-600 mb-1">{type.count}</div>
+              <motion.div 
+                key={index} 
+                className="text-center p-6 bg-gray-50 rounded-xl hover:bg-amber-50 transition-colors"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -5,
+                  backgroundColor: "#fef3c7",
+                  boxShadow: "0 10px 25px rgba(245, 158, 11, 0.2)"
+                }}
+              >
+                <motion.div 
+                  className="text-3xl mb-3"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {type.icon}
+                </motion.div>
+                <motion.div 
+                  className="text-2xl font-bold text-amber-600 mb-1"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.3, type: "spring", stiffness: 200 }}
+                >
+                  {type.count}
+                </motion.div>
                 <div className="text-sm text-gray-600 font-medium">{type.type}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -196,11 +262,26 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Featured Properties</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {properties.slice(0, 6).map((property, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -10,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
               >
                 <div className="h-64 bg-gradient-to-br from-amber-100 to-amber-200 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -245,34 +326,59 @@ export default function Portfolio() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Global Presence */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Global Presence</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our properties span across major international markets, from bustling city centers 
               to exotic vacation destinations.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {[
               "United Kingdom", "United States", "Singapore", "Switzerland", 
               "Maldives", "France", "Germany", "Australia", "Japan", "Canada",
               "Italy", "Spain"
             ].map((country, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg hover:bg-amber-50 transition-colors">
+              <motion.div 
+                key={index} 
+                className="text-center p-4 bg-gray-50 rounded-lg hover:bg-amber-50 transition-colors"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -3,
+                  backgroundColor: "#fef3c7",
+                  boxShadow: "0 8px 20px rgba(245, 158, 11, 0.15)"
+                }}
+              >
                 <div className="font-semibold text-gray-900">{country}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

@@ -70,16 +70,16 @@ export default function Hero() {
             <span className="text-amber-800 text-sm font-medium tracking-wide">Global Property & Hotel Management Excellence</span>
           </motion.div>
 
-          {/* Main Heading with Word-based Split Text Effect */}
+          {/* Main Heading with Enhanced Word-based Split Text Effect */}
           <motion.div
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight px-2"
             variants={itemVariants}
           >
             <AnimatedText
               text="Elevating Hospitality Worldwide"
-              highlightWords={["Hospitality"]}
+              highlightWords={["Elevating", "Hospitality", "Worldwide"]}
               highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
-              delay={0.5}
+              delay={0.3}
             />
           </motion.div>
 

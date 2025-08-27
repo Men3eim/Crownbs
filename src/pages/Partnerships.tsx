@@ -3,7 +3,7 @@ import { api } from "../../convex/_generated/api";
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
-import { containerVariants, itemVariants, floatingVariants } from '../utils/animations';
+import { containerVariants, cardVariants } from '../utils/animations';
 
 export default function Partnerships() {
   const partnerships = useQuery(api.partnerships.list, { featured: true });
@@ -106,39 +106,59 @@ export default function Partnerships() {
 
         {/* Enhanced Logo Carousel - Full Width */}
         <div className="relative overflow-hidden w-full">
-            {/* Gradient Overlays */}
-            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
 
-            {/* Scrolling Container */}
-            <div className="flex space-x-12 animate-scroll" style={{ minWidth: '100vw' }}>
-              {/* Create three sets of logos for seamless infinite scroll */}
-              {[...Array(3)].map((_, setIndex) => (
-                partnerLogos.map((logo, logoIndex) => (
-                  <div
-                    key={`${setIndex}-${logoIndex}`}
-                    className="logo-container flex items-center justify-center min-w-[200px] h-24 bg-white rounded-xl shadow-sm hover:shadow-lg p-4 flex-shrink-0"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.name}
-                      className="max-h-16 max-w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
-                    />
-                  </div>
-                ))
-              ))}
-            </div>
+          {/* Scrolling Container */}
+          <div className="flex space-x-12 animate-scroll" style={{ minWidth: '100vw' }}>
+            {/* Create three sets of logos for seamless infinite scroll */}
+            {[...Array(3)].map((_, setIndex) => (
+              partnerLogos.map((logo, logoIndex) => (
+                <div
+                  key={`${setIndex}-${logoIndex}`}
+                  className="logo-container flex items-center justify-center min-w-[200px] h-24 bg-white rounded-xl shadow-sm hover:shadow-lg p-4 flex-shrink-0"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className="max-h-16 max-w-[180px] object-contain filter grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
+                  />
+                </div>
+              ))
+            ))}
           </div>
+        </div>
       </section>
 
       {/* Partnership Categories */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-16 text-center">Partnership Categories</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <motion.h2
+            className="text-3xl font-bold text-gray-900 mb-16 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            Partnership Categories
+          </motion.h2>
+
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {partnerCategories.map((category, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
+              <motion.div
+                key={index}
+                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100"
+                variants={cardVariants}
+                whileHover="hover"
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center mr-4">
                     <span className="text-3xl">{category.icon}</span>
@@ -148,7 +168,7 @@ export default function Partnerships() {
                     <p className="text-gray-600">{category.description}</p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-3">
                   {category.partners.slice(0, 4).map((partner, partnerIndex) => (
                     <div key={partnerIndex} className="flex items-center p-3 bg-white rounded-lg border border-gray-100">
@@ -164,29 +184,50 @@ export default function Partnerships() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Partnership Benefits */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Partnership Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our strategic alliances deliver measurable value across every aspect of property management
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div
+              className="bg-white rounded-2xl p-8 text-center shadow-lg"
+              variants={cardVariants}
+              whileHover="hover"
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Enhanced Distribution</h3>
               <p className="text-gray-600 mb-4">Access to premium channels and exclusive booking platforms worldwide</p>
               <ul className="text-sm text-gray-600 space-y-2">
@@ -195,14 +236,23 @@ export default function Partnerships() {
                 <li>• Exclusive partnership rates</li>
                 <li>• Multi-language support</li>
               </ul>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-2xl p-8 text-center shadow-lg"
+              variants={cardVariants}
+              whileHover="hover"
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Revenue Optimization</h3>
               <p className="text-gray-600 mb-4">Advanced pricing strategies through global partner insights</p>
               <ul className="text-sm text-gray-600 space-y-2">
@@ -211,14 +261,23 @@ export default function Partnerships() {
                 <li>• Competitive rate analysis</li>
                 <li>• Yield optimization tools</li>
               </ul>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-2xl p-8 text-center shadow-lg"
+              variants={cardVariants}
+              whileHover="hover"
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Market Intelligence</h3>
               <p className="text-gray-600 mb-4">Real-time global market data and competitive insights</p>
               <ul className="text-sm text-gray-600 space-y-2">
@@ -227,63 +286,93 @@ export default function Partnerships() {
                 <li>• Competitor benchmarking</li>
                 <li>• Performance analytics</li>
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Success Stories */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Partnership Success Stories</h2>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div
+              className="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200"
+              variants={cardVariants}
+              whileHover="hover"
+              transition={{ duration: 0.3 }}
+            >
               <h3 className="text-xl font-bold text-gray-900 mb-4">Global Hotel Chain Partnership</h3>
               <p className="text-gray-600 mb-6">
-                Partnered with a major international hotel chain to optimize revenue across 50+ properties 
+                Partnered with a major international hotel chain to optimize revenue across 50+ properties
                 in 15 countries, resulting in a 45% increase in direct bookings.
               </p>
               <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-amber-600">45%</div>
-                  <div className="text-xs text-gray-600">Revenue Increase</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-amber-600">50+</div>
-                  <div className="text-xs text-gray-600">Properties</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-amber-600">15</div>
-                  <div className="text-xs text-gray-600">Countries</div>
-                </div>
+                {[
+                  { value: "45%", label: "Revenue Increase" },
+                  { value: "50+", label: "Properties" },
+                  { value: "15", label: "Countries" }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3, type: "spring", stiffness: 200 }}
+                  >
+                    <div className="text-2xl font-bold text-amber-600">{stat.value}</div>
+                    <div className="text-xs text-gray-600">{stat.label}</div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200">
+            <motion.div
+              className="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-200"
+              variants={cardVariants}
+              whileHover="hover"
+              transition={{ duration: 0.3 }}
+            >
               <h3 className="text-xl font-bold text-gray-900 mb-4">OTA Distribution Network</h3>
               <p className="text-gray-600 mb-6">
                 Expanded a boutique hotel group's reach through strategic OTA distribution,
                 increasing international bookings by 200% within 12 months.
               </p>
               <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-amber-600">200%</div>
-                  <div className="text-xs text-gray-600">Booking Increase</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-amber-600">25+</div>
-                  <div className="text-xs text-gray-600">New Markets</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-amber-600">12</div>
-                  <div className="text-xs text-gray-600">Months</div>
-                </div>
+                {[
+                  { value: "200%", label: "Booking Increase" },
+                  { value: "25+", label: "New Markets" },
+                  { value: "12", label: "Months" }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3, type: "spring", stiffness: 200 }}
+                  >
+                    <div className="text-2xl font-bold text-amber-600">{stat.value}</div>
+                    <div className="text-xs text-gray-600">{stat.label}</div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -294,7 +383,7 @@ export default function Partnerships() {
             Join Our Global Partner Network
           </h2>
           <p className="text-xl text-amber-100 mb-8">
-            Become part of an exclusive network of industry leaders and unlock new opportunities 
+            Become part of an exclusive network of industry leaders and unlock new opportunities
             for growth and collaboration worldwide.
           </p>
           <a

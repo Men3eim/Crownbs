@@ -24,14 +24,23 @@ export const itemVariants = {
 };
 
 export const wordVariants = {
-  hidden: { opacity: 0, y: 50, rotateX: -90 },
+  hidden: { 
+    opacity: 0, 
+    y: 60, 
+    rotateX: -90,
+    scale: 0.8
+  },
   visible: {
     opacity: 1,
     y: 0,
     rotateX: 0,
+    scale: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      duration: 0.9,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      type: "spring",
+      stiffness: 120,
+      damping: 15
     }
   }
 };
@@ -43,7 +52,7 @@ export const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+      ease: [0.25, 0.46, 0.45, 0.94]
     }
   },
   hover: {
@@ -51,7 +60,7 @@ export const cardVariants = {
     y: -10,
     transition: {
       duration: 0.3,
-      ease: "easeOut"
+      ease: [0.25, 0.46, 0.45, 0.94]
     }
   }
 };
@@ -225,6 +234,53 @@ export const professionalCardVariants = {
     transition: {
       duration: 0.3,
       ease: "easeOut"
+    }
+  }
+};
+
+// Mobile-optimized animations
+export const mobileOptimizedVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 30,
+    scale: 0.95
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+// Synchronized container for multiple elements
+export const synchronizedContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+// Enhanced floating animations with better performance
+export const enhancedFloatingVariants = {
+  animate: {
+    y: [-15, 15, -15],
+    rotate: [0, 180, 360],
+    scale: [1, 1.05, 1],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+      times: [0, 0.5, 1]
     }
   }
 };
