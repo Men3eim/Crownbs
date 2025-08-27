@@ -1,5 +1,9 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { motion } from 'framer-motion';
+import PageWrapper from '../components/PageWrapper';
+import AnimatedText from '../components/AnimatedText';
+import { containerVariants, itemVariants, floatingVariants } from '../utils/animations';
 
 export default function Partnerships() {
   const partnerships = useQuery(api.partnerships.list, { featured: true });
@@ -54,19 +58,23 @@ export default function Partnerships() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <PageWrapper className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Global <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Partnerships</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Our success is built on strong relationships with industry leaders worldwide, 
+          <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-6 px-2">
+            <AnimatedText
+              text="Global Partnerships"
+              highlightWords={["Partnerships"]}
+              delay={0.5}
+            />
+          </div>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
+            Our success is built on strong relationships with industry leaders worldwide,
             creating unparalleled value through collaborative excellence across international markets.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto px-4">
             <div className="text-center">
               <div className="text-4xl font-bold text-amber-600 mb-2">200+</div>
               <div className="text-gray-600 text-sm">Global Partners</div>
@@ -297,6 +305,6 @@ export default function Partnerships() {
           </a>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

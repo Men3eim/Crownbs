@@ -1,11 +1,15 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { motion } from 'framer-motion';
+import PageWrapper from '../components/PageWrapper';
+import AnimatedText from '../components/AnimatedText';
+import { containerVariants, itemVariants, floatingVariants } from '../utils/animations';
 
 export default function RevenueManagement() {
   const properties = useQuery(api.properties.list, { featured: true });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50/30 via-white to-yellow-50/30">
+    <PageWrapper className="min-h-screen bg-gradient-to-br from-amber-50/30 via-white to-yellow-50/30">
       {/* Luxury Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -27,35 +31,39 @@ export default function RevenueManagement() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16 sm:mb-20">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-6 sm:mb-8 backdrop-blur-sm animate-fade-in-up">
               <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
-              <svg className="w-5 h-5 text-amber-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 sm:w-5 h-4 sm:h-5 text-amber-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
-              <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Premium Revenue Solutions</span>
+              <span className="text-amber-800 text-xs sm:text-sm font-semibold tracking-wide uppercase">Premium Revenue Solutions</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in-up-delay-1">
-              Revenue <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent animate-gradient-x">Management</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light animate-fade-in-up-delay-2">
+            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight px-2">
+              <AnimatedText
+                text="Revenue Management"
+                highlightWords={["Management"]}
+                delay={0.5}
+              />
+            </div>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light animate-fade-in-up-delay-2 px-4">
               Maximize your property's revenue potential with our advanced analytics, dynamic pricing strategies,
               and comprehensive market intelligence solutions designed for the global hospitality industry.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <a
                 href="/contact"
-                className="group relative bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 text-white px-10 py-4 rounded-2xl font-semibold hover:from-amber-700 hover:via-yellow-600 hover:to-amber-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-amber-500/40 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:from-amber-700 hover:via-yellow-600 hover:to-amber-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-amber-500/40 hover:-translate-y-1 overflow-hidden w-full sm:w-auto text-center"
               >
                 <span className="relative z-10">Get Revenue Analysis</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
               <a
                 href="/portfolio"
-                className="group border-2 border-amber-600/60 text-amber-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-amber-600 hover:via-yellow-500 hover:to-amber-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50"
+                className="group border-2 border-amber-600/60 text-amber-700 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-amber-600 hover:via-yellow-500 hover:to-amber-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50 w-full sm:w-auto text-center"
               >
                 View Case Studies
               </a>
@@ -67,7 +75,7 @@ export default function RevenueManagement() {
       {/* Key Metrics */}
       <section className="py-20 bg-gradient-to-br from-white via-amber-50/30 to-yellow-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
             <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/50 shadow-lg hover:shadow-xl hover:shadow-amber-500/20 transition-all duration-500">
               <div className="text-4xl font-bold bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent mb-2">35%</div>
               <div className="text-gray-700 font-medium">Average Revenue Increase</div>
@@ -336,6 +344,6 @@ export default function RevenueManagement() {
           </a>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

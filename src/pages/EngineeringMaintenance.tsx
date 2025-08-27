@@ -1,6 +1,10 @@
+import { motion } from 'framer-motion';
+import PageWrapper from '../components/PageWrapper';
+import AnimatedText from '../components/AnimatedText';
+
 export default function EngineeringMaintenance() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/30">
+    <PageWrapper className="min-h-screen bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/30">
       {/* Luxury Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -24,33 +28,38 @@ export default function EngineeringMaintenance() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100/80 to-teal-100/80 border border-emerald-200/50 mb-8 backdrop-blur-sm">
-              <svg className="w-5 h-5 text-emerald-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-emerald-100/80 to-teal-100/80 border border-emerald-200/50 mb-6 sm:mb-8 backdrop-blur-sm">
+              <svg className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span className="text-emerald-700 text-sm font-semibold tracking-wide uppercase">Advanced Technology</span>
+              <span className="text-emerald-700 text-xs sm:text-sm font-semibold tracking-wide uppercase">Advanced Technology</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              Engineering & <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent">Technology</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light">
+            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight px-2">
+              <AnimatedText
+                text="Engineering & Technology"
+                highlightWords={["Technology"]}
+                delay={0.5}
+                highlightClassName="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent"
+              />
+            </div>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-4">
               Advanced engineering solutions, predictive maintenance systems, and cutting-edge automation
               technologies that revolutionize property management workflows and operational efficiency.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <a
                 href="/contact"
-                className="group relative bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white px-10 py-4 rounded-2xl font-semibold hover:from-emerald-700 hover:via-teal-700 hover:to-emerald-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/40 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:from-emerald-700 hover:via-teal-700 hover:to-emerald-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/40 hover:-translate-y-1 overflow-hidden w-full sm:w-auto text-center"
               >
                 <span className="relative z-10">Explore Technology Solutions</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
               <a
                 href="/portfolio"
-                className="group border-2 border-emerald-600/60 text-emerald-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-emerald-600 hover:via-teal-600 hover:to-emerald-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50"
+                className="group border-2 border-emerald-600/60 text-emerald-700 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-emerald-600 hover:via-teal-600 hover:to-emerald-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50 w-full sm:w-auto text-center"
               >
                 View Implementations
               </a>
@@ -62,7 +71,7 @@ export default function EngineeringMaintenance() {
       {/* Technology Metrics */}
       <section className="py-20 bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
             <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-emerald-200/50 shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-500">
               <div className="text-4xl font-bold bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 bg-clip-text text-transparent mb-2">85%</div>
               <div className="text-gray-700 font-medium">Maintenance Cost Reduction</div>
@@ -442,6 +451,6 @@ export default function EngineeringMaintenance() {
           </a>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

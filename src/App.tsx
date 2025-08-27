@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
-import Partnerships from "./components/Partnerships";
+import Partnerships from "./pages/Partnerships";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";

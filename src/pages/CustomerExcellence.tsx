@@ -1,6 +1,10 @@
+import { motion } from 'framer-motion';
+import PageWrapper from '../components/PageWrapper';
+import AnimatedText from '../components/AnimatedText';
+
 export default function CustomerExcellence() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50/30 via-white to-pink-50/30">
+    <PageWrapper className="min-h-screen bg-gradient-to-br from-rose-50/30 via-white to-pink-50/30">
       {/* Luxury Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -24,32 +28,37 @@ export default function CustomerExcellence() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-rose-100/80 to-pink-100/80 border border-rose-200/50 mb-8 backdrop-blur-sm">
-              <svg className="w-5 h-5 text-rose-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-rose-100/80 to-pink-100/80 border border-rose-200/50 mb-6 sm:mb-8 backdrop-blur-sm">
+              <svg className="w-4 sm:w-5 h-4 sm:h-5 text-rose-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
-              <span className="text-rose-700 text-sm font-semibold tracking-wide uppercase">Guest Experience Excellence</span>
+              <span className="text-rose-700 text-xs sm:text-sm font-semibold tracking-wide uppercase">Guest Experience Excellence</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              Customer <span className="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent">Excellence</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light">
+            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight px-2">
+              <AnimatedText
+                text="Customer Excellence"
+                highlightWords={["Excellence"]}
+                delay={0.5}
+                highlightClassName="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent"
+              />
+            </div>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-4">
               Deliver exceptional guest experiences through personalized service, advanced guest intelligence,
               and comprehensive customer relationship management solutions that drive loyalty and satisfaction.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <a
                 href="/contact"
-                className="group relative bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 text-white px-10 py-4 rounded-2xl font-semibold hover:from-rose-700 hover:via-pink-700 hover:to-rose-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-rose-500/40 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:from-rose-700 hover:via-pink-700 hover:to-rose-800 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-rose-500/40 hover:-translate-y-1 overflow-hidden w-full sm:w-auto text-center"
               >
                 <span className="relative z-10">Enhance Guest Experience</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
               <a
                 href="/portfolio"
-                className="group border-2 border-rose-600/60 text-rose-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50"
+                className="group border-2 border-rose-600/60 text-rose-700 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-rose-600 hover:via-pink-600 hover:to-rose-700 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50 w-full sm:w-auto text-center"
               >
                 View Guest Stories
               </a>
@@ -61,7 +70,7 @@ export default function CustomerExcellence() {
       {/* Excellence Metrics */}
       <section className="py-20 bg-gradient-to-br from-white via-rose-50/30 to-pink-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
             <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-rose-200/50 shadow-lg hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-500">
               <div className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent mb-2">9.6/10</div>
               <div className="text-gray-700 font-medium">Guest Satisfaction Score</div>
@@ -265,6 +274,6 @@ export default function CustomerExcellence() {
           </a>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

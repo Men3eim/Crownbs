@@ -62,8 +62,7 @@ export default function Services() {
       bgGradient: "from-amber-50/80 via-yellow-50/60 to-amber-100/80",
       borderColor: "border-amber-200/60",
       textAccent: "text-amber-700",
-      shadowColor: "shadow-amber-500/20",
-      hoverShadow: "group-hover:shadow-amber-500/40"
+      shadowColor: "shadow-amber-500/20"
     },
     {
       title: "Hotel Operations",
@@ -80,8 +79,7 @@ export default function Services() {
       bgGradient: "from-slate-50/80 via-gray-50/60 to-slate-100/80",
       borderColor: "border-slate-200/60",
       textAccent: "text-slate-700",
-      shadowColor: "shadow-slate-500/20",
-      hoverShadow: "group-hover:shadow-slate-500/40"
+      shadowColor: "shadow-slate-500/20"
     },
     {
       title: "Engineering & Technology",
@@ -99,8 +97,7 @@ export default function Services() {
       bgGradient: "from-emerald-50/80 via-teal-50/60 to-emerald-100/80",
       borderColor: "border-emerald-200/60",
       textAccent: "text-emerald-700",
-      shadowColor: "shadow-emerald-500/20",
-      hoverShadow: "group-hover:shadow-emerald-500/40"
+      shadowColor: "shadow-emerald-500/20"
     },
     {
       title: "Customer Excellence",
@@ -117,8 +114,7 @@ export default function Services() {
       bgGradient: "from-rose-50/80 via-pink-50/60 to-rose-100/80",
       borderColor: "border-rose-200/60",
       textAccent: "text-rose-700",
-      shadowColor: "shadow-rose-500/20",
-      hoverShadow: "group-hover:shadow-rose-500/40"
+      shadowColor: "shadow-rose-500/20"
     }
   ];
 
@@ -236,7 +232,7 @@ export default function Services() {
                   <div className="pt-4">
                     <a
                       href={service.link}
-                      className={`relative inline-flex items-center bg-gradient-to-r ${service.color} text-white px-10 py-5 rounded-2xl font-semibold ${service.hoverColor} transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 overflow-hidden group/btn text-lg`}
+                      className={`relative inline-flex items-center bg-gradient-to-r ${service.color} text-white px-10 py-5 rounded-2xl font-semibold ${service.hoverColor} transition-all duration-300 shadow-xl hover:scale-105 overflow-hidden group/btn text-lg`}
                     >
                       <span className="relative z-10">Discover More</span>
                       <svg className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -250,7 +246,7 @@ export default function Services() {
 
                 {/* Image Side */}
                 <div className={`${index % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8 lg:col-start-1'} relative`}>
-                  <div className={`relative bg-gradient-to-br ${service.bgGradient} backdrop-blur-sm rounded-3xl p-12 border ${service.borderColor} ${service.shadowColor} shadow-2xl hover:shadow-3xl ${service.hoverShadow} transition-all duration-700 hover:-translate-y-3 hover:scale-[1.02] overflow-hidden min-h-[400px] flex items-center justify-center`}>
+                  <div className={`relative bg-gradient-to-br ${service.bgGradient} backdrop-blur-sm rounded-3xl p-12 border ${service.borderColor} ${service.shadowColor} shadow-2xl transition-all duration-700 hover:-translate-y-3 hover:scale-[1.02] overflow-hidden min-h-[400px] flex items-center justify-center`}>
 
                     {/* Luxury Shine Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />

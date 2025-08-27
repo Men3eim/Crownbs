@@ -1,6 +1,10 @@
+import { motion } from 'framer-motion';
+import PageWrapper from '../components/PageWrapper';
+import AnimatedText from '../components/AnimatedText';
+
 export default function HotelOperations() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50/30">
+    <PageWrapper className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50/30">
       {/* Luxury Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -24,33 +28,38 @@ export default function HotelOperations() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-slate-100/80 to-gray-100/80 border border-slate-200/50 mb-6 sm:mb-8 backdrop-blur-sm animate-fade-in-up">
               <div className="w-2 h-2 bg-slate-500 rounded-full mr-3 animate-pulse"></div>
-              <svg className="w-5 h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 sm:w-5 h-4 sm:h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
-              <span className="text-slate-700 text-sm font-semibold tracking-wide uppercase">Operational Excellence</span>
+              <span className="text-slate-700 text-xs sm:text-sm font-semibold tracking-wide uppercase">Operational Excellence</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in-up-delay-1">
-              Hotel <span className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent animate-gradient-x">Operations</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed font-light animate-fade-in-up-delay-2">
+            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight px-2">
+              <AnimatedText
+                text="Hotel Operations"
+                highlightWords={["Operations"]}
+                delay={0.5}
+                highlightClassName="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent"
+              />
+            </div>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light animate-fade-in-up-delay-2 px-4">
               Streamline your hotel operations with our comprehensive management solutions,
               from front desk operations to housekeeping coordination and guest experience optimization.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
               <a
                 href="/contact"
-                className="group relative bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 text-white px-10 py-4 rounded-2xl font-semibold hover:from-slate-700 hover:via-slate-800 hover:to-slate-900 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-slate-500/40 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:from-slate-700 hover:via-slate-800 hover:to-slate-900 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-slate-500/40 hover:-translate-y-1 overflow-hidden w-full sm:w-auto text-center"
               >
                 <span className="relative z-10">Optimize Operations</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
               <a
                 href="/portfolio"
-                className="group border-2 border-slate-600/60 text-slate-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-slate-600 hover:via-slate-700 hover:to-slate-800 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50"
+                className="group border-2 border-slate-600/60 text-slate-700 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-semibold hover:bg-gradient-to-r hover:from-slate-600 hover:via-slate-700 hover:to-slate-800 hover:text-white hover:border-transparent transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-white/50 w-full sm:w-auto text-center"
               >
                 View Success Stories
               </a>
@@ -62,7 +71,7 @@ export default function HotelOperations() {
       {/* Operational Excellence Metrics */}
       <section className="py-20 bg-gradient-to-br from-white via-slate-50/30 to-gray-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
             <div className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 shadow-lg hover:shadow-xl hover:shadow-slate-500/20 transition-all duration-500">
               <div className="text-4xl font-bold bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent mb-2">98%</div>
               <div className="text-gray-700 font-medium">Guest Satisfaction</div>
@@ -235,6 +244,6 @@ export default function HotelOperations() {
           </a>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

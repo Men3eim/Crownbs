@@ -137,8 +137,8 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Heading with Word-based Split Text Effect */}
-          <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+          <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight px-2">
+            <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2">
               {["Elevating", "Hospitality", "Worldwide"].map((word, index) => (
                 <motion.span
                   key={word}
@@ -168,7 +168,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4"
             variants={itemVariants}
           >
             Crown Business Solutions delivers unparalleled revenue management, operational excellence,
@@ -177,7 +177,7 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 max-w-4xl mx-auto px-4"
             variants={containerVariants}
           >
             {[
@@ -227,12 +227,12 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
             variants={itemVariants}
           >
             <motion.a
               href="/contact"
-              className="relative bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-2xl overflow-hidden"
+              className="relative bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-2xl overflow-hidden w-full sm:w-auto text-center"
               whileHover={{
                 scale: 1.05,
                 y: -8,
@@ -258,7 +258,7 @@ export default function Hero() {
 
             <motion.a
               href="/services"
-              className="relative border-2 border-gray-300 text-gray-700 px-10 py-4 rounded-xl font-semibold text-lg backdrop-blur-sm bg-white/50 shadow-lg overflow-hidden"
+              className="relative border-2 border-gray-300 text-gray-700 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg backdrop-blur-sm bg-white/50 shadow-lg overflow-hidden w-full sm:w-auto text-center"
               whileHover={{
                 scale: 1.05,
                 y: -4,
