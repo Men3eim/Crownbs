@@ -33,7 +33,7 @@ export const pageAnimationConfig = {
   exit: { opacity: 0, y: -20, scale: 0.98 },
   transition: {
     duration: 0.6,
-    ease: "easeInOut",
+    ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
   },
 };
 
@@ -56,7 +56,7 @@ export const staggerConfig = {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       },
     },
   },

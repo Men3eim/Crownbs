@@ -18,7 +18,7 @@ export const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
@@ -37,7 +37,7 @@ export const wordVariants = {
     scale: 1,
     transition: {
       duration: 0.9,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       type: "spring",
       stiffness: 120,
       damping: 15
@@ -52,7 +52,7 @@ export const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   },
   hover: {
@@ -60,7 +60,7 @@ export const cardVariants = {
     y: -10,
     transition: {
       duration: 0.3,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
@@ -103,7 +103,7 @@ export const fadeInUpVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
@@ -151,7 +151,7 @@ export const pageVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       staggerChildren: 0.1
     }
   },
@@ -161,14 +161,14 @@ export const pageVariants = {
     scale: 0.98,
     transition: {
       duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
 
 export const pageTransition = {
-  type: "tween",
-  ease: [0.25, 0.46, 0.45, 0.94],
+  type: "tween" as const,
+  ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
   duration: 0.6
 };
 
@@ -181,7 +181,7 @@ export const staggerContainer = {
       staggerChildren: 0.1,
       delayChildren: 0.2,
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
@@ -223,7 +223,7 @@ export const professionalCardVariants = {
     rotateX: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   },
   hover: {
@@ -251,7 +251,7 @@ export const mobileOptimizedVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
@@ -265,7 +265,7 @@ export const synchronizedContainer = {
       staggerChildren: 0.08,
       delayChildren: 0.1,
       duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
     }
   }
 };
