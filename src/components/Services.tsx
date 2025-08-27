@@ -147,7 +147,6 @@ export default function Services() {
               key={index}
               className={`group relative overflow-hidden premium-card ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}
               variants={cardVariants}
-              whileHover="hover"
               custom={index}
             >
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:grid-flow-col-dense'}`}>

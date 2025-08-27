@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
-import Partnerships from "./pages/Partnerships";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
@@ -39,7 +38,6 @@ export default function App() {
             <Route path="/services/engineering-maintenance" element={<EngineeringMaintenance />} />
             <Route path="/services/customer-excellence" element={<CustomerExcellence />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />

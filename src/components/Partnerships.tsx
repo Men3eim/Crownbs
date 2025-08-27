@@ -165,7 +165,7 @@ export default function Partnerships() {
               for growth and collaboration worldwide.
             </p>
             <a
-              href="/partnerships"
+              href="/contact"
               className="inline-flex items-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
               Explore Partnership

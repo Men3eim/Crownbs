@@ -19,7 +19,7 @@ export default function AnimatedText({
   const words = splitTextIntoWords(text);
 
   return (
-    <div className={`flex flex-wrap justify-center gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2 ${className}`}>
+    <div className={`flex flex-wrap justify-center gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-2 sm:gap-y-3 ${className}`} style={{ lineHeight: '1.3', paddingBottom: '8px' }}>
       {words.map((word, index) => {
         const isHighlighted = highlightWords.includes(word);
 
@@ -27,26 +27,12 @@ export default function AnimatedText({
           <motion.span
             key={`${word}-${index}`}
             className={`inline-block ${isHighlighted ? highlightClassName : ""}`}
-            variants={wordVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: delay + index * 0.15,
-              duration: 0.9,
-              ease: [0.25, 0.46, 0.45, 0.94],
-              type: "spring",
-              stiffness: 100,
-              damping: 12
-            }}
-            whileHover={{
-              scale: 1.05,
-              y: -2,
-              transition: { 
-                duration: 0.2,
-                type: "spring",
-                stiffness: 400,
-                damping: 10
-              }
+              duration: 0.6,
+              ease: "easeOut"
             }}
           >
             {word}

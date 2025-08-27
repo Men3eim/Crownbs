@@ -39,10 +39,10 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight px-2">
+          <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
             <AnimatedText
               text="Elevating Hospitality Worldwide"
-              highlightWords={["Elevating", "Hospitality", "Worldwide"]}
+              highlightWords={["Hospitality"]}
               highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
               delay={0.3}
             />

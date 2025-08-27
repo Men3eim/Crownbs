@@ -373,10 +373,10 @@ export default function OTAChannels() {
                 </svg>
               </a>
               <a
-                href="/partnerships"
+                href="/portfolio"
                 className="inline-flex items-center border-2 border-amber-500 text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-amber-500 hover:text-white transition-all duration-200"
               >
-                Learn About Our Partnerships
+                View Our Global Portfolio
               </a>
             </div>
           </div>
