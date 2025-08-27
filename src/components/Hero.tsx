@@ -1,73 +1,7 @@
 import { motion } from 'framer-motion';
 import LuxuryScrollIndicator from './LuxuryScrollIndicator';
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
-};
-
-const wordVariants = {
-  hidden: { opacity: 0, y: 50, rotateX: -90 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
-};
-
-const floatingVariants = {
-  animate: {
-    y: [-20, 20, -20],
-    rotate: [0, 180, 360],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
-
-const statsVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "backOut"
-    }
-  },
-  hover: {
-    scale: 1.05,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-};
+import AnimatedText from './AnimatedText';
+import { containerVariants, itemVariants, floatingVariants, wordVariants, statsVariants, buttonVariants } from '../utils/animations';
 
 export default function Hero() {
   return (
@@ -137,34 +71,17 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Heading with Word-based Split Text Effect */}
-          <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight px-2">
-            <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-1 sm:gap-y-2">
-              {["Elevating", "Hospitality", "Worldwide"].map((word, index) => (
-                <motion.span
-                  key={word}
-                  className={`inline-block ${
-                    word === "Hospitality"
-                      ? "bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
-                      : ""
-                  }`}
-                  variants={wordVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{
-                    delay: 0.5 + index * 0.2,
-                    duration: 0.8,
-                    ease: [0.25, 0.46, 0.45, 0.94]
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </div>
-          </div>
+          <motion.div
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight px-2"
+            variants={itemVariants}
+          >
+            <AnimatedText
+              text="Elevating Hospitality Worldwide"
+              highlightWords={["Hospitality"]}
+              highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
+              delay={0.5}
+            />
+          </motion.div>
 
           {/* Subheading */}
           <motion.p

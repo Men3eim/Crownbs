@@ -1,6 +1,9 @@
 import { useMemo } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { motion } from 'framer-motion';
+import AnimatedText from './AnimatedText';
+import { containerVariants, itemVariants } from '../utils/animations';
 
 type OTA = { name: string; logoUrl?: string };
 
@@ -55,6 +58,46 @@ export default function OTAMarquee() {
       aria-label="Distribution channels"
       className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50"
     >
+      {/* Section Header */}
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 border border-blue-200/50 mb-6 sm:mb-8 backdrop-blur-sm shadow-lg"
+          variants={itemVariants}
+        >
+          <motion.div
+            className="w-2 h-2 bg-blue-500 rounded-full mr-3"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+          <span className="text-blue-800 text-xs sm:text-sm font-medium tracking-wide">Global Distribution</span>
+        </motion.div>
+
+        <motion.div
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-2"
+          variants={itemVariants}
+        >
+          <AnimatedText
+            text="Worldwide Channel Partners"
+            highlightWords={["Worldwide", "Channel", "Partners"]}
+            highlightClassName="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent"
+            delay={0.3}
+          />
+        </motion.div>
+
+        <motion.p
+          className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4"
+          variants={itemVariants}
+        >
+          We partner with leading global distribution channels to maximize your property's visibility and bookings across international markets.
+        </motion.p>
+      </motion.div>
+
       {/* Full-width, edge-faded marquee container */}
       <div className="relative w-full overflow-hidden select-none">
         {/* Edge fades for smoothness */}

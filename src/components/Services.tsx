@@ -1,49 +1,6 @@
 import { motion } from 'framer-motion';
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 60, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
-  },
-  hover: {
-    scale: 1.02,
-    y: -5,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-};
+import AnimatedText from './AnimatedText';
+import { containerVariants, itemVariants, cardVariants, floatingVariants } from '../utils/animations';
 
 export default function Services() {
   const services = [
@@ -156,21 +113,17 @@ export default function Services() {
             <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Premium Services</span>
           </motion.div>
 
-          <motion.h2
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
+          <motion.div
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight px-2"
             variants={itemVariants}
           >
-            Our <motion.span
-              className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent"
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              style={{ backgroundSize: "200% 200%" }}
-            >
-              Expertise
-            </motion.span>
-          </motion.h2>
+            <AnimatedText
+              text="Our Premium Expertise"
+              highlightWords={["Premium", "Expertise"]}
+              highlightClassName="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent"
+              delay={0.3}
+            />
+          </motion.div>
 
           <motion.p
             className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"

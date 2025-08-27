@@ -1,50 +1,8 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { motion } from 'framer-motion';
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  },
-  hover: {
-    scale: 1.05,
-    y: -10,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-};
+import AnimatedText from './AnimatedText';
+import { containerVariants, itemVariants, cardVariants, floatingVariants } from '../utils/animations';
 
 export default function Portfolio() {
   const featuredProperties = useQuery(api.properties.list, { featured: true });
@@ -112,21 +70,17 @@ export default function Portfolio() {
             <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Global Portfolio</span>
           </motion.div>
 
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+          <motion.div
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 px-2"
             variants={itemVariants}
           >
-            Our <motion.span
-              className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              style={{ backgroundSize: "200% 200%" }}
-            >
-              Portfolio
-            </motion.span>
-          </motion.h2>
+            <AnimatedText
+              text="Our Global Portfolio"
+              highlightWords={["Global", "Portfolio"]}
+              highlightClassName="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
+              delay={0.3}
+            />
+          </motion.div>
 
           <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto"
