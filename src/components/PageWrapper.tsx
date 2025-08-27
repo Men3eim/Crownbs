@@ -9,15 +9,8 @@ interface PageWrapperProps {
 
 export default function PageWrapper({ children, className = "" }: PageWrapperProps) {
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-      className={className}
-    >
+    <div className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }

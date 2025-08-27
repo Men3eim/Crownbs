@@ -6,21 +6,8 @@ export const usePageAnimations = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Add page load animation class
-    document.body.classList.add('page-load-animation');
-    
-    // Remove animation class after animation completes
-    const timer = setTimeout(() => {
-      document.body.classList.remove('page-load-animation');
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-      document.body.classList.remove('page-load-animation');
-    };
+    // Scroll to top on route change (instant for better performance)
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
   return location.pathname;

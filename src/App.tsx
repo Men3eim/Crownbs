@@ -21,15 +21,15 @@ export default function App() {
   function AnimatedRoutes() {
     const location = useLocation();
     usePageAnimations(); // Use our custom hook for consistent animations
-    
+
     return (
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
-          initial={pageAnimationConfig.initial}
-          animate={pageAnimationConfig.animate}
-          exit={pageAnimationConfig.exit}
-          transition={pageAnimationConfig.transition}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <Routes location={location}>
             <Route path="/" element={<Home />} />
@@ -51,19 +51,14 @@ export default function App() {
 
   return (
     <Router>
-      <motion.div 
-        className="min-h-screen bg-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
+      <div className="min-h-screen bg-white">
         <Header />
         <main className="pt-20">
           <AnimatedRoutes />
         </main>
         <Footer />
         <Toaster />
-      </motion.div>
+      </div>
     </Router>
   );
 }
