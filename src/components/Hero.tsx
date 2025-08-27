@@ -1,18 +1,112 @@
+import { motion } from 'framer-motion';
 import LuxuryScrollIndicator from './LuxuryScrollIndicator';
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 50, rotateX: -90 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+const floatingVariants = {
+  animate: {
+    y: [-20, 20, -20],
+    rotate: [0, 180, 360],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
+const statsVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "backOut"
+    }
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function Hero() {
   return (
     <section className="relative pb-16 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 overflow-hidden min-h-screen flex items-center">
-      {/* Luxury Floating Elements */}
+      {/* Luxury Floating Elements with Framer Motion */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Golden Orbs */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full blur-xl animate-float-slow"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-amber-500/15 to-amber-700/15 rounded-full blur-lg animate-float-medium"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl animate-float-fast"></div>
+        <motion.div
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full blur-xl"
+          variants={floatingVariants}
+          animate="animate"
+        />
+        <motion.div
+          className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-amber-500/15 to-amber-700/15 rounded-full blur-lg"
+          variants={floatingVariants}
+          animate="animate"
+          transition={{ delay: 1, duration: 4, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-32 left-1/4 w-40 h-40 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl"
+          variants={floatingVariants}
+          animate="animate"
+          transition={{ delay: 2, duration: 3, repeat: Infinity }}
+        />
 
         {/* Geometric Shapes */}
-        <div className="absolute top-1/3 right-10 w-16 h-16 border border-amber-400/30 rotate-45 animate-spin-slow"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-gradient-to-br from-amber-500/20 to-transparent rotate-12 animate-pulse-luxury"></div>
+        <motion.div
+          className="absolute top-1/3 right-10 w-16 h-16 border border-amber-400/30 rotate-45"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-gradient-to-br from-amber-500/20 to-transparent rotate-12"
+          animate={{
+            opacity: [0.3, 0.8, 0.3],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
 
         {/* Luxury Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
@@ -22,79 +116,170 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg animate-fade-in-up">
-            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+          <motion.div
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="w-2 h-2 bg-amber-500 rounded-full mr-3"
+              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             <span className="text-amber-800 text-sm font-medium tracking-wide">Global Property & Hotel Management Excellence</span>
-          </div>
+          </motion.div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up-delay-1">
-            <span className="inline-block animate-slide-in-left">Elevating</span>
-            <span className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent animate-gradient-x inline-block animate-slide-in-up"> Hospitality </span>
-            <span className="inline-block animate-slide-in-right">Worldwide</span>
-          </h1>
+          {/* Main Heading with Word-based Split Text Effect */}
+          <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+              {["Elevating", "Hospitality", "Worldwide"].map((word, index) => (
+                <motion.span
+                  key={word}
+                  className={`inline-block ${
+                    word === "Hospitality"
+                      ? "bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
+                      : ""
+                  }`}
+                  variants={wordVariants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{
+                    delay: 0.5 + index * 0.2,
+                    duration: 0.8,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </div>
+          </div>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+          <motion.p
+            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed"
+            variants={itemVariants}
+          >
             Crown Business Solutions delivers unparalleled revenue management, operational excellence,
             and strategic partnerships across global property and hotel portfolios.
-          </p>
+          </motion.p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto animate-fade-in-up-delay-3">
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Properties Managed</div>
-            </div>
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">$150M+</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Revenue Generated</div>
-            </div>
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Countries Served</div>
-            </div>
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Global Support</div>
-            </div>
-          </div>
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-4xl mx-auto"
+            variants={containerVariants}
+          >
+            {[
+              { value: "500+", label: "Properties Managed" },
+              { value: "$150M+", label: "Revenue Generated" },
+              { value: "50+", label: "Countries Served" },
+              { value: "24/7", label: "Global Support" }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                className="text-center"
+                variants={statsVariants}
+                whileHover="hover"
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="relative">
+                  <motion.div
+                    className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{
+                      delay: 1.2 + index * 0.1,
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+                <motion.div
+                  className="text-gray-600 text-sm uppercase tracking-wider"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.4 + index * 0.1 }}
+                >
+                  {stat.label}
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up-delay-4">
-            <a
+          <motion.div
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            variants={itemVariants}
+          >
+            <motion.a
               href="/contact"
-              className="group relative bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-amber-500/25 transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 overflow-hidden"
+              className="relative bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-2xl overflow-hidden"
+              whileHover={{
+                scale: 1.05,
+                y: -8,
+                boxShadow: "0 25px 50px rgba(245, 158, 11, 0.4)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <span className="relative z-10">Partner With Us</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </a>
-            <a
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className="absolute inset-0 bg-white/20 transform -skew-x-12"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "100%" }}
+                transition={{ duration: 0.6 }}
+              />
+            </motion.a>
+
+            <motion.a
               href="/services"
-              className="group relative border-2 border-gray-300 text-gray-700 px-10 py-4 rounded-xl font-semibold text-lg hover:border-amber-500 hover:text-amber-600 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 backdrop-blur-sm bg-white/50 shadow-lg hover:shadow-xl overflow-hidden"
+              className="relative border-2 border-gray-300 text-gray-700 px-10 py-4 rounded-xl font-semibold text-lg backdrop-blur-sm bg-white/50 shadow-lg overflow-hidden"
+              whileHover={{
+                scale: 1.05,
+                y: -4,
+                borderColor: "rgb(245 158 11)",
+                color: "rgb(217 119 6)",
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <span className="relative z-10">Explore Services</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-50 to-amber-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </a>
-          </div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-amber-50 to-amber-100"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.a>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Luxury Scroll Indicator */}
       <LuxuryScrollIndicator />

@@ -1,5 +1,50 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { motion } from 'framer-motion';
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  },
+  hover: {
+    scale: 1.05,
+    y: -10,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function Portfolio() {
   const featuredProperties = useQuery(api.properties.list, { featured: true });
@@ -48,44 +93,94 @@ export default function Portfolio() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
-            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+        <motion.div
+          className="text-center mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="w-2 h-2 bg-amber-500 rounded-full mr-3"
+              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Global Portfolio</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up-delay-1">
-            Our <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent animate-gradient-x">Portfolio</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up-delay-2">
+          </motion.div>
+
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            variants={itemVariants}
+          >
+            Our <motion.span
+              className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              style={{ backgroundSize: "200% 200%" }}
+            >
+              Portfolio
+            </motion.span>
+          </motion.h2>
+
+          <motion.p
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            variants={itemVariants}
+          >
             Discover our diverse collection of premium properties across international markets,
             each delivering exceptional returns and guest satisfaction.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Portfolio Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="relative">
-              <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="text-gray-600 font-medium">Properties Under Management</div>
-          </div>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="relative">
-              <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">89%</div>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="text-gray-600 font-medium">Average Occupancy Rate</div>
-          </div>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <div className="relative">
-              <div className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">$150M</div>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="text-gray-600 font-medium">Annual Revenue Generated</div>
-          </div>
-        </div>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {[
+            { value: "500+", label: "Properties Under Management" },
+            { value: "89%", label: "Average Occupancy Rate" },
+            { value: "$150M", label: "Annual Revenue Generated" }
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg premium-card group"
+              variants={cardVariants}
+              whileHover="hover"
+            >
+              <div className="relative">
+                <motion.div
+                  className="text-4xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{
+                    delay: index * 0.2,
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                  viewport={{ once: true }}
+                >
+                  {stat.value}
+                </motion.div>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Featured Properties */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">

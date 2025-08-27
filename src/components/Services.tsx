@@ -1,3 +1,50 @@
+import { motion } from 'framer-motion';
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 60, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  },
+  hover: {
+    scale: 1.02,
+    y: -5,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
+};
+
 export default function Services() {
   const services = [
     {
@@ -94,27 +141,65 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
-            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+        <motion.div
+          className="text-center mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="w-2 h-2 bg-amber-500 rounded-full mr-3"
+              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Premium Services</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in-up-delay-1">
-            Our <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent animate-gradient-x">Expertise</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up-delay-2">
+          </motion.div>
+
+          <motion.h2
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
+            variants={itemVariants}
+          >
+            Our <motion.span
+              className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              style={{ backgroundSize: "200% 200%" }}
+            >
+              Expertise
+            </motion.span>
+          </motion.h2>
+
+          <motion.p
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+            variants={itemVariants}
+          >
             Comprehensive property management solutions designed to maximize revenue,
             optimize operations, and deliver exceptional guest experiences worldwide.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Services Alternating Layout */}
-        <div className="space-y-24 mb-20">
+        <motion.div
+          className="space-y-24 mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`group relative overflow-hidden premium-card ${index % 2 === 0 ? '' : 'flex-row-reverse'} animate-fade-in-up`}
-              style={{ animationDelay: `${0.3 + index * 0.2}s` }}
+              className={`group relative overflow-hidden premium-card ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}
+              variants={cardVariants}
+              whileHover="hover"
+              custom={index}
             >
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:grid-flow-col-dense'}`}>
 
@@ -189,9 +274,9 @@ export default function Services() {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Why Choose Us - Luxury Section */}
         <div className="relative bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 rounded-3xl p-12 md:p-16 shadow-2xl border border-slate-700/50 overflow-hidden">

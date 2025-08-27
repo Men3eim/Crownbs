@@ -1,5 +1,52 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { motion } from 'framer-motion';
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.9, rotateY: -15 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotateY: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut"
+    }
+  },
+  hover: {
+    scale: 1.03,
+    y: -5,
+    rotateY: 5,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function Testimonials() {
   const testimonials = useQuery(api.testimonials.list, { featured: true });
@@ -63,27 +110,64 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
-            <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
+        <motion.div
+          className="text-center mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="w-2 h-2 bg-amber-500 rounded-full mr-3"
+              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Client Testimonials</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up-delay-1">
-            Global <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent animate-gradient-x">Success Stories</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up-delay-2">
+          </motion.div>
+
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            variants={itemVariants}
+          >
+            Global <motion.span
+              className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              style={{ backgroundSize: "200% 200%" }}
+            >
+              Success Stories
+            </motion.span>
+          </motion.h2>
+
+          <motion.p
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            variants={itemVariants}
+          >
             Discover how Crown Business Solutions has helped property owners and hotel groups worldwide
             achieve exceptional results and sustainable growth across international markets.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {testimonialData.slice(0, 6).map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 premium-card animate-fade-in-up"
-              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 premium-card"
+              variants={cardVariants}
+              whileHover="hover"
             >
               {/* Stars */}
               <div className="flex mb-6">
@@ -117,9 +201,9 @@ export default function Testimonials() {
                   <div className="text-sm text-amber-600 font-medium">{testimonial.company}</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Global Success Metrics */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
