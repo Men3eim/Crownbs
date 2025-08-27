@@ -64,7 +64,7 @@ export default function Portfolio() {
             >
               <AnimatedText
                 text="Global Partnerships"
-                highlightWords={["Global", "Partnerships"]}
+                highlightWords={["Partnerships"]}
                 highlightClassName="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
                 delay={0.3}
               />
