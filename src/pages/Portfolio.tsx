@@ -24,7 +24,7 @@ export default function Portfolio() {
       name: "HFS",
       alt: "HFS",
       src: "/logos-partnerships/HFS.png",
-      website: null,
+      website: "https://www.hfs.london/" ,
       description: "Strategic hospitality and facilities management partnership",
       category: "Facilities Management",
       services: ["Facilities Management", "Operational Excellence", "Strategic Consulting"]
