@@ -7,38 +7,38 @@ import { containerVariants, itemVariants, cardVariants, floatingVariants } from 
 export default function Portfolio() {
   const featuredProperties = useQuery(api.properties.list, { featured: true });
 
-  // Example data for demonstration - Global properties
-  const exampleProperties = [
+  // Real portfolio showcase - Focus on our actual services and achievements
+  const portfolioHighlights = [
     {
-      name: "The Grand Metropolitan",
-      type: "Luxury Hotel",
-      location: "London, United Kingdom",
-      description: "A prestigious 5-star hotel in the heart of London's financial district.",
-      revenue: 2500000,
-      occupancyRate: 92,
-      amenities: ["Spa", "Fine Dining", "Business Center", "Concierge"]
+      title: "Global Hospitality Management",
+      type: "Service Excellence",
+      location: "Worldwide Operations",
+      description: "Comprehensive hospitality management solutions delivering exceptional guest experiences across international markets.",
+      achievement: "98% Client Satisfaction",
+      metric: "50+ Countries",
+      services: ["Revenue Management", "Operations", "Guest Experience", "Global Distribution"]
     },
     {
-      name: "Marina Bay Residences",
-      type: "Serviced Apartments",
-      location: "Singapore",
-      description: "Premium waterfront apartments with stunning city skyline views.",
-      revenue: 3200000,
-      occupancyRate: 94,
-      amenities: ["Infinity Pool", "Gym", "Concierge", "Valet Parking"]
+      title: "Strategic Partnership Network",
+      type: "Business Development",
+      location: "International Markets",
+      description: "Exclusive partnerships with industry leaders including Stayz, Irwin Estates, and key strategic partners.",
+      achievement: "200+ Partners",
+      metric: "24/7 Support",
+      services: ["Partnership Development", "Market Expansion", "Strategic Consulting", "Business Growth"]
     },
     {
-      name: "Alpine Resort & Spa",
-      type: "Resort Hotel",
-      location: "Swiss Alps, Switzerland",
-      description: "Luxury mountain resort offering world-class skiing and wellness facilities.",
-      revenue: 4100000,
-      occupancyRate: 88,
-      amenities: ["Ski Access", "Spa", "Multiple Restaurants", "Conference Center"]
+      title: "Revenue Optimization Solutions",
+      type: "Financial Performance",
+      location: "Global Portfolio",
+      description: "Advanced revenue management strategies and pricing optimization delivering measurable results for our clients.",
+      achievement: "35% Revenue Increase",
+      metric: "89% Occupancy",
+      services: ["Dynamic Pricing", "Market Analysis", "Performance Optimization", "Financial Consulting"]
     }
   ];
 
-  const properties = featuredProperties || exampleProperties;
+  const portfolioData = featuredProperties && featuredProperties.length > 0 ? featuredProperties : portfolioHighlights;
 
   return (
     <section id="portfolio" className="py-20 bg-gradient-to-br from-gray-50 via-white to-amber-50/20 relative overflow-hidden">
@@ -138,7 +138,7 @@ export default function Portfolio() {
 
         {/* Featured Properties */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {properties.slice(0, 3).map((property, index) => (
+          {portfolioData.slice(0, 3).map((item, index) => (
             <div
               key={index}
               className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg premium-card group animate-fade-in-up"
@@ -147,42 +147,46 @@ export default function Portfolio() {
               <div className="h-48 bg-gradient-to-br from-amber-100 to-amber-200 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <div className="text-sm font-medium opacity-90">{property.type}</div>
-                  <div className="text-xs opacity-75">{property.location}</div>
+                  <div className="text-sm font-medium opacity-90">{item.type}</div>
+                  <div className="text-xs opacity-75">{item.location}</div>
                 </div>
               </div>
-              
+
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{property.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">{property.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title || item.name}</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">{item.description}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <div className="text-2xl font-bold text-amber-600">
-                      {property.occupancyRate}%
+                      {item.achievement || `${item.occupancyRate}%`}
                     </div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Occupancy</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">
+                      {item.achievement ? "Achievement" : "Occupancy"}
+                    </div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-amber-600">
-                      ${((property.revenue || 0) / 1000000).toFixed(1)}M
+                      {item.metric || `$${((item.revenue || 0) / 1000000).toFixed(1)}M`}
                     </div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Annual Revenue</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">
+                      {item.metric ? "Global Reach" : "Annual Revenue"}
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {property.amenities.slice(0, 3).map((amenity, amenityIndex) => (
+                  {(item.services || item.amenities)?.slice(0, 3).map((service, serviceIndex) => (
                     <span
-                      key={amenityIndex}
-                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                      key={serviceIndex}
+                      className="px-3 py-1 bg-amber-50 text-amber-700 text-xs rounded-full border border-amber-200"
                     >
-                      {amenity}
+                      {service}
                     </span>
                   ))}
-                  {property.amenities.length > 3 && (
-                    <span className="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">
-                      +{property.amenities.length - 3} more
+                  {(item.services || item.amenities) && (item.services || item.amenities).length > 3 && (
+                    <span className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-full border border-gray-200">
+                      +{(item.services || item.amenities).length - 3} more
                     </span>
                   )}
                 </div>

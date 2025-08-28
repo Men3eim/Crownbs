@@ -9,12 +9,44 @@ export default function Portfolio() {
   const partnerships = useQuery(api.partnerships.list, { featured: true });
   const isLoading = partnerships === undefined;
 
-  // Partner logos for the carousel
-  const partnerLogos = [
-    { alt: "HFS", src: "/logos-partnerships/HFS.png" },
-    { alt: "Irwin", src: "/logos-partnerships/Irwin.png" },
-    { alt: "KMA", src: "/logos-partnerships/KMA.png" },
-    { alt: "Stayz", src: "/logos-partnerships/Stayz.png" }
+  // Strategic Partners - Real Partnership Data
+  const strategicPartners = [
+    {
+      name: "Stayz",
+      alt: "Stayz",
+      src: "/logos-partnerships/Stayz.png",
+      website: "https://www.stayzltd.com/",
+      description: "Premium hospitality management and luxury accommodation solutions",
+      category: "Hospitality Management",
+      services: ["Luxury Accommodations", "Property Management", "Guest Experience"]
+    },
+    {
+      name: "HFS",
+      alt: "HFS",
+      src: "/logos-partnerships/HFS.png",
+      website: null,
+      description: "Strategic hospitality and facilities management partnership",
+      category: "Facilities Management",
+      services: ["Facilities Management", "Operational Excellence", "Strategic Consulting"]
+    },
+    {
+      name: "Irwin Estates",
+      alt: "Irwin",
+      src: "/logos-partnerships/Irwin.png",
+      website: "https://irwin-estates.com/",
+      description: "Premium real estate development and property investment solutions",
+      category: "Real Estate Development",
+      services: ["Property Development", "Investment Solutions", "Real Estate Consulting"]
+    },
+    {
+      name: "KMA",
+      alt: "KMA",
+      src: "/logos-partnerships/KMA.png",
+      website: null,
+      description: "Key strategic partnership in hospitality and business solutions",
+      category: "Business Solutions",
+      services: ["Strategic Planning", "Business Development", "Operational Support"]
+    }
   ];
 
   return (
@@ -170,14 +202,14 @@ export default function Portfolio() {
             <div className="absolute inset-0 flex items-center">
               <div className="flex animate-scroll space-x-8 sm:space-x-12 md:space-x-16" style={{ minWidth: '100vw' }}>
                 {/* First set of logos */}
-                {partnerLogos.map((logo, idx) => (
+                {strategicPartners.map((partner, idx) => (
                   <div
-                    key={logo.alt + idx}
+                    key={partner.alt + idx}
                     className="flex-shrink-0 w-28 h-16 sm:w-32 sm:h-20 md:w-40 md:h-24 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
                   >
                     <img
-                      src={logo.src}
-                      alt={`${logo.alt} logo`}
+                      src={partner.src}
+                      alt={`${partner.alt} logo`}
                       loading="lazy"
                       decoding="async"
                       width={144}
@@ -187,14 +219,14 @@ export default function Portfolio() {
                   </div>
                 ))}
                 {/* Second set for seamless loop */}
-                {partnerLogos.map((logo, idx) => (
+                {strategicPartners.map((partner, idx) => (
                   <div
-                    key={logo.alt + "repeat" + idx}
+                    key={partner.alt + "repeat" + idx}
                     className="flex-shrink-0 w-28 h-16 sm:w-32 sm:h-20 md:w-40 md:h-24 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg border border-white/50 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300"
                   >
                     <img
-                      src={logo.src}
-                      alt={`${logo.alt} logo`}
+                      src={partner.src}
+                      alt={`${partner.alt} logo`}
                       loading="lazy"
                       decoding="async"
                       width={144}
@@ -206,6 +238,100 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+        </div>
+      </motion.section>
+
+      {/* Strategic Partners Showcase */}
+      <motion.section
+        className="py-16 sm:py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Strategic <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Partnership</span> Portfolio
+            </h3>
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              Discover our exclusive network of premium partners, each bringing specialized expertise
+              and luxury solutions to elevate your hospitality experience.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12"
+            variants={containerVariants}
+          >
+            {strategicPartners.map((partner) => (
+              <motion.div
+                key={partner.name}
+                className="group bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Partner Header */}
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center mr-4 sm:mr-6">
+                    <img
+                      src={partner.src}
+                      alt={partner.alt}
+                      className="max-h-12 sm:max-h-16 max-w-12 sm:max-w-16 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">{partner.name}</h4>
+                    <p className="text-sm sm:text-base text-amber-600 font-medium">{partner.category}</p>
+                  </div>
+                </div>
+
+                {/* Partner Description */}
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {partner.description}
+                </p>
+
+                {/* Services */}
+                <div className="mb-6">
+                  <h5 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">Key Services</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {partner.services.map((service, serviceIndex) => (
+                      <span
+                        key={serviceIndex}
+                        className="px-3 py-1 bg-amber-50 text-amber-700 text-xs sm:text-sm font-medium rounded-full border border-amber-200"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Website Link */}
+                {partner.website ? (
+                  <motion.a
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-amber-600 hover:text-amber-700 font-semibold text-sm sm:text-base group-hover:translate-x-1 transition-all duration-300"
+                    whileHover={{ x: 4 }}
+                  >
+                    Visit Website
+                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </motion.a>
+                ) : (
+                  <div className="inline-flex items-center text-gray-400 text-sm sm:text-base">
+                    <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    Strategic Partnership
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </motion.section>
 
