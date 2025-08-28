@@ -87,7 +87,49 @@ export default function Footer() {
               Global property and hotel management company, delivering exceptional 
               revenue optimization and operational excellence across diverse international portfolios.
             </p>
-            
+
+            {/* Primary Contact */}
+            <div className="relative rounded-2xl border border-amber-400/20 bg-gradient-to-br from-amber-50/5 to-white/5 p-5 mb-6 overflow-hidden">
+              <div
+                className="absolute inset-0 pointer-events-none opacity-10"
+                style={{
+                  backgroundImage:
+                    'radial-gradient(circle at 20% 10%, #f59e0b 0%, transparent 40%), radial-gradient(circle at 80% 50%, #fbbf24 0%, transparent 40%)',
+                }}
+              />
+              <div className="relative space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1114 0c0 5.65-7 10-7 10z" />
+                      <circle cx="12" cy="11" r="2.5" strokeWidth="1.5" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p className="text-sm uppercase tracking-wider text-gray-400">Location</p>
+                    <address className="not-italic text-platinum font-medium">
+                      Kafr-Abdou Villa 75 Khalil AlMasry Street
+                    </address>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300">
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M4 6l8 6 8-6" />
+                      <rect x="3" y="5" width="18" height="14" rx="2" strokeWidth="1.5" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p className="text-sm uppercase tracking-wider text-gray-400">Mail</p>
+                    <a href="mailto:info@crownbs.com" className="text-amber-300 hover:text-amber-400 font-semibold">
+                      info@crownbs.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Global Offices Quick Contact */}
             <div className="mb-6">
               <h4 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">Global Offices</h4>

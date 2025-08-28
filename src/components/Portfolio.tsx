@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 import AnimatedText from './AnimatedText';
 import { containerVariants, itemVariants, cardVariants, floatingVariants } from '../utils/animations';
 
+// Images for portfolio highlights
+import globalHospitalityImg from '../pages/images/Global Hospitality Management.jpg';
+import strategicPartnershipImg from '../pages/images/Strategic Partnership Network.jpg';
+import revenueOptimizationImg from '../pages/images/Revenue Optimization Solutions.jpg';
+
 export default function Portfolio() {
   const featuredProperties = useQuery(api.properties.list, { featured: true });
 
@@ -16,7 +21,8 @@ export default function Portfolio() {
       description: "Comprehensive hospitality management solutions delivering exceptional guest experiences across international markets.",
       achievement: "98% Client Satisfaction",
       metric: "50+ Countries",
-      services: ["Revenue Management", "Operations", "Guest Experience", "Global Distribution"]
+      services: ["Revenue Management", "Operations", "Guest Experience", "Global Distribution"],
+      image: globalHospitalityImg,
     },
     {
       title: "Strategic Partnership Network",
@@ -25,7 +31,8 @@ export default function Portfolio() {
       description: "Exclusive partnerships with industry leaders including Stayz, Irwin Estates, and key strategic partners.",
       achievement: "200+ Partners",
       metric: "24/7 Support",
-      services: ["Partnership Development", "Market Expansion", "Strategic Consulting", "Business Growth"]
+      services: ["Partnership Development", "Market Expansion", "Strategic Consulting", "Business Growth"],
+      image: strategicPartnershipImg,
     },
     {
       title: "Revenue Optimization Solutions",
@@ -34,7 +41,8 @@ export default function Portfolio() {
       description: "Advanced revenue management strategies and pricing optimization delivering measurable results for our clients.",
       achievement: "35% Revenue Increase",
       metric: "89% Occupancy",
-      services: ["Dynamic Pricing", "Market Analysis", "Performance Optimization", "Financial Consulting"]
+      services: ["Dynamic Pricing", "Market Analysis", "Performance Optimization", "Financial Consulting"],
+      image: revenueOptimizationImg,
     }
   ];
 
@@ -144,7 +152,18 @@ export default function Portfolio() {
               className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg premium-card group animate-fade-in-up"
               style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
-              <div className="h-48 bg-gradient-to-br from-amber-100 to-amber-200 relative overflow-hidden">
+              <div className="h-48 relative overflow-hidden">
+                {/* Prefer item.image (static highlights) then item.imageUrl (Convex data) */}
+                {(item as any).image || (item as any).imageUrl ? (
+                  <img
+                    src={(item as any).image || (item as any).imageUrl}
+                    alt={item.title || item.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-amber-100 to-amber-200" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <div className="text-sm font-medium opacity-90">{item.type}</div>
