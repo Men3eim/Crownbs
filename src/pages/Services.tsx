@@ -32,7 +32,7 @@ export default function Services() {
     {
       icon: "🔧",
       title: "Engineering & Maintenance",
-      description: "Advanced engineering consulting and maintenance optimization solutions to enhance operational efficiency.",
+      description: "Proactive maintenance and engineering solutions to keep your properties in pristine condition.",
       features: ["Preventive Maintenance", "Emergency Response", "Facility Upgrades", "Compliance Management"],
       benefits: [
         "Reduce maintenance costs by 25%",
@@ -148,14 +148,14 @@ export default function Services() {
                 <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Business Solutions Delivered</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Properties Managed</div>
             </div>
             <div className="text-center group">
               <div className="relative">
-                <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+                <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">1M+</div>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Countries Served</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Bookings Managed</div>
             </div>
             <div className="text-center group">
               <div className="relative">

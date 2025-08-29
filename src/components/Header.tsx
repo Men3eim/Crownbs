@@ -4,17 +4,26 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/services", hasDropdown: true },
     { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
+  const servicesDropdown = [
+    { name: "Revenue Management", href: "/services/revenue-management" },
+    { name: "Hotel Operations", href: "/services/hotel-operations" },
+    { name: "Engineering & Technology", href: "/services/engineering-maintenance" },
+    { name: "Customer Excellence", href: "/services/customer-excellence" },
+  ];
+
   const isActive = (href: string) => location.pathname === href;
+  const isServicesActive = () => location.pathname.startsWith('/services');
 
   return (
     <motion.header
@@ -61,16 +70,65 @@ export default function Header() {
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  className="relative"
                 >
-                  <Link
-                    to={item.href}
-                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive(item.href)
-                      ? "text-gold border-b-2 border-gold"
-                      : "text-platinum hover:text-gold"
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
+                  {item.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
+                      <Link
+                        to={item.href}
+                        className={`px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center ${isServicesActive()
+                          ? "text-gold border-b-2 border-gold"
+                          : "text-platinum hover:text-gold"
+                          }`}
+                      >
+                        {item.name}
+                        <svg
+                          className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </Link>
+
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                          >
+                            {servicesDropdown.map((service) => (
+                              <Link
+                                key={service.name}
+                                to={service.href}
+                                className="block px-4 py-3 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive(item.href)
+                        ? "text-gold border-b-2 border-gold"
+                        : "text-platinum hover:text-gold"
+                        }`}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -166,16 +224,43 @@ export default function Header() {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Link
-                      to={item.href}
-                      className={`block px-3 py-2 text-base font-medium ${isActive(item.href)
-                        ? "text-amber-600 bg-amber-50"
-                        : "text-gray-700 hover:text-amber-600"
-                        }`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.hasDropdown ? (
+                      <div>
+                        <Link
+                          to={item.href}
+                          className={`block px-3 py-2 text-base font-medium ${isServicesActive()
+                            ? "text-amber-600 bg-amber-50"
+                            : "text-gray-700 hover:text-amber-600"
+                            }`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                        <div className="ml-4 space-y-1">
+                          {servicesDropdown.map((service) => (
+                            <Link
+                              key={service.name}
+                              to={service.href}
+                              className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={`block px-3 py-2 text-base font-medium ${isActive(item.href)
+                          ? "text-amber-600 bg-amber-50"
+                          : "text-gray-700 hover:text-amber-600"
+                          }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
                 <motion.div
