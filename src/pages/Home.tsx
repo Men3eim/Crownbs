@@ -6,7 +6,7 @@ import OTAMarquee from "../components/OTAMarquee";
 import Testimonials from "../components/Testimonials";
 import AnimatedText from "../components/AnimatedText";
 import PageWrapper from "../components/PageWrapper";
-import { containerVariants, itemVariants, floatingVariants } from "../utils/animations";
+
 
 export default function Home() {
   return (
@@ -34,15 +34,15 @@ export default function Home() {
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
               <AnimatedText
-                text="Ready to Transform Your Property Management?"
-                highlightWords={["Transform", "Property", "Management"]}
+                text="Ready to Transform Your Business Operations?"
+                highlightWords={["Transform", "Business", "Operations"]}
                 highlightClassName="text-amber-100"
                 delay={0.2}
               />
             </div>
 
             <p className="text-lg sm:text-xl text-amber-100 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join property owners worldwide who trust Crown Business Solutions
+              Join hospitality businesses worldwide who trust Crown Business Solutions
               to maximize their revenue and operational efficiency.
             </p>
 

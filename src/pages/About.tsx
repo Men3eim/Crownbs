@@ -55,11 +55,11 @@ export default function About() {
   ];
 
   const milestones = [
-    { year: "2015", event: "Founded Crown Business Solutions", description: "Started with a vision to revolutionize property management" },
+    { year: "2015", event: "Founded Crown Business Solutions", description: "Started with a vision to revolutionize hospitality business solutions" },
     { year: "2017", event: "International Expansion", description: "Expanded operations to 10 countries across Europe and Asia" },
     { year: "2019", event: "Technology Partnership", description: "Formed strategic alliances with leading hospitality technology providers" },
     { year: "2021", event: "Global Network", description: "Reached 500+ properties under management across 50+ countries" },
-    { year: "2023", event: "Industry Recognition", description: "Awarded 'Global Property Management Company of the Year'" },
+    { year: "2023", event: "Industry Recognition", description: "Awarded 'Global Hospitality Business Solutions Provider of the Year'" },
     { year: "2024", event: "Continued Growth", description: "Expanding into new markets with innovative service offerings" }
   ];
 
@@ -124,7 +124,7 @@ export default function About() {
               className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto px-4"
               variants={itemVariants}
             >
-              A global leader in property and hotel management, delivering exceptional results
+              A global leader in business solutions for the hospitality industry, delivering exceptional results
               through innovative strategies, cutting-edge technology, and unparalleled expertise
               across international markets.
             </motion.p>
@@ -193,9 +193,9 @@ export default function About() {
             <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To revolutionize property and hotel management by delivering innovative solutions
-                that maximize revenue, enhance guest experiences, and create sustainable value
-                for property owners worldwide.
+                To revolutionize hospitality business operations by delivering innovative solutions
+                that maximize revenue, enhance operational efficiency, and create sustainable value
+                for hospitality businesses worldwide.
               </p>
               <div className="bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 premium-card">
                 <h3 className="font-semibold text-gray-900 mb-2">Global Impact</h3>
@@ -209,7 +209,7 @@ export default function About() {
             <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To be the world's most trusted property management partner, known for our
+                To be the world's most trusted business solutions partner for hospitality, known for our
                 expertise, innovation, and commitment to delivering exceptional results
                 across every market we serve.
               </p>
@@ -278,7 +278,7 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Journey</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From a small startup to a global leader in property management
+              From a small startup to a global leader in hospitality business solutions
             </p>
           </div>
 

@@ -48,7 +48,7 @@ export default function Testimonials() {
       clientName: "Ahmed Al-Rashid",
       company: "Middle East Hospitality Group",
       position: "Chairman",
-      content: "The strategic partnerships CBS facilitated opened new distribution channels we never thought possible. Our international guest ratio doubled within 18 months.",
+      content: "The strategic business solutions CBS provided opened new market opportunities we never thought possible. Our international business growth doubled within 18 months.",
       rating: 5
     }
   ];

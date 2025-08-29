@@ -8,8 +8,8 @@ export default function Services() {
     {
       icon: "📊",
       title: "Revenue Management",
-      description: "Advanced pricing strategies and yield optimization across all OTA channels to maximize your property's revenue potential.",
-      features: ["Dynamic Pricing", "Channel Management", "Market Analysis", "Performance Reporting"],
+      description: "Advanced pricing strategies and yield optimization consulting to maximize your business revenue potential.",
+      features: ["Dynamic Pricing Strategy", "Distribution Consulting", "Market Analysis", "Performance Reporting"],
       benefits: [
         "Increase revenue by up to 35%",
         "Optimize pricing across 50+ channels",
@@ -55,14 +55,14 @@ export default function Services() {
     },
     {
       icon: "🌐",
-      title: "Global Distribution",
-      description: "Expand your reach with our extensive network of international booking platforms and travel agencies.",
-      features: ["Multi-Channel Distribution", "Global OTA Management", "Regional Partnerships", "Market Expansion"],
+      title: "Global Business Development",
+      description: "Expand your reach with strategic partnerships and market expansion consulting for international growth.",
+      features: ["Market Expansion Strategy", "Partnership Development", "Regional Business Consulting", "Growth Planning"],
       benefits: [
-        "Access to 100+ booking channels",
-        "Expand to new markets",
-        "Increase international bookings",
-        "Localized marketing strategies"
+        "Access to global markets",
+        "Strategic partnership guidance",
+        "International business growth",
+        "Localized market strategies"
       ]
     },
     {
@@ -139,8 +139,8 @@ export default function Services() {
             className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-4"
             variants={itemVariants}
           >
-            Comprehensive property and hotel management solutions designed to maximize revenue,
-            enhance guest satisfaction, and streamline operations across global markets.
+            Comprehensive business solutions for the hospitality industry designed to maximize revenue,
+            enhance operational efficiency, and streamline business processes across global markets.
           </motion.p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto animate-fade-in-up-delay-3 px-4">
             <div className="text-center group">

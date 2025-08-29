@@ -116,10 +116,10 @@ export default function Portfolio() {
             variants={containerVariants}
           >
             {[
-              { number: "200+", label: "Global Partners" },
-              { number: "50+", label: "Countries" },
-              { number: "100+", label: "Distribution Channels" },
-              { number: "24/7", label: "Global Support" }
+              { number: "200+", label: "Strategic Partners" },
+              { number: "1M+", label: "Bookings Managed" },
+              { number: "100+", label: "Business Solutions" },
+              { number: "24/7", label: "Performance & Operations Focus" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

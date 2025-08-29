@@ -116,9 +116,9 @@ export default function RevenueManagement() {
                 features: ["Performance dashboards", "Revenue forecasting", "Channel analysis", "ROI tracking"]
               },
               {
-                title: "Channel Management",
-                description: "Optimize distribution across all OTA platforms and direct booking channels for maximum revenue capture.",
-                features: ["Multi-channel distribution", "Rate parity management", "Inventory optimization", "Commission analysis"]
+                title: "Distribution Strategy",
+                description: "Strategic guidance for optimizing your presence across booking platforms and direct channels for maximum revenue capture.",
+                features: ["Distribution strategy", "Rate optimization guidance", "Performance analysis", "Revenue optimization"]
               },
               {
                 title: "Market Intelligence",

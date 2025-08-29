@@ -129,8 +129,8 @@ export default function Services() {
             className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
             variants={itemVariants}
           >
-            Comprehensive property management solutions designed to maximize revenue,
-            optimize operations, and deliver exceptional guest experiences worldwide.
+            Comprehensive business solutions designed to maximize revenue,
+            optimize operations, and deliver exceptional results for hospitality businesses worldwide.
           </motion.p>
         </motion.div>
 

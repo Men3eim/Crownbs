@@ -83,8 +83,8 @@ export default function OTAMarquee() {
           variants={itemVariants}
         >
           <AnimatedText
-            text="Worldwide Channel Partners"
-            highlightWords={["Worldwide", "Channel", "Partners"]}
+            text="Global Distribution Network"
+            highlightWords={["Global", "Distribution", "Network"]}
             highlightClassName="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent"
             delay={0.3}
           />
@@ -94,7 +94,7 @@ export default function OTAMarquee() {
           className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4"
           variants={itemVariants}
         >
-          We partner with leading global distribution channels to maximize your property's visibility and bookings across international markets.
+          We provide strategic guidance for leveraging global distribution platforms to maximize your business visibility and bookings across international markets.
         </motion.p>
       </motion.div>
 
