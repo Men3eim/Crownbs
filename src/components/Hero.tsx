@@ -35,14 +35,14 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg">
             <div className="w-2 h-2 bg-amber-500 rounded-full mr-3" />
-            <span className="text-amber-800 text-sm font-medium tracking-wide">Global Property & Hotel Management Excellence</span>
+            <span className="text-amber-800 text-sm font-medium tracking-wide">Advanced Business Solutions for Hospitality Excellence</span>
           </div>
 
           {/* Main Heading */}
           <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
             <AnimatedText
-              text="Elevating Hospitality Worldwide"
-              highlightWords={["Hospitality"]}
+              text="Transforming Hospitality Business Performance"
+              highlightWords={["Business", "Performance"]}
               highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
               delay={0.3}
             />
@@ -50,17 +50,17 @@ export default function Hero() {
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-            Crown Business Solutions delivers unparalleled revenue management, operational excellence,
-            and strategic partnerships across global property and hotel portfolios.
+            Crown Business Solutions delivers advanced revenue optimization, operational intelligence,
+            and strategic business consulting to transform hospitality performance worldwide.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 max-w-4xl mx-auto px-4">
             {[
-              { value: "500+", label: "Properties Managed" },
-              { value: "$150M+", label: "Revenue Generated" },
-              { value: "50+", label: "Countries Served" },
-              { value: "24/7", label: "Global Support" }
+              { value: "500+", label: "Business Solutions Delivered" },
+              { value: "$150M+", label: "Revenue Optimized" },
+              { value: "1M+", label: "Bookings Managed" },
+              { value: "24/7", label: "Performance & Operations Focus" }
             ].map((stat, index) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">

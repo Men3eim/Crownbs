@@ -8,8 +8,8 @@ export default function Services() {
     {
       icon: "📊",
       title: "Revenue Management",
-      description: "Advanced pricing strategies and yield optimization consulting to maximize your business revenue potential.",
-      features: ["Dynamic Pricing Strategy", "Distribution Consulting", "Market Analysis", "Performance Reporting"],
+      description: "Advanced pricing strategies and yield optimization across all OTA channels to maximize your property's revenue potential.",
+      features: ["Dynamic Pricing", "Channel Management", "Market Analysis", "Performance Reporting"],
       benefits: [
         "Increase revenue by up to 35%",
         "Optimize pricing across 50+ channels",
@@ -32,7 +32,7 @@ export default function Services() {
     {
       icon: "🔧",
       title: "Engineering & Maintenance",
-      description: "Proactive maintenance and engineering solutions to keep your properties in pristine condition.",
+      description: "Advanced engineering consulting and maintenance optimization solutions to enhance operational efficiency.",
       features: ["Preventive Maintenance", "Emergency Response", "Facility Upgrades", "Compliance Management"],
       benefits: [
         "Reduce maintenance costs by 25%",
@@ -55,14 +55,14 @@ export default function Services() {
     },
     {
       icon: "🌐",
-      title: "Global Business Development",
-      description: "Expand your reach with strategic partnerships and market expansion consulting for international growth.",
-      features: ["Market Expansion Strategy", "Partnership Development", "Regional Business Consulting", "Growth Planning"],
+      title: "Global Distribution",
+      description: "Expand your reach with our extensive network of international booking platforms and travel agencies.",
+      features: ["Multi-Channel Distribution", "Global OTA Management", "Regional Partnerships", "Market Expansion"],
       benefits: [
-        "Access to global markets",
-        "Strategic partnership guidance",
-        "International business growth",
-        "Localized market strategies"
+        "Access to 100+ booking channels",
+        "Expand to new markets",
+        "Increase international bookings",
+        "Localized marketing strategies"
       ]
     },
     {
@@ -139,8 +139,8 @@ export default function Services() {
             className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-4"
             variants={itemVariants}
           >
-            Comprehensive business solutions for the hospitality industry designed to maximize revenue,
-            enhance operational efficiency, and streamline business processes across global markets.
+            Comprehensive property and hotel management solutions designed to maximize revenue,
+            enhance guest satisfaction, and streamline operations across global markets.
           </motion.p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto animate-fade-in-up-delay-3 px-4">
             <div className="text-center group">
@@ -148,7 +148,7 @@ export default function Services() {
                 <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Properties Managed</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Business Solutions Delivered</div>
             </div>
             <div className="text-center group">
               <div className="relative">

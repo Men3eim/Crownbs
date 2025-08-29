@@ -45,8 +45,8 @@ export default function EngineeringMaintenance() {
               />
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light px-4">
-              Advanced engineering solutions, predictive maintenance systems, and cutting-edge automation
-              technologies that revolutionize property management workflows and operational efficiency.
+              Advanced engineering consulting, predictive maintenance intelligence, and cutting-edge automation
+              technologies that revolutionize hospitality business workflows and operational performance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
@@ -441,7 +441,7 @@ export default function EngineeringMaintenance() {
             Ready to Automate Your Operations?
           </h2>
           <p className="text-xl text-emerald-100 mb-8">
-            Discover how our engineering and automation solutions can transform your property management efficiency.
+            Discover how our engineering and automation solutions can transform your business operational efficiency.
           </p>
           <a
             href="/contact"
