@@ -21,7 +21,7 @@ export default function Portfolio() {
       description: "Comprehensive hospitality management solutions delivering exceptional guest experiences across international markets.",
       achievement: "98% Client Satisfaction",
       metric: "50+ Countries",
-      services: ["Revenue Management", "Operations", "Guest Experience", "Global Distribution"],
+      services: ["Revenue Optimization", "Operational Excellence", "Global Distribution & Partnerships"],
       image: globalHospitalityImg,
     },
     {
@@ -31,7 +31,7 @@ export default function Portfolio() {
       description: "Exclusive partnerships with industry leaders including Stayz, Irwin Estates, and key strategic partners.",
       achievement: "200+ Partners",
       metric: "24/7 Support",
-      services: ["Partnership Development", "Market Expansion", "Strategic Consulting", "Business Growth"],
+      services: ["Global Distribution & Partnerships", "Market Expansion", "Business Intelligence"],
       image: strategicPartnershipImg,
     },
     {
@@ -41,7 +41,7 @@ export default function Portfolio() {
       description: "Advanced revenue management strategies and pricing optimization delivering measurable results for our clients.",
       achievement: "35% Revenue Increase",
       metric: "89% Occupancy",
-      services: ["Dynamic Pricing", "Market Analysis", "Performance Optimization", "Financial Consulting"],
+      services: ["Revenue Optimization", "Business Intelligence & Analytics"],
       image: revenueOptimizationImg,
     }
   ];

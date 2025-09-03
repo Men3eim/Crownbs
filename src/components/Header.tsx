@@ -9,21 +9,22 @@ export default function Header() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Solutions", href: "/solutions", hasDropdown: true },
     { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
   const servicesDropdown = [
-    { name: "Revenue Management", href: "/services/revenue-management" },
-    { name: "Hotel Operations", href: "/services/hotel-operations" },
-    { name: "Engineering & Technology", href: "/services/engineering-maintenance" },
-    { name: "Customer Excellence", href: "/services/customer-excellence" },
+    { name: "Revenue Optimization", href: "/solutions/revenue-optimization" },
+    { name: "Operational Excellence", href: "/solutions/operational-excellence" },
+    { name: "Asset & Infrastructure", href: "/solutions/asset-infrastructure" },
+    { name: "Business Intelligence", href: "/solutions/business-intelligence" },
+    { name: "Global Distribution", href: "/solutions/global-distribution" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
-  const isServicesActive = () => location.pathname.startsWith('/services');
+  const isServicesActive = () => location.pathname.startsWith('/solutions');
 
   return (
     <motion.header
@@ -150,7 +151,7 @@ export default function Header() {
                 to="/contact"
                 className="relative inline-flex items-center gap-2 bg-gold text-charcoal px-6 py-2 rounded-full font-semibold border border-platinum shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal overflow-hidden group"
               >
-                <span>Get Started</span>
+                <span>Schedule Assessment</span>
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
                   viewBox="0 0 24 24"
@@ -273,7 +274,7 @@ export default function Header() {
                     className="relative group inline-flex items-center justify-center gap-2 w-full bg-gold text-charcoal px-4 py-2 rounded-full font-semibold border border-platinum shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <span>Get Started</span>
+                    <span>Schedule Assessment</span>
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

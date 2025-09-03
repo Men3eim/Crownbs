@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
-import { containerVariants, itemVariants, cardVariants, floatingVariants, statsVariants } from '../utils/animations';
+import { containerVariants, itemVariants, floatingVariants, statsVariants } from '../utils/animations';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function About() {
+  usePageMeta('About Us | Crown Business Solutions', 'Learn about our journey from hospitality excellence to a global leader in business transformation across multiple industries.');
   const team = [
     {
       name: "Michael Crown",
@@ -114,19 +116,17 @@ export default function About() {
 
             <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-6 px-2">
               <AnimatedText
-                text="About Crown Business Solutions"
-                highlightWords={["Crown", "Business", "Solutions"]}
+                text="From Hospitality Excellence to Global Business Transformation"
+                highlightWords={["Hospitality", "Transformation"]}
                 delay={0.5}
               />
             </div>
 
             <motion.p
-              className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto px-4"
+              className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
-              A global leader in property and hotel management, delivering exceptional results
-              through innovative strategies, cutting-edge technology, and unparalleled expertise
-              across international markets.
+              Our journey began by mastering the complex, high-stakes world of hospitality. Today, we apply those proven principles to optimize businesses across every industry.
             </motion.p>
           </div>
 
@@ -193,15 +193,13 @@ export default function About() {
             <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To revolutionize property and hotel management by delivering innovative solutions
-                that maximize revenue, enhance guest experiences, and create sustainable value
-                for property owners worldwide.
+                To empower businesses across all industries by delivering innovative, data-driven solutions that maximize revenue, enhance operational efficiency, and create sustainable value for our partners worldwide.
               </p>
               <div className="bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 premium-card">
                 <h3 className="font-semibold text-gray-900 mb-2">Global Impact</h3>
                 <p className="text-gray-700 text-sm">
-                  We're committed to setting new standards in hospitality management across
-                  diverse cultures and markets, ensuring every property reaches its full potential.
+                  We're committed to setting new standards in business optimization across
+                  diverse industries and markets, ensuring every partner reaches its full potential.
                 </p>
               </div>
             </div>
@@ -209,15 +207,13 @@ export default function About() {
             <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To be the world's most trusted property management partner, known for our
-                expertise, innovation, and commitment to delivering exceptional results
-                across every market we serve.
+                To be the world's most trusted business optimization partner, renowned for our hospitality-proven expertise, adaptable strategies, and unwavering commitment to client success across every market we serve.
               </p>
               <div className="bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-xl p-6 border border-amber-200/50 premium-card">
                 <h3 className="font-semibold text-gray-900 mb-2">Future Focus</h3>
                 <p className="text-gray-700 text-sm">
-                  We're building the future of hospitality business solutions through technology innovation,
-                  sustainable practices, and global collaboration.
+                  We're building the future of business optimization through adaptable technology,
+                  sustainable practices, and cross-industry collaboration.
                 </p>
               </div>
             </div>
@@ -278,7 +274,7 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Journey</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From a small startup to a global leader in property management
+              From a hospitality specialist to a global leader in business transformation
             </p>
           </div>
 
@@ -307,17 +303,16 @@ export default function About() {
       <section className="py-16 bg-gradient-to-r from-amber-500 to-amber-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Partner with Industry Leaders?
+            Ready to Transform Your Operations?
           </h2>
           <p className="text-xl text-amber-100 mb-8">
-            Join the Crown Business Solutions family and experience the difference 
-            that expertise and dedication can make.
+            Partner with us and experience the difference that hospitality-proven expertise and dedication can make.
           </p>
           <a
             href="/contact"
             className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            Start Your Journey
+            Explore Custom Business Solutions
           </a>
         </div>
       </section>

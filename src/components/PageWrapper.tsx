@@ -1,6 +1,4 @@
-import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import { pageVariants, pageTransition } from '../utils/animations';
 
 interface PageWrapperProps {
   children: ReactNode;

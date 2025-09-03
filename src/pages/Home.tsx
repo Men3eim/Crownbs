@@ -1,14 +1,20 @@
 import { motion } from 'framer-motion';
 import Hero from "../components/Hero";
-import Services from "../components/Services";
+import BusinessSolutions from "../components/BusinessSolutions";
 import Portfolio from "../components/Portfolio";
 import OTAMarquee from "../components/OTAMarquee";
 import Testimonials from "../components/Testimonials";
 import AnimatedText from "../components/AnimatedText";
 import PageWrapper from "../components/PageWrapper";
+import { usePageMeta } from '../hooks/usePageMeta';
 
 
 export default function Home() {
+  usePageMeta(
+    'Comprehensive Business Solutions | Crown Business Solutions',
+    'End-to-end business optimization solutions born in hospitality\'s demanding environment, now transforming businesses across multiple industries worldwide.'
+  );
+
   return (
     <PageWrapper>
       <motion.div
@@ -17,7 +23,7 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <Hero />
-        <Services />
+        <BusinessSolutions />
         <Portfolio />
         <OTAMarquee />
         <Testimonials />
@@ -42,8 +48,8 @@ export default function Home() {
             </div>
 
             <p className="text-lg sm:text-xl text-amber-100 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join hospitality businesses worldwide who trust Crown Business Solutions
-              to maximize their revenue and operational efficiency.
+              Join businesses worldwide who trust Crown Business Solutions
+              to maximize their revenue and operational efficiency with our hospitality-proven strategies.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
@@ -51,14 +57,14 @@ export default function Home() {
                 href="/contact"
                 className="group relative bg-white text-amber-600 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-2xl overflow-hidden w-full sm:w-auto text-center hover:scale-105 hover:-translate-y-1 transition-all duration-300"
               >
-                <span className="relative z-10">Get Free Consultation</span>
+                <span className="relative z-10">Transform Your Business Today</span>
               </a>
 
               <a
                 href="/portfolio"
                 className="group relative border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg backdrop-blur-sm bg-white/10 shadow-lg overflow-hidden w-full sm:w-auto text-center hover:scale-105 hover:bg-white/20 transition-all duration-300"
               >
-                <span className="relative z-10">View Our Work</span>
+                <span className="relative z-10">Discover Our Methods</span>
               </a>
             </div>
           </div>

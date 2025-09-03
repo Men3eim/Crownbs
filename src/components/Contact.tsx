@@ -20,11 +20,11 @@ export default function Contact() {
   const generateUploadUrl = useMutation(api.inquiries.generateUploadUrl);
 
   const services = [
-    "Revenue Management",
-    "Hotel Operations",
-    "Engineering & Maintenance",
-    "Customer Excellence",
-    "Partnership Opportunities",
+    "Revenue Optimization Solutions",
+    "Operational Excellence Solutions",
+    "Asset & Infrastructure Management",
+    "Business Intelligence & Analytics",
+    "Global Distribution & Partnerships",
     "General Inquiry"
   ];
 
@@ -130,26 +130,10 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Head Office</h4>
+                  <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
                   <p className="text-gray-600">
-                    Crown Business Solutions<br />
-                    25 Cavendish Square<br />
-                    London, W1G 0PN<br />
-                    United Kingdom
+                    Kafr-Abdou Villa 75 Khalil AlMasry Street
                   </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p className="text-gray-600">+44 20 7123 4567</p>
-                  <p className="text-gray-600 text-sm">24/7 Emergency: +44 20 7123 4568</p>
                 </div>
               </div>
 
@@ -160,9 +144,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">info@crownbs.co.uk</p>
-                  <p className="text-gray-600 text-sm">partnerships@crownbs.co.uk</p>
+                  <h4 className="font-semibold text-gray-900 mb-1">Mail</h4>
+                  <p className="text-gray-600">info@crownbs.com</p>
                 </div>
               </div>
             </div>

@@ -4,13 +4,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Services: [
-      { name: "Revenue Management", href: "/services" },
-      { name: "Hotel Operations", href: "/services" },
-      { name: "Engineering & Maintenance", href: "/services" },
-      { name: "Customer Excellence", href: "/services" },
-      { name: "Global Distribution", href: "/services" },
-      { name: "Business Intelligence", href: "/services" },
+    "Business Solutions": [
+      { name: "Revenue Optimization", href: "/solutions/revenue-optimization" },
+      { name: "Operational Excellence", href: "/solutions/operational-excellence" },
+      { name: "Asset & Infrastructure", href: "/solutions/asset-infrastructure" },
+      { name: "Business Intelligence", href: "/solutions/business-intelligence" },
+      { name: "Global Distribution", href: "/solutions/global-distribution" },
     ],
     Company: [
       { name: "About Us", href: "/about" },
@@ -84,8 +83,8 @@ export default function Footer() {
               </div>
             </motion.div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Global property and hotel management company, delivering exceptional 
-              revenue optimization and operational excellence across diverse international portfolios.
+              Comprehensive business solutions, born in hospitality and now adapted for multiple industries,
+              driving optimization and excellence worldwide.
             </p>
 
             {/* Primary Contact */}

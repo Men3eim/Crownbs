@@ -91,7 +91,7 @@ export default function Testimonials() {
           >
             <AnimatedText
               text="Global Success Stories"
-              highlightWords={["Global", "Success", "Stories"]}
+              highlightWords={["Success"]}
               highlightClassName="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
               delay={0.3}
             />

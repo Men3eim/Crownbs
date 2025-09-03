@@ -5,16 +5,17 @@ import { Toaster } from "sonner";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
+import BusinessSolutions from "./pages/BusinessSolutions";
+import RevenueOptimization from "./pages/RevenueOptimization";
+import OperationalExcellence from "./pages/OperationalExcellence";
+import AssetInfrastructure from "./pages/AssetInfrastructure";
+import BusinessIntelligence from "./pages/BusinessIntelligence";
+import GlobalDistribution from "./pages/GlobalDistribution";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
-import RevenueManagement from "./pages/RevenueManagement";
-import HotelOperations from "./pages/HotelOperations";
-import EngineeringMaintenance from "./pages/EngineeringMaintenance";
-import CustomerExcellence from "./pages/CustomerExcellence";
-import { usePageAnimations, pageAnimationConfig } from "./hooks/usePageAnimations";
+import { usePageAnimations } from "./hooks/usePageAnimations";
 
 export default function App() {
   function AnimatedRoutes() {
@@ -32,11 +33,12 @@ export default function App() {
         >
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/revenue-management" element={<RevenueManagement />} />
-            <Route path="/services/hotel-operations" element={<HotelOperations />} />
-            <Route path="/services/engineering-maintenance" element={<EngineeringMaintenance />} />
-            <Route path="/services/customer-excellence" element={<CustomerExcellence />} />
+            <Route path="/solutions" element={<BusinessSolutions />} />
+            <Route path="/solutions/revenue-optimization" element={<RevenueOptimization />} />
+            <Route path="/solutions/operational-excellence" element={<OperationalExcellence />} />
+            <Route path="/solutions/asset-infrastructure" element={<AssetInfrastructure />} />
+            <Route path="/solutions/business-intelligence" element={<BusinessIntelligence />} />
+            <Route path="/solutions/global-distribution" element={<GlobalDistribution />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

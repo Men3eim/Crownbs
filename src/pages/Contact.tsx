@@ -1,10 +1,19 @@
 import { motion } from 'framer-motion';
+import React, { Suspense } from 'react';
 import Contact from "../components/Contact";
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
-import { containerVariants, itemVariants, statsVariants, floatingVariants } from '../utils/animations';
+import { containerVariants, itemVariants, floatingVariants } from '../utils/animations';
+import { usePageMeta } from '../hooks/usePageMeta';
+
+const InteractiveMap = React.lazy(() => import('../components/InteractiveMap'));
 
 export default function ContactPage() {
+  usePageMeta(
+    'Contact Us | Crown Business Solutions',
+    'Get in touch with our global team of experts for a personalized consultation on how we can transform your business.'
+  );
+
   return (
     <PageWrapper className="min-h-screen">
       {/* Hero Section */}
@@ -65,8 +74,8 @@ export default function ContactPage() {
             className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 px-4"
             variants={itemVariants}
           >
-            Ready to transform your property management experience?
-            Connect with our global team of experts for a personalized consultation.
+            Ready to transform your business?
+            Connect with our global team of experts for a personalized consultation on our industry-adaptable solutions.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto animate-fade-in-up-delay-3 px-4">
@@ -95,70 +104,25 @@ export default function ContactPage() {
         </motion.div>
       </section>
 
-      {/* Global Offices */}
-      <section className="py-16 bg-gradient-to-br from-white via-gray-50/50 to-amber-50/20 relative overflow-hidden">
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-16 right-16 w-28 h-28 bg-gradient-to-br from-amber-400/15 to-amber-600/15 rounded-full blur-xl animate-float-slow"></div>
-          <div className="absolute bottom-20 left-20 w-36 h-36 bg-gradient-to-br from-amber-300/10 to-amber-500/10 rounded-full blur-2xl animate-float-medium"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-100/80 to-yellow-100/80 border border-amber-200/50 mb-8 backdrop-blur-sm animate-fade-in-up">
-              <div className="w-2 h-2 bg-amber-500 rounded-full mr-3 animate-pulse"></div>
-              <span className="text-amber-800 text-sm font-semibold tracking-wide uppercase">Worldwide Presence</span>
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900 animate-fade-in-up-delay-1">Global Offices</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                city: "London",
-                country: "United Kingdom",
-                address: "25 Cavendish Square, London W1G 0PN",
-                phone: "+44 20 7123 4567",
-                email: "london@crownbs.com"
-              },
-              {
-                city: "New York",
-                country: "United States",
-                address: "350 Fifth Avenue, New York, NY 10118",
-                phone: "+1 212 555 0123",
-                email: "newyork@crownbs.com"
-              },
-              {
-                city: "Singapore",
-                country: "Singapore",
-                address: "1 Raffles Place, Singapore 048616",
-                phone: "+65 6123 4567",
-                email: "singapore@crownbs.com"
-              },
-              {
-                city: "Dubai",
-                country: "United Arab Emirates",
-                address: "Dubai International Financial Centre",
-                phone: "+971 4 123 4567",
-                email: "dubai@crownbs.com"
-              }
-            ].map((office, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{office.city}</h3>
-                <p className="text-amber-600 font-medium mb-4">{office.country}</p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p>{office.address}</p>
-                  <p>{office.phone}</p>
-                  <p>{office.email}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form */}
       <Contact />
+
+      {/* Map Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Our <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">Location</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Visit us at our head office for a personal consultation.
+            </p>
+          </div>
+          <Suspense fallback={<div className="h-[400px] w-full bg-gray-800 rounded-2xl flex items-center justify-center text-white">Loading Map...</div>}>
+            <InteractiveMap />
+          </Suspense>
+        </div>
+      </section>
 
     </PageWrapper>
   );

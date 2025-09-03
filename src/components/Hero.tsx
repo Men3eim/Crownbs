@@ -35,13 +35,13 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg">
             <div className="w-2 h-2 bg-amber-500 rounded-full mr-3" />
-            <span className="text-amber-800 text-sm font-medium tracking-wide">Advanced Business Solutions for Hospitality Excellence</span>
+            <span className="text-amber-800 text-sm font-medium tracking-wide">Comprehensive Business Solutions | Hospitality-Proven, Industry-Adaptable</span>
           </div>
 
           {/* Main Heading */}
           <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
             <AnimatedText
-              text="Elevating Hospitality Solutions"
+              text="Elevating Hospitality WorldWide"
               highlightWords={["Hospitality"]}
               highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
               delay={0.3}
@@ -50,8 +50,8 @@ export default function Hero() {
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-            Crown Business Solutions delivers advanced revenue optimization, operational intelligence,
-            and strategic business consulting to transform hospitality performance worldwide.
+            End-to-end business optimization solutions born in hospitality's demanding environment,
+            now transforming businesses across multiple industries worldwide.
           </p>
 
           {/* Stats */}
@@ -79,14 +79,14 @@ export default function Hero() {
               href="/contact"
               className="relative bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-2xl overflow-hidden w-full sm:w-auto text-center hover:scale-105 hover:-translate-y-2 transition-all duration-300"
             >
-              <span className="relative z-10">Partner With Us</span>
+              <span className="relative z-10">Schedule a Strategic Assessment</span>
             </a>
 
             <a
-              href="/services"
+              href="/solutions"
               className="relative border-2 border-gray-300 text-gray-700 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg backdrop-blur-sm bg-white/50 shadow-lg overflow-hidden w-full sm:w-auto text-center hover:scale-105 hover:-translate-y-1 hover:border-amber-500 hover:text-amber-600 transition-all duration-300"
             >
-              <span className="relative z-10">Explore Services</span>
+              <span className="relative z-10">Explore Custom Solutions</span>
             </a>
           </div>
         </div>

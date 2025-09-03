@@ -1,8 +1,6 @@
-import { motion } from 'framer-motion';
 import AdminOTAs from "../components/AdminOTAs";
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
-import { containerVariants, itemVariants } from '../utils/animations';
 
 export default function AdminPage() {
   return (

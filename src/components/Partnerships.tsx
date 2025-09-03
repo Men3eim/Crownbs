@@ -12,19 +12,10 @@ export default function Partnerships() {
     { src: "/logos-partnerships/Stayz.png", alt: "Stayz" }
   ];
 
-  // Example partnerships for demonstration - Global focus
-  const examplePartnerships = [
-    { name: "Marriott International", category: "Hotel Group", description: "Global hotel chain partnership" },
-    { name: "Hilton Worldwide", category: "Hotel Group", description: "Strategic alliance with luxury hotel brand" },
-    { name: "Booking.com", category: "OTA Platform", description: "Global listing channel we utilize" },
-    { name: "Expedia Group", category: "OTA Platform", description: "Major OTA we list properties on" },
-    { name: "Airbnb", category: "OTA Platform", description: "Marketplace where we publish listings" },
-    { name: "Agoda", category: "OTA Platform", description: "APAC OTA channel we distribute to" }
-  ];
+
 
   // Loading state: only show fallback if query is undefined (not loading or error)
   const isLoading = partnerships === undefined;
-  const partnerData = !isLoading && partnerships ? partnerships : examplePartnerships;
 
   return (
     <section id="partnerships" className="py-20 bg-white">

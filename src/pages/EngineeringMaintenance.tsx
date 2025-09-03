@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
 
