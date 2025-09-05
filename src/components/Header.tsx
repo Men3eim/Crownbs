@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -34,7 +35,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
           <motion.div
             className="flex-shrink-0"
@@ -46,12 +47,12 @@ export default function Header() {
               <motion.img
                 src="/logos/Crownbs.png"
                 alt="Crown Business Solutions Logo"
-                width={128}
-                height={128}
+                width={96}
+                height={96}
                 decoding="async"
                 fetchPriority="high"
-                className="w-32 h-32 object-contain mr-3 drop-shadow-lg"
-                whileHover={{ scale: 1.05 }}
+                className="w-24 h-24 sm:w-28 sm:h-28 object-contain mr-2 sm:mr-3 drop-shadow-lg"
+                whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
               />
             </Link>
@@ -179,9 +180,11 @@ export default function Header() {
           >
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-amber-600 p-2"
+              className="text-gray-200 hover:text-amber-400 p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.1 }}
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               <motion.svg
                 className="h-6 w-6"
@@ -212,7 +215,7 @@ export default function Header() {
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <motion.div
-                className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100"
+                className="px-3 pt-3 pb-4 space-y-2 bg-charcoal text-platinum border-t border-platinum/20 rounded-b-2xl shadow-xl"
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
                 exit={{ y: -20 }}
@@ -223,40 +226,47 @@ export default function Header() {
                     key={item.name}
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    transition={{ duration: 0.3, delay: index * 0.07 }}
                   >
                     {item.hasDropdown ? (
                       <div>
-                        <Link
-                          to={item.href}
-                          className={`block px-3 py-2 text-base font-medium ${isServicesActive()
-                            ? "text-amber-600 bg-amber-50"
-                            : "text-gray-700 hover:text-amber-600"
-                            }`}
-                          onClick={() => setIsMenuOpen(false)}
+                        <button
+                          className={`w-full flex items-center justify-between px-3 py-2 text-base font-medium rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${isServicesActive() ? "text-gold bg-white/5" : "text-platinum hover:text-gold hover:bg-white/5"}`}
+                          onClick={() => setMobileServicesOpen((s) => !s)}
+                          aria-expanded={mobileServicesOpen}
+                          aria-controls="mobile-services"
                         >
-                          {item.name}
-                        </Link>
-                        <div className="ml-4 space-y-1">
-                          {servicesDropdown.map((service) => (
-                            <Link
-                              key={service.name}
-                              to={service.href}
-                              className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
-                              onClick={() => setIsMenuOpen(false)}
+                          <span>{item.name}</span>
+                          <svg className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {mobileServicesOpen && (
+                            <motion.div
+                              id="mobile-services"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                              className="ml-2 pl-2 border-l border-platinum/20 mt-1 space-y-1"
                             >
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
+                              {servicesDropdown.map((service) => (
+                                <Link
+                                  key={service.name}
+                                  to={service.href}
+                                  className="block px-3 py-2 text-sm rounded-md text-platinum hover:text-amber-400 hover:bg-white/5"
+                                  onClick={() => { setIsMenuOpen(false); setMobileServicesOpen(false); }}
+                                >
+                                  {service.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     ) : (
                       <Link
                         to={item.href}
-                        className={`block px-3 py-2 text-base font-medium ${isActive(item.href)
-                          ? "text-amber-600 bg-amber-50"
-                          : "text-gray-700 hover:text-amber-600"
-                          }`}
+                        className={`block px-3 py-2 text-base font-medium rounded-lg ${isActive(item.href) ? "text-gold bg-white/5" : "text-platinum hover:text-gold hover:bg-white/5"}`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}
@@ -267,11 +277,11 @@ export default function Header() {
                 <motion.div
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: navigation.length * 0.1 }}
+                  transition={{ duration: 0.3, delay: navigation.length * 0.07 }}
                 >
                   <Link
                     to="/contact"
-                    className="relative group inline-flex items-center justify-center gap-2 w-full bg-gold text-charcoal px-4 py-2 rounded-full font-semibold border border-platinum shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2"
+                    className="relative group inline-flex items-center justify-center gap-2 w-full bg-gold text-charcoal px-4 py-2 rounded-full font-semibold border border-platinum shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span>Schedule Assessment</span>

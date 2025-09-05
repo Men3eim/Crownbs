@@ -5,7 +5,7 @@ import { containerVariants, itemVariants, floatingVariants, wordVariants, statsV
 
 export default function Hero() {
   return (
-    <section className="relative pb-16 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 overflow-hidden min-h-screen flex items-center">
+    <section className="relative pb-28 sm:pb-24 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 overflow-hidden min-h-screen flex items-center">
       {/* Simplified Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Static Golden Orbs */}
