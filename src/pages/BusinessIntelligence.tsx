@@ -102,16 +102,16 @@ export default function BusinessIntelligence() {
 
             <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
               <AnimatedText
-                text="Transform Data Into Insights"
-                highlightWords={["Data", "Insights"]}
+                text="See Issues Early, Decide Faster"
+                highlightWords={["Decide", "Faster"]}
                 highlightClassName="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent"
                 delay={0.3}
               />
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Data-driven insights, performance analytics, and strategic decision support 
-              that transforms raw data into actionable business intelligence.
+              Detect anomalies early, forecast accurately, and shorten decision time—
+              with data quality SLAs and alerts routed to Revenue and Operations.
             </p>
           </motion.div>
         </div>
@@ -190,6 +190,44 @@ export default function BusinessIntelligence() {
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Operations Playbook */}
+      <motion.section 
+        className="py-12 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-purple-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">SOPs & SLAs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Daily data quality checks and freshness SLAs</li>
+                <li>Source of truth definitions and access controls</li>
+                <li>Report change control and versioning</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-purple-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Ingest → Validate → Model → Publish → Monitor</li>
+                <li>Alerting to Revenue/Operations on anomalies</li>
+                <li>Weekly review of KPIs and forecast deltas</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-purple-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">KPIs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Data freshness and pipeline success rate</li>
+                <li>Forecast accuracy and alert precision</li>
+                <li>Decision lead time and adoption</li>
+              </ul>
+            </div>
           </div>
         </div>
       </motion.section>

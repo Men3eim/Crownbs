@@ -11,8 +11,8 @@ import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function Home() {
   usePageMeta(
-    'Comprehensive Business Solutions | Crown Business Solutions',
-    'End-to-end business optimization solutions born in hospitality\'s demanding environment, now transforming businesses across multiple industries worldwide.'
+    'Family‑Built. Professionally Orchestrated. | Crown Business Solutions',
+    'Born answering guest calls, now a 120+ team orchestrating a growing UK hotel portfolio from Alexandria, Egypt—modern luxury with operational precision.'
   );
 
   return (
@@ -23,6 +23,31 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <Hero />
+
+        {/* Family-built story + 2025 footprint */}
+        <section className="py-12 bg-gradient-to-br from-white via-amber-50/30 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="lg:col-span-2 bg-white rounded-2xl p-6 border border-amber-100">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">A Family‑Built Operation</h2>
+                <p className="text-gray-700 text-sm sm:text-base">From two founders answering every guest call to a fully orchestrated operations engine—running a growing UK hotel portfolio from Alexandria. We align Accounting, Customer Service, Revenue, Marketing, Data, Maintenance, and Software to one standard: guest delight through discipline.</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { k: '100+', v: 'Hotels in UK' },
+                  { k: '120+', v: 'Team in Alexandria' },
+                  { k: '24/7', v: 'Customer Operations' },
+                  { k: 'End‑to‑End', v: 'Accounting • CS • Revenue' },
+                ].map((s) => (
+                  <div key={s.v} className="bg-white rounded-xl border border-amber-100 p-4 text-center">
+                    <div className="text-2xl font-bold text-amber-700">{s.k}</div>
+                    <div className="text-xs font-medium text-gray-600 mt-1">{s.v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
         <BusinessSolutions />
         <Portfolio />
         <OTAMarquee />

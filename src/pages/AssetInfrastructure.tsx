@@ -97,21 +97,21 @@ export default function AssetInfrastructure() {
           <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-50 to-green-100/50 border border-green-200/50 mb-8 backdrop-blur-sm shadow-lg">
               <span className="text-6xl mr-4">🔧</span>
-              <span className="text-green-800 text-sm font-medium tracking-wide">Asset & Infrastructure Management</span>
+              <span className="text-green-800 text-sm font-medium tracking-wide">Increase Uptime</span>
             </div>
 
             <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
               <AnimatedText
-                text="Optimize Asset Performance"
-                highlightWords={["Asset", "Performance"]}
+                text="Increase Uptime, Lower Maintenance Cost"
+                highlightWords={["Uptime", "Cost"]}
                 highlightClassName="bg-gradient-to-r from-green-500 via-green-600 to-green-700 bg-clip-text text-transparent"
                 delay={0.3}
               />
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Comprehensive facility management, maintenance optimization, and asset lifecycle solutions 
-              that maximize asset value and operational uptime.
+              Increase uptime and lower total cost with preventive schedules, vendor SLAs, and lifecycle controls—
+              tracked with MTTR, preventive/reactive ratio, and cost per unit.
             </p>
           </motion.div>
         </div>
@@ -190,6 +190,44 @@ export default function AssetInfrastructure() {
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Operations Playbook */}
+      <motion.section 
+        className="py-12 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-green-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">SOPs & SLAs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Preventive schedules per asset class</li>
+                <li>Response times by fault severity</li>
+                <li>Safety and compliance controls</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-green-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Ticket → Assign → Resolve → QA → Sign‑off</li>
+                <li>Vendor dispatch with SLA tracking</li>
+                <li>Lifecycle updates and cost capture</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-green-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">KPIs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Uptime and mean time to repair (MTTR)</li>
+                <li>Preventive vs. reactive ratio</li>
+                <li>Cost per room/unit and vendor SLA hit rate</li>
+              </ul>
+            </div>
           </div>
         </div>
       </motion.section>

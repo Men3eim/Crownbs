@@ -97,21 +97,21 @@ export default function GlobalDistribution() {
           <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-50 to-indigo-100/50 border border-indigo-200/50 mb-8 backdrop-blur-sm shadow-lg">
               <span className="text-6xl mr-4">🌐</span>
-              <span className="text-indigo-800 text-sm font-medium tracking-wide">Global Distribution & Partnerships</span>
+              <span className="text-indigo-800 text-sm font-medium tracking-wide">Profitable Channel Mix</span>
             </div>
 
             <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
               <AnimatedText
-                text="Expand Global Reach"
-                highlightWords={["Global", "Reach"]}
+                text="Fill Calendars with Profitable Channel Mix"
+                highlightWords={["Profitable", "Channel"]}
                 highlightClassName="bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 bg-clip-text text-transparent"
                 delay={0.3}
               />
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Multi-channel distribution strategies and strategic partnership development 
-              that expands market reach and drives sustainable growth.
+              Fill calendars profitably with content standards, parity checks, and promotions cadence—
+              monitored by conversion, parity error rate, and channel mix profitability.
             </p>
           </motion.div>
         </div>
@@ -190,6 +190,44 @@ export default function GlobalDistribution() {
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Operations Playbook */}
+      <motion.section 
+        className="py-12 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-indigo-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">SOPs & SLAs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Channel content standards and audit cadence</li>
+                <li>Rate/availability parity checks with SLAs</li>
+                <li>Partner response times and contact matrix</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-indigo-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Updates → Channel sync → QA → Monitor</li>
+                <li>Promotions calendar and blackout rules</li>
+                <li>Escalation to partners for systemic issues</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-indigo-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">KPIs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Content score and conversion rate</li>
+                <li>Parity error rate and time to resolution</li>
+                <li>Channel mix profitability</li>
+              </ul>
+            </div>
           </div>
         </div>
       </motion.section>

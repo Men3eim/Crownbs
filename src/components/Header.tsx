@@ -10,18 +10,20 @@ export default function Header() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Solutions", href: "/solutions", hasDropdown: true },
+    { name: "Capabilities", href: "/solutions", hasDropdown: true },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "About", href: "/about" },
+    { name: "Our Story", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
   const servicesDropdown = [
-    { name: "Revenue Optimization", href: "/solutions/revenue-optimization" },
-    { name: "Operational Excellence", href: "/solutions/operational-excellence" },
-    { name: "Asset & Infrastructure", href: "/solutions/asset-infrastructure" },
-    { name: "Business Intelligence", href: "/solutions/business-intelligence" },
-    { name: "Global Distribution", href: "/solutions/global-distribution" },
+    { name: "Grow RevPAR", href: "/solutions/revenue-optimization" },
+    { name: "Reduce Time-to-Resolution", href: "/solutions/operational-excellence" },
+    { name: "Increase Uptime", href: "/solutions/asset-infrastructure" },
+    { name: "Data & Analytics", href: "/solutions/business-intelligence" },
+    { name: "Profitable Channel Mix", href: "/solutions/global-distribution" },
+    { name: "Marketing", href: "/solutions/marketing" },
+    { name: "Software Engineering", href: "/solutions/software-engineering" },
   ];
 
   const isActive = (href: string) => location.pathname === href;

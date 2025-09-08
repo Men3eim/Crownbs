@@ -59,7 +59,7 @@ export default function Hero() {
             {[
               { value: "500+", label: "Business Solutions Delivered" },
               { value: "$150M+", label: "Revenue Optimized" },
-              { value: "1M+", label: "Bookings Managed" },
+              { value: "1M+", label: "Operational Tasks Resolved" },
               { value: "24/7", label: "Performance & Operations Focus" }
             ].map((stat, index) => (
               <div key={stat.label} className="text-center">

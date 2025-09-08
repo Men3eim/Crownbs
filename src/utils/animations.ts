@@ -72,7 +72,7 @@ export const floatingVariants = {
     transition: {
       duration: 6,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: [0.42, 0, 0.58, 1] as [number, number, number, number]
     }
   }
 };
@@ -84,14 +84,14 @@ export const statsVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: "backOut"
+      ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number]
     }
   },
   hover: {
     scale: 1.05,
     transition: {
       duration: 0.3,
-      ease: "easeOut"
+      ease: [0, 0, 0.58, 1] as [number, number, number, number]
     }
   }
 };
@@ -115,7 +115,7 @@ export const slideInVariants = {
     x: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: [0, 0, 0.58, 1] as [number, number, number, number]
     }
   }
 };
@@ -233,7 +233,7 @@ export const professionalCardVariants = {
     boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)",
     transition: {
       duration: 0.3,
-      ease: "easeOut"
+      ease: [0, 0, 0.58, 1] as [number, number, number, number]
     }
   }
 };
@@ -279,7 +279,7 @@ export const enhancedFloatingVariants = {
     transition: {
       duration: 8,
       repeat: Infinity,
-      ease: "easeInOut",
+      ease: [0.42, 0, 0.58, 1] as [number, number, number, number],
       times: [0, 0.5, 1]
     }
   }

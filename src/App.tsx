@@ -15,6 +15,8 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
+import Marketing from "./pages/Marketing";
+import SoftwareEngineering from "./pages/SoftwareEngineering";
 import { usePageAnimations } from "./hooks/usePageAnimations";
 
 export default function App() {
@@ -39,6 +41,8 @@ export default function App() {
             <Route path="/solutions/asset-infrastructure" element={<AssetInfrastructure />} />
             <Route path="/solutions/business-intelligence" element={<BusinessIntelligence />} />
             <Route path="/solutions/global-distribution" element={<GlobalDistribution />} />
+            <Route path="/solutions/marketing" element={<Marketing />} />
+            <Route path="/solutions/software-engineering" element={<SoftwareEngineering />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

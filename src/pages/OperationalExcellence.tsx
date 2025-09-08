@@ -97,21 +97,21 @@ export default function OperationalExcellence() {
           <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 border border-blue-200/50 mb-8 backdrop-blur-sm shadow-lg">
               <span className="text-6xl mr-4">🏢</span>
-              <span className="text-blue-800 text-sm font-medium tracking-wide">Operational Excellence Solutions</span>
+              <span className="text-blue-800 text-sm font-medium tracking-wide">Reduce Time‑to‑Resolution</span>
             </div>
 
             <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
               <AnimatedText
-                text="Achieve Operational Excellence"
-                highlightWords={["Operational", "Excellence"]}
+                text="Reduce Time‑to‑Resolution, Raise Standards"
+                highlightWords={["Reduce", "Standards"]}
                 highlightClassName="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent"
                 delay={0.3}
               />
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              End-to-end operational efficiency, quality management, and performance optimization 
-              that drives sustainable business growth and customer satisfaction.
+              Cut time‑to‑resolution, reduce repeat issues, and raise standards with SOPs, checklists,
+              and escalation paths—measured by response/resolve SLAs and review sentiment.
             </p>
           </motion.div>
         </div>
@@ -190,6 +190,44 @@ export default function OperationalExcellence() {
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Operations Playbook */}
+      <motion.section 
+        className="py-12 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">SOPs & SLAs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Response times by case severity</li>
+                <li>Housekeeping and maintenance checklists</li>
+                <li>Brand standards audits and QA loops</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Open ticket → Diagnose → Resolve → QA → Close</li>
+                <li>Customer comms templates with escalation</li>
+                <li>Daily standups; weekly ops review</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">KPIs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>First response and resolution times</li>
+                <li>Repeat issues and rework rate</li>
+                <li>Review sentiment and NPS</li>
+              </ul>
+            </div>
           </div>
         </div>
       </motion.section>

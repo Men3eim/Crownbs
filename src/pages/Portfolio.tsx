@@ -51,7 +51,7 @@ export default function Portfolio() {
 
   return (
     <PageWrapper className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section - family-built story + footprint */}
       <motion.section 
         className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
         initial="hidden"
@@ -95,8 +95,8 @@ export default function Portfolio() {
               variants={itemVariants}
             >
               <AnimatedText
-                text="Global Partnerships"
-                highlightWords={["Partnerships"]}
+                text="Portfolio, Built by Family—Run at Scale"
+                highlightWords={["Portfolio", "Scale"]}
                 highlightClassName="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent"
                 delay={0.3}
               />
@@ -105,8 +105,7 @@ export default function Portfolio() {
               className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
-              Our success is built on strong relationships with industry leaders worldwide, 
-              creating unparalleled value for our clients through collaborative excellence.
+              From answering calls to operating a growing UK portfolio from Alexandria. Here’s how disciplined operations, technology, and partnerships turn standards into results.
             </motion.p>
           </motion.div>
 
@@ -116,10 +115,10 @@ export default function Portfolio() {
             variants={containerVariants}
           >
             {[
-              { number: "200+", label: "Strategic Partners" },
-              { number: "1M+", label: "Bookings Managed" },
-              { number: "100+", label: "Business Solutions" },
-              { number: "24/7", label: "Performance & Operations Focus" }
+              { number: "100+", label: "Hotels in UK" },
+              { number: "120+", label: "Team in Alexandria" },
+              { number: "1M+", label: "Operational Tasks Resolved" },
+              { number: "24/7", label: "Operations Coverage" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

@@ -58,21 +58,21 @@ export default function RevenueOptimization() {
           <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg">
               <span className="text-6xl mr-4">🎯</span>
-              <span className="text-amber-800 text-sm font-medium tracking-wide">Revenue Optimization Solutions</span>
+              <span className="text-amber-800 text-sm font-medium tracking-wide">Grow RevPAR</span>
             </div>
 
             <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
               <AnimatedText
-                text="Maximize Revenue Potential"
-                highlightWords={["Revenue", "Potential"]}
+                text="Grow RevPAR with Precision Pricing"
+                highlightWords={["Grow", "RevPAR"]}
                 highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
                 delay={0.3}
               />
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Advanced pricing strategies, yield management, and multi-channel revenue optimization
-              that maximizes profitability while maintaining competitive positioning.
+              Lift RevPAR 6–12% with daily pricing playbooks, parity audits, and forecast‑driven rules—
+              executed within SLA windows and aligned with Operations and Accounting.
             </p>
           </motion.div>
         </div>
@@ -109,6 +109,44 @@ export default function RevenueOptimization() {
                 <p className="text-gray-600 leading-relaxed">{capability.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Operations Playbook */}
+      <motion.section
+        className="py-12 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-amber-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">SOPs & SLAs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Daily pricing review at set time windows</li>
+                <li>Event/shoulder detection with playbook actions</li>
+                <li>Parity checks and OTA rate accuracy audits</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-amber-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Forecast → Pacing → Price rules → Publish</li>
+                <li>Exceptions routed to Revenue/CS for action</li>
+                <li>Weekly target review with Accounting ops</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-amber-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">KPIs</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>Occupancy, ADR, RevPAR vs. target</li>
+                <li>Pickup velocity and cancellation rates</li>
+                <li>Channel mix and gross-to-net capture</li>
+              </ul>
+            </div>
           </div>
         </div>
       </motion.section>
