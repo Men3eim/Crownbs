@@ -127,26 +127,6 @@ export default function ContactPage() {
               services: ['Property Management', 'Asset Optimization', 'Revenue Solutions'],
               timezone: 'EET (UTC+2)',
               established: '2018'
-            },
-            {
-              name: 'Dubai Office',
-              city: 'Dubai, UAE',
-              address: ['Business Bay, Dubai', 'United Arab Emirates'],
-              phone: '+971 4 123 4567',
-              email: 'dubai@crownbs.com',
-              services: ['Global Distribution', 'Business Intelligence', 'Partnership Management'],
-              timezone: 'GST (UTC+4)',
-              established: '2020'
-            },
-            {
-              name: 'London Office',
-              city: 'London, UK',
-              address: ['Mayfair, London', 'United Kingdom'],
-              phone: '+44 20 1234 5678',
-              email: 'london@crownbs.com',
-              services: ['European Operations', 'Financial Services', 'Strategic Consulting'],
-              timezone: 'GMT (UTC+0)',
-              established: '2021'
             }
           ].map((location) => (
             <div key={location.name} className="bg-white rounded-xl p-6 shadow-lg border border-amber-200/50">
@@ -228,14 +208,14 @@ export default function ContactPage() {
               viewport={{ once: true }}
             >
               <div className="w-3 h-3 bg-amber-400 rounded-full mr-3 animate-pulse"></div>
-              <span className="text-amber-300 text-sm font-medium tracking-wide">Global Presence</span>
+              <span className="text-amber-300 text-sm font-medium tracking-wide">Our Alexandria Location</span>
             </motion.div>
 
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Our <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">Locations</span>
+              <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">Alexandria</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Experience our global network of premium business solutions across three continents.
+              Visit our headquarters in Alexandria, Egypt.
             </p>
           </motion.div>
 

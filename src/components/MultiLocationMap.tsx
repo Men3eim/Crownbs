@@ -27,30 +27,6 @@ const locations: Location[] = [
     services: ['Property Management', 'Asset Optimization', 'Revenue Solutions'],
     timezone: 'EET (UTC+2)',
     established: '2018'
-  },
-  {
-    id: 'dubai',
-    name: 'Dubai Office',
-    city: 'Dubai, UAE',
-    position: [25.2048, 55.2708],
-    address: ['Business Bay, Dubai', 'United Arab Emirates'],
-    phone: '+971 4 123 4567',
-    email: 'dubai@crownbs.com',
-    services: ['Global Distribution', 'Business Intelligence', 'Partnership Management'],
-    timezone: 'GST (UTC+4)',
-    established: '2020'
-  },
-  {
-    id: 'london',
-    name: 'London Office',
-    city: 'London, UK',
-    position: [51.5074, -0.1278],
-    address: ['Mayfair, London', 'United Kingdom'],
-    phone: '+44 20 1234 5678',
-    email: 'london@crownbs.com',
-    services: ['European Operations', 'Financial Services', 'Strategic Consulting'],
-    timezone: 'GMT (UTC+0)',
-    established: '2021'
   }
 ];
 
