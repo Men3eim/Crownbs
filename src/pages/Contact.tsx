@@ -141,7 +141,7 @@ export default function ContactPage() {
                     </span>
                     <div>
                       <p className="text-sm uppercase tracking-wider text-gray-500">Email</p>
-                      <a href="mailto:alexandria@crownbs.com" className="text-amber-700 hover:text-amber-800 font-semibold">alexandria@crownbs.com</a>
+                      <a href="mailto:info@crownbs.com" className="text-amber-700 hover:text-amber-800 font-semibold">info@crownbs.com</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -164,8 +164,8 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="mt-6 flex items-center gap-4">
-                  <a href="/contact" className="inline-flex items-center px-4 py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors">Get Directions</a>
-                  <a href="mailto:alexandria@crownbs.com" className="inline-flex items-center px-4 py-2 rounded-lg border border-amber-300 text-amber-700 font-semibold hover:bg-amber-50 transition-colors">Email Us</a>
+                  <a href="https://maps.app.goo.gl/NyS1QVxEd9yAB4aV8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors">Get Directions</a>
+                  <a href="mailto:info@crownbs.com" className="inline-flex items-center px-4 py-2 rounded-lg border border-amber-300 text-amber-700 font-semibold hover:bg-amber-50 transition-colors">Email Us</a>
                 </div>
               </div>
             </div>
