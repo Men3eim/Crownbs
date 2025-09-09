@@ -114,72 +114,71 @@ export default function ContactPage() {
       {/* Contact Form */}
       <Contact />
 
-      {/* Location Details Cards */}
+      {/* Contact Details - Modern Panel */}
       <section className="py-20 bg-gradient-to-br from-white via-amber-50/30 to-amber-100/20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              name: 'Alexandria Office',
-              city: 'Alexandria, Egypt',
-              address: ['Kafr-Abdou Villa 75', 'Khalil AlMasry Street'],
-              phone: '+20 3 123 4567',
-              email: 'alexandria@crownbs.com',
-              services: ['Property Management', 'Asset Optimization', 'Revenue Solutions'],
-              timezone: 'EET (UTC+2)',
-              established: '2018'
-            }
-          ].map((location) => (
-            <div key={location.name} className="bg-white rounded-xl p-6 shadow-lg border border-amber-200/50">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-bold text-lg text-gray-900">{location.name}</h3>
-                <span className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full font-medium">
-                  Est. {location.established}
-                </span>
-              </div>
-              <p className="text-amber-600 font-medium mb-3">{location.city}</p>
-              <div className="space-y-2 mb-4">
-                {location.address.map((line, index) => (
-                  <p key={index} className="text-sm text-gray-600">{line}</p>
-                ))}
-              </div>
-              <div className="border-t border-gray-200 pt-3 space-y-2">
-                <div className="flex items-center text-sm">
-                  <div className="w-4 h-4 bg-amber-500 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">{location.phone}</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-amber-200/60 via-amber-400/40 to-amber-600/40">
+              <div className="rounded-2xl bg-white/70 backdrop-blur-md border border-amber-200/60 p-8 h-full">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900">Alexandria Headquarters</h3>
+                  <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-amber-100 text-amber-700 border border-amber-200">Since 2018</span>
                 </div>
-                <div className="flex items-center text-sm">
-                  <div className="w-4 h-4 bg-amber-500 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">{location.email}</span>
-                </div>
-                <div className="flex items-center text-sm">
-                  <div className="w-4 h-4 bg-amber-500 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">{location.timezone}</span>
-                </div>
-              </div>
-              <div className="border-t border-gray-200 pt-3 mt-3">
-                <p className="text-xs font-medium text-gray-500 mb-2">Services Offered:</p>
-                <div className="flex flex-wrap gap-1">
-                  {location.services.map((service, index) => (
-                    <span key={index} className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded-md border border-amber-200">
-                      {service}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/15 text-amber-600">
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1114 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5" strokeWidth="1.5"/></svg>
                     </span>
-                  ))}
+                    <div>
+                      <p className="text-sm uppercase tracking-wider text-gray-500">Address</p>
+                      <p className="text-gray-800 font-medium">Kafr-Abdou Villa 75</p>
+                      <p className="text-gray-800">Khalil AlMasry Street, Alexandria</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/15 text-amber-600">
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M4 6l8 6 8-6"/><rect x="3" y="5" width="18" height="14" rx="2" strokeWidth="1.5"/></svg>
+                    </span>
+                    <div>
+                      <p className="text-sm uppercase tracking-wider text-gray-500">Email</p>
+                      <a href="mailto:alexandria@crownbs.com" className="text-amber-700 hover:text-amber-800 font-semibold">alexandria@crownbs.com</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/15 text-amber-600">
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </span>
+                    <div>
+                      <p className="text-sm uppercase tracking-wider text-gray-500">Phone</p>
+                      <a href="tel:+2031234567" className="text-gray-800 font-medium">+20 3 123 4567</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/15 text-amber-600">
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </span>
+                    <div>
+                      <p className="text-sm uppercase tracking-wider text-gray-500">Hours</p>
+                      <p className="text-gray-800">24/7 Customer Operations</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 flex items-center gap-4">
+                  <a href="/contact" className="inline-flex items-center px-4 py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors">Get Directions</a>
+                  <a href="mailto:alexandria@crownbs.com" className="inline-flex items-center px-4 py-2 rounded-lg border border-amber-300 text-amber-700 font-semibold hover:bg-amber-50 transition-colors">Email Us</a>
                 </div>
               </div>
             </div>
-          ))}
+            <div className="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-amber-200/60">
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Why reach out</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>Operations assessment and tailored roadmap</li>
+                <li>Portfolio onboarding and due‑diligence support</li>
+                <li>Partnerships and distribution opportunities</li>
+              </ul>
+              <p className="mt-6 text-sm text-gray-600">Prefer a call back? Submit the form and choose “Call Back” in the message—we will get in touch within 1 hour.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -235,3 +234,4 @@ export default function ContactPage() {
     </PageWrapper>
   );
 }
+
