@@ -14,7 +14,6 @@ export default function Footer() {
     Company: [
       { name: "About Us", href: "/about" },
       { name: "Our Portfolio", href: "/portfolio" },
-      { name: "Global Offices", href: "/contact" },
       { name: "Careers", href: "/contact" },
     ],
     Support: [
@@ -33,12 +32,7 @@ export default function Footer() {
     ],
   };
 
-  const globalOffices = [
-    { city: "London", country: "UK", phone: "+44 20 7123 4567" },
-    { city: "New York", country: "USA", phone: "+1 212 555 0123" },
-    { city: "Singapore", country: "SG", phone: "+65 6123 4567" },
-    { city: "Dubai", country: "UAE", phone: "+971 4 123 4567" },
-  ];
+  // Removed global offices listing per request
 
   return (
     <motion.footer 
@@ -129,17 +123,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Global Offices Quick Contact */}
-            <div className="mb-6">
-              <h4 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">Global Offices</h4>
-              <div className="grid grid-cols-2 gap-2 text-xs text-gray-400">
-                {globalOffices.map((office, index) => (
-                  <div key={index}>
-                    <span className="font-medium">{office.city}, {office.country}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Global offices section removed */}
 
             <motion.div 
               className="flex space-x-4"
@@ -235,38 +219,9 @@ export default function Footer() {
             >
               © {currentYear} Crown Business Solutions. All rights reserved.
             </motion.div>
-            <motion.div 
-              className="flex items-center space-x-6 text-sm text-gray-400"
-              initial={{ x: 20, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 1.1 }}
-            >
-              {["Global Operations", "50+ Countries", "24/7 Support"].map((item, index) => (
-                <motion.span 
-                  key={item}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
-                >
-                  {item}
-                </motion.span>
-              ))}
-            </motion.div>
+            <motion.div />
           </motion.div>
-          <motion.div 
-            className="mt-4 text-center md:text-left"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 1.3 }}
-          >
-            <p className="text-xs text-gray-500">
-              Crown Business Solutions operates globally with offices in major international markets. 
-              Licensed and regulated in accordance with local jurisdictions.
-            </p>
-          </motion.div>
+          {/* Removed global operations blurb */}
         </motion.div>
       </div>
     </motion.footer>
