@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import React, { Suspense } from 'react';
-import Contact from "../components/Contact";
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
 import { containerVariants, itemVariants, floatingVariants } from '../utils/animations';
@@ -111,8 +110,7 @@ export default function ContactPage() {
         </motion.div>
       </section>
 
-      {/* Contact Form */}
-      <Contact />
+      {/* Contact Form removed per request */}
 
       {/* Contact Details - Modern Panel */}
       <section className="py-20 bg-gradient-to-br from-white via-amber-50/30 to-amber-100/20 relative overflow-hidden">
