@@ -165,46 +165,36 @@ export default function BusinessSolutions() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries We Transform</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">Built in hospitality, our playbooks scale across travel portfolios and adjacent asset‑heavy operations.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Card 1 - Primary */}
-            <div className="bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-3xl p-8 shadow-2xl shadow-amber-500/30 transform lg:scale-105 lg:row-span-2 flex flex-col">
-              <h3 className="text-2xl font-bold mb-4">🏨 Hospitality & Travel</h3>
-              <p className="text-amber-100 mb-6 font-semibold">Our core expertise</p>
-              <ul className="space-y-3 text-amber-50 list-disc list-inside flex-grow">
-                <li>Hotels, resorts, vacation rentals</li>
-                <li>Travel agencies, tour operators</li>
-                <li>Event venues, conference centers</li>
-              </ul>
-            </div>
-            {/* Card 2 */}
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">🏢 Corporate & Professional Services</h3>
-              <ul className="space-y-3 text-gray-600 list-disc list-inside">
-                <li>Office buildings, coworking spaces</li>
-                <li>Professional service firms</li>
-                <li>Franchise operations</li>
-              </ul>
-            </div>
-            {/* Card 3 */}
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">🏪 Retail & E-commerce</h3>
-              <ul className="space-y-3 text-gray-600 list-disc list-inside">
-                <li>Multi-location retail</li>
-                <li>Online marketplaces</li>
-                <li>Omnichannel operations</li>
-              </ul>
-            </div>
-            {/* Card 4 */}
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200 lg:col-start-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">🏭 Other Industries</h3>
-              <ul className="space-y-3 text-gray-600 list-disc list-inside">
-                <li>Healthcare facilities</li>
-                <li>Educational institutions</li>
-                <li>Entertainment venues</li>
-              </ul>
+          <div className="grid grid-cols-1 gap-8">
+            {/* Enhanced Primary Card - Hospitality */}
+            <div className="relative rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-amber-600" />
+              <div className="relative p-8 md:p-10 text-white grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="md:col-span-1">
+                  <h3 className="text-2xl font-bold mb-2">🏨 Hospitality & Travel</h3>
+                  <p className="text-amber-100 font-semibold">Our core expertise</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">We operate</h4>
+                  <ul className="space-y-2 text-amber-50 list-disc list-inside">
+                    <li>Hotels, aparthotels, vacation rentals</li>
+                    <li>Distribution via OTAs and direct</li>
+                    <li>Front‑desk, housekeeping, maintenance</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Outcomes</h4>
+                  <ul className="space-y-2 text-amber-50 list-disc list-inside">
+                    <li>RevPAR growth with daily pricing cadence</li>
+                    <li>Lower MTTR and higher uptime</li>
+                    <li>Faster resolutions and higher review scores</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
