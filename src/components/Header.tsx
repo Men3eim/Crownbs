@@ -13,6 +13,7 @@ export default function Header() {
     { name: "Capabilities", href: "/solutions", hasDropdown: true },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Our Story", href: "/about" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ];
 

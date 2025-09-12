@@ -180,6 +180,40 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* CV Upload Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Join Our <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Team</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Join our family-built team and be part of our journey in transforming hospitality operations with modern luxury.
+            </p>
+          </motion.div>
+
+          <div className="text-center py-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Interested in Joining Our Team?</h3>
+            <p className="text-gray-600 mb-8">Visit our careers page to explore current opportunities.</p>
+            <a
+              href="/careers"
+              className="inline-flex items-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              View Career Opportunities
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Map Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
         {/* Luxury Background Elements */}

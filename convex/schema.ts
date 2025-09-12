@@ -11,8 +11,11 @@ const applicationTables = {
     service: v.string(),
     message: v.string(),
     attachments: v.optional(v.array(v.id("_storage"))),
+    cvFileId: v.optional(v.id("_storage")),
+    inquiryType: v.optional(v.string()), // "general", "cv_upload", "partnership"
     status: v.string(), // "new", "in-progress", "completed"
-  }).index("by_status", ["status"]),
+  }).index("by_status", ["status"])
+    .index("by_type", ["inquiryType"]),
   
   properties: defineTable({
     name: v.string(),
