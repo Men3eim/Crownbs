@@ -20,26 +20,6 @@ export default function About() {
     decimal: (value: number) => `${(value / 10).toFixed(1)}%`,
   };
 
-  const team = [
-    {
-      name: "Hassan Arif",
-      position: "Chief Executive Officer",
-      bio: "Co‑founder who transformed CBS from a family startup into a £50M+ hospitality enterprise. Led the strategic expansion from guest communications to comprehensive hotel operations across 100+ UK properties.",
-      initials: "HA"
-    },
-    {
-      name: "Sarah Chen",
-      position: "Chief Operating Officer",
-      bio: "Former VP of Operations at leading global hospitality company, now driving enterprise-level operational excellence across our 120+ person team and seven specialized departments.",
-      initials: "SC"
-    },
-    {
-      name: "David Rodriguez",
-      position: "Head of Revenue Management",
-      bio: "Revenue optimization expert who has delivered 150%+ annual growth across our £50M+ portfolio, with proven expertise in scaling hospitality operations internationally.",
-      initials: "DR"
-    }
-  ];
 
   const milestones = [
     {
@@ -350,10 +330,26 @@ export default function About() {
               <div className="text-4xl mb-6">🎯</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
-                To empower every team member with the experience and skills needed to build their own successful business, 
-                while delivering exceptional operational excellence that transforms our clients' hospitality operations 
-                into industry-leading success stories.
+                At Crown Business Solutions, our mission is to:
               </p>
+              <ul className="text-gray-600 leading-relaxed text-lg mt-4 space-y-3">
+                <li className="flex items-start">
+                  <span className="text-amber-600 font-bold mr-3">•</span>
+                  <span><strong>Support & Streamline:</strong> Deliver seamless solutions across customer service, finance, revenue management, and maintenance, tailored to the unique needs of each hotel.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 font-bold mr-3">•</span>
+                  <span><strong>Empower People:</strong> Equip our teams and partners with the tools, training, and opportunities to grow, thrive, and deliver exceptional results.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 font-bold mr-3">•</span>
+                  <span><strong>Innovate & Automate:</strong> Continuously improve our systems and software to reduce complexity, enhance accuracy, and give hoteliers more time to focus on their guests.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-600 font-bold mr-3">•</span>
+                  <span><strong>Transform the Market:</strong> Provide UK small and medium hotels with accessible, scalable solutions that raise operational standards and unlock long-term sustainability.</span>
+                </li>
+              </ul>
             </motion.div>
 
             <motion.div
@@ -366,9 +362,15 @@ export default function About() {
               <div className="text-4xl mb-6">🌟</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
-                To be the global standard for family-built operational excellence, where every team member's growth 
-                directly contributes to our clients' success, creating a sustainable ecosystem of mutual achievement 
-                and industry transformation.
+                To redefine hotel operations for small and medium-sized properties in the UK by creating smarter, 
+                automated, and people-empowered solutions that set new standards for efficiency, service, and growth.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-lg mt-4">
+                We envision a future where every independent hotelier has access to enterprise-level technology 
+                and operational expertise, enabling them to compete effectively with larger chains while maintaining 
+                their unique character and personal touch. Through our innovative approach, we're building a new 
+                ecosystem where technology serves people, automation enhances human connection, and every hotel 
+                can achieve sustainable growth and exceptional guest experiences.
               </p>
             </motion.div>
           </div>
@@ -559,45 +561,6 @@ export default function About() {
       {/* Work Environment Section */}
       <WorkEnvironment />
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Enterprise Leadership</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              The leadership team that has guided our transformation from family startup to major hospitality enterprise.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                className="bg-gradient-to-br from-white to-gray-50/50 rounded-3xl p-8 shadow-xl border border-gray-200/80 text-center"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                  {member.initials}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <div className="text-amber-600 font-semibold mb-4">{member.position}</div>
-                <p className="text-gray-600 leading-relaxed">{member.bio}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </PageWrapper>
   );
 }

@@ -51,9 +51,9 @@ export default function Careers() {
       openings: "5+ Openings"
     },
     {
-      name: "Revenue Management",
-      description: "Dynamic pricing and revenue optimization strategies",
-      icon: "📈",
+      name: "Accounting",
+      description: "Financial management, bookkeeping, and financial reporting",
+      icon: "📊",
       openings: "3+ Openings"
     },
     {
@@ -218,6 +218,113 @@ export default function Careers() {
                 <p className="text-gray-600 leading-relaxed text-lg">{benefit.description}</p>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Perks and Benefits Section */}
+      <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-amber-50/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Perks & Benefits</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We believe in taking care of our team members with comprehensive benefits and perks that support both personal and professional growth.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {[
+              {
+                icon: "💰",
+                title: "Competitive Pay",
+                description: "Attractive salary packages that reflect your skills and experience, with regular performance reviews and market adjustments."
+              },
+              {
+                icon: "📈",
+                title: "Performance Raises",
+                description: "Regular salary increases based on performance, achievements, and contributions to the team's success."
+              },
+              {
+                icon: "🛡️",
+                title: "Social Insurance",
+                description: "Comprehensive social insurance coverage including retirement benefits, disability protection, and unemployment insurance."
+              },
+              {
+                icon: "🏥",
+                title: "Health Insurance",
+                description: "Full health insurance coverage for you and your family, including medical, dental, and vision care."
+              },
+              {
+                icon: "🏖️",
+                title: "Paid Vacation",
+                description: "Generous paid time off policy including annual leave, sick days, and personal days to maintain work-life balance."
+              },
+              {
+                icon: "🍽️",
+                title: "Food Vouchers",
+                description: "Monthly food vouchers to help with meal expenses, ensuring you're well-nourished and energized at work."
+              },
+              {
+                icon: "🏆",
+                title: "Rewards & Recognition",
+                description: "Regular recognition programs, performance bonuses, and achievement awards to celebrate your contributions and milestones."
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                className="group bg-white rounded-3xl p-8 border border-amber-100/80 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
+                variants={cardVariants}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{benefit.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Additional Benefits Highlight */}
+          <motion.div
+            className="mt-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-3xl p-8 md:p-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Plus Additional Perks
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+              <div className="flex flex-col items-center">
+                <div className="text-4xl mb-4">🎓</div>
+                <h4 className="text-xl font-bold mb-2">Professional Development</h4>
+                <p className="text-amber-100">Training programs, conferences, and skill development opportunities</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-4xl mb-4">🏢</div>
+                <h4 className="text-xl font-bold mb-2">Modern Workspace</h4>
+                <p className="text-amber-100">State-of-the-art office facilities in Alexandria with all amenities</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-4xl mb-4">🌍</div>
+                <h4 className="text-xl font-bold mb-2">Global Exposure</h4>
+                <p className="text-amber-100">Work with international clients and gain global business experience</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

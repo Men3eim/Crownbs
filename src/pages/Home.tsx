@@ -53,6 +53,78 @@ export default function Home() {
         <OTAMarquee />
         <Testimonials />
 
+        {/* Careers Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-amber-600/10 rounded-full blur-xl" />
+            <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-amber-400/5 to-amber-600/5 rounded-full blur-2xl" />
+            <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-amber-400/20 rotate-45" />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-400/30 mb-8 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-amber-400 rounded-full mr-3" />
+                <span className="text-amber-300 text-sm font-medium tracking-wide uppercase">Join Our Team</span>
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+                <AnimatedText
+                  text="Build Your Future With Us"
+                  highlightWords={["Future", "Us"]}
+                  highlightClassName="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent"
+                  delay={0.2}
+                />
+              </h2>
+
+              <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Join our family-built team in Alexandria, Egypt. From managing a growing UK hotel portfolio to embracing modern luxury—build your career with operational excellence.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a
+                  href="/careers"
+                  className="group relative bg-gradient-to-r from-amber-500 to-amber-600 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-2xl overflow-hidden hover:scale-105 hover:-translate-y-1 transition-all duration-300"
+                >
+                  <span className="relative z-10">Explore Careers</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+                
+                <a
+                  href="https://recruit.crownbs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative border-2 border-white text-white px-10 py-4 rounded-2xl font-bold text-lg backdrop-blur-sm bg-white/10 shadow-lg overflow-hidden hover:scale-105 hover:bg-white/20 transition-all duration-300"
+                >
+                  <span className="relative z-10">View Openings</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              {[
+                { number: '120+', label: 'Team Members', icon: '👥' },
+                { number: '100+', label: 'UK Hotels', icon: '🏨' },
+                { number: '24/7', label: 'Operations', icon: '⏰' },
+                { number: '7', label: 'Departments', icon: '🏢' }
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center group"
+                >
+                  <div className="text-4xl mb-3">{stat.icon}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Quick Contact CTA */}
         <section className="relative py-16 sm:py-20 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 overflow-hidden">
           {/* Simplified Background Elements */}
