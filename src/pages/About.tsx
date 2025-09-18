@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
 import CountUpNumber from '../components/CountUpNumber';
@@ -10,6 +11,41 @@ export default function About() {
     'Our Story | Crown Business Solutions',
     'From family startup to major hospitality enterprise: A £50M+ portfolio, 100+ UK hotels, and 120+ person team delivering enterprise-level excellence while maintaining family-built values.'
   );
+
+  // Carousel state for headquarters images
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const headquartersImages = [
+    {
+      src: '/work-environment/villa75.jpg',
+      alt: 'Villa 75 - Crown Business Solutions Alexandria headquarters',
+      title: 'Villa 75 Headquarters',
+      description: 'Premium workspace in Alexandria\'s business district',
+      features: ['Modern Facilities', 'Strategic Location'],
+      badge: '🏛️',
+      badgeText: 'Premium Location'
+    },
+    {
+      src: '/work-environment/Meeting.jpeg',
+      alt: 'Professional meeting room at Crown Business Solutions',
+      title: 'Professional Meeting Spaces',
+      description: 'State-of-the-art conference rooms for collaboration',
+      features: ['Advanced Technology', 'Collaborative Environment'],
+      badge: '💼',
+      badgeText: 'Professional'
+    }
+  ];
+
+  // Auto-rotate images every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === headquartersImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [headquartersImages.length]);
 
   // Formatters for count animations
   const formatters = {
@@ -653,40 +689,80 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="relative space-y-6">
-                {/* Villa Headquarters Image */}
+                {/* Animated Headquarters Carousel */}
                 <div className="relative group">
                   <div className="aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl">
-                    <img 
-                      src="/work-environment/villa75.jpg" 
-                      alt="Villa 75 - Crown Business Solutions Alexandria headquarters"
+                    <motion.img 
+                      key={currentImageIndex}
+                      src={headquartersImages[currentImageIndex].src}
+                      alt={headquartersImages[currentImageIndex].alt}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
+                      initial={{ opacity: 0, scale: 1.1 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                   </div>
+                  
                   {/* Enhanced Overlay with info */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-3xl flex items-end">
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-3xl flex items-end"
+                    key={`overlay-${currentImageIndex}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <div className="p-6 text-white">
-                      <h4 className="text-2xl font-bold mb-2">Villa 75 Headquarters</h4>
-                      <p className="text-gray-200 text-lg mb-3">Premium workspace in Alexandria's business district</p>
+                      <h4 className="text-2xl font-bold mb-2">{headquartersImages[currentImageIndex].title}</h4>
+                      <p className="text-gray-200 text-lg mb-3">{headquartersImages[currentImageIndex].description}</p>
                       <div className="flex items-center space-x-4 text-sm">
-                        <span className="flex items-center">
-                          <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
-                          Modern Facilities
-                        </span>
-                        <span className="flex items-center">
-                          <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
-                          Strategic Location
-                        </span>
+                        {headquartersImages[currentImageIndex].features.map((feature, index) => (
+                          <span key={index} className="flex items-center">
+                            <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                            {feature}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
+                  
                   {/* Enhanced floating badge */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20">
-                    <span className="text-white text-2xl">🏛️</span>
-                  </div>
+                  <motion.div 
+                    className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20"
+                    key={`badge-${currentImageIndex}`}
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <span className="text-white text-2xl">{headquartersImages[currentImageIndex].badge}</span>
+                  </motion.div>
+                  
                   {/* Additional floating element */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-amber-500/90 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                    Premium Location
+                  <motion.div 
+                    className="absolute top-4 left-4 px-3 py-1 bg-amber-500/90 backdrop-blur-sm rounded-full text-white text-sm font-medium"
+                    key={`badge-text-${currentImageIndex}`}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    {headquartersImages[currentImageIndex].badgeText}
+                  </motion.div>
+
+                  {/* Carousel Indicators */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {headquartersImages.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentImageIndex 
+                            ? 'bg-amber-400 w-8' 
+                            : 'bg-white/50 hover:bg-white/70'
+                        }`}
+                        onClick={() => setCurrentImageIndex(index)}
+                        aria-label={`Go to image ${index + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
 
