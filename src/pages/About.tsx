@@ -729,13 +729,13 @@ export default function About() {
                   
                   {/* Enhanced floating badge */}
                   <motion.div 
-                    className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20"
+                    className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl border-2 sm:border-4 border-white/20"
                     key={`badge-${currentImageIndex}`}
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <span className="text-white text-2xl">{headquartersImages[currentImageIndex].badge}</span>
+                    <span className="text-white text-sm sm:text-lg md:text-2xl">{headquartersImages[currentImageIndex].badge}</span>
                   </motion.div>
                   
                   {/* Additional floating element */}
@@ -783,8 +783,8 @@ export default function About() {
                     </div>
                   </div>
                   {/* Floating badge */}
-                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white text-xl">🎬</span>
+                  <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm sm:text-base md:text-xl">🎬</span>
                   </div>
                 </div>
 
