@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
-import WorkEnvironment from '../components/WorkEnvironment';
 import CountUpNumber from '../components/CountUpNumber';
 import { containerVariants, itemVariants, floatingVariants, statsVariants } from '../utils/animations';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -558,8 +557,197 @@ export default function About() {
         </div>
       </section>
 
-      {/* Work Environment Section */}
-      <WorkEnvironment />
+      {/* Professional Excellence Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-amber-600/10 rounded-full blur-xl" />
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-amber-400/5 to-amber-600/5 rounded-full blur-2xl" />
+          <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-amber-400/20 rotate-45" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">Professional Excellence</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Built on a foundation of family values, we've evolved into a world-class operation that delivers enterprise-level results with personal touch.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xl">🏢</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Modern Infrastructure</h3>
+                    <p className="text-gray-300 text-lg">State-of-the-art facilities in Alexandria, Egypt, equipped with cutting-edge technology and collaborative workspaces designed for maximum productivity and innovation.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xl">🌍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Global Operations</h3>
+                    <p className="text-gray-300 text-lg">Managing a growing UK hotel portfolio from our Alexandria headquarters, demonstrating our ability to deliver world-class service across international markets.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xl">⚡</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Innovation Hub</h3>
+                    <p className="text-gray-300 text-lg">Continuous investment in AI, automation, and modern technology solutions that keep us at the forefront of operational excellence and industry innovation.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Stats */}
+              <div className="grid grid-cols-2 gap-6 pt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-amber-400 mb-2">120+</div>
+                  <div className="text-gray-300 text-sm uppercase tracking-wider">Team Members</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-amber-400 mb-2">100+</div>
+                  <div className="text-gray-300 text-sm uppercase tracking-wider">UK Hotels</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-amber-400 mb-2">24/7</div>
+                  <div className="text-gray-300 text-sm uppercase tracking-wider">Operations</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-amber-400 mb-2">£50M+</div>
+                  <div className="text-gray-300 text-sm uppercase tracking-wider">Portfolio Value</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Visual Elements */}
+              <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="relative space-y-6">
+                {/* Villa Headquarters Image */}
+                <div className="relative group">
+                  <div className="aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/work-environment/villa75.jpg" 
+                      alt="Villa 75 - Crown Business Solutions Alexandria headquarters"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  {/* Enhanced Overlay with info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-3xl flex items-end">
+                    <div className="p-6 text-white">
+                      <h4 className="text-2xl font-bold mb-2">Villa 75 Headquarters</h4>
+                      <p className="text-gray-200 text-lg mb-3">Premium workspace in Alexandria's business district</p>
+                      <div className="flex items-center space-x-4 text-sm">
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                          Modern Facilities
+                        </span>
+                        <span className="flex items-center">
+                          <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                          Strategic Location
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Enhanced floating badge */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20">
+                    <span className="text-white text-2xl">🏛️</span>
+                  </div>
+                  {/* Additional floating element */}
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-amber-500/90 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+                    Premium Location
+                  </div>
+                </div>
+
+                {/* Team Culture Image */}
+                <div className="relative group">
+                  <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/work-environment/movie-night.jpg" 
+                      alt="Team building and cultural activities at Crown Business Solutions"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  {/* Overlay with info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl flex items-end">
+                    <div className="p-6 text-white">
+                      <h4 className="text-2xl font-bold mb-2">Team Culture</h4>
+                      <p className="text-gray-200 text-lg">Building connections through shared experiences</p>
+                    </div>
+                  </div>
+                  {/* Floating badge */}
+                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-xl">🎬</span>
+                  </div>
+                </div>
+
+                {/* Feature Pills */}
+                <div className="flex flex-wrap gap-3 justify-center">
+                  <span className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full text-sm font-medium border border-amber-400/30 backdrop-blur-sm">
+                    AI-Powered Systems
+                  </span>
+                  <span className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full text-sm font-medium border border-amber-400/30 backdrop-blur-sm">
+                    Global Connectivity
+                  </span>
+                  <span className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full text-sm font-medium border border-amber-400/30 backdrop-blur-sm">
+                    Collaborative Spaces
+                  </span>
+                </div>
+              </div>
+              </motion.div>
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <a
+              href="/careers"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300"
+            >
+              Join Our Professional Team
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </motion.div>
+        </div>
+      </section>
 
     </PageWrapper>
   );
