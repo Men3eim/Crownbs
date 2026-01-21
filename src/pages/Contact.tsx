@@ -104,7 +104,7 @@ export default function ContactPage() {
                 <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Languages Supported</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">Countries Covered</div>
             </div>
           </div>
         </motion.div>
