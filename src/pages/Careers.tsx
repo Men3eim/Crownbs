@@ -223,7 +223,7 @@ export default function Careers() {
           >
             {[
               { number: '120+', label: 'Team Members', icon: '👥' },
-              { number: '120+', label: 'UK Hotels', icon: '🏨' },
+              { number: '1000+', label: 'keys managed in UK', icon: '🏨' },
               { number: '24/7', label: 'Operations', icon: '⏰' },
               { number: '7', label: 'Departments', icon: '🏢' }
             ].map((stat, index) => (
@@ -531,8 +531,8 @@ export default function Careers() {
                   <div className="text-gray-300 text-sm uppercase tracking-wider">Support</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-400 mb-2">120+</div>
-                  <div className="text-gray-300 text-sm uppercase tracking-wider">UK Hotels</div>
+                  <div className="text-3xl font-bold text-amber-400 mb-2">1000+</div>
+                  <div className="text-gray-300 text-sm uppercase tracking-wider">keys managed in UK</div>
                 </div>
               </div>
             </motion.div>

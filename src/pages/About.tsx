@@ -9,7 +9,7 @@ import { usePageMeta } from '../hooks/usePageMeta';
 export default function About() {
   usePageMeta(
     'Our Story | Crown Business Solutions',
-    'From family startup to major hospitality enterprise: A £50M+ portfolio, 120+ UK hotels, and 120+ person team delivering enterprise-level excellence while maintaining family-built values.'
+    'From family startup to major hospitality enterprise: A £50M+ portfolio, 1000+ keys managed in UK, and 120+ person team delivering enterprise-level excellence while maintaining family-built values.'
   );
 
   // Carousel state for headquarters images
@@ -85,7 +85,7 @@ export default function About() {
     {
       year: "2024-2025",
       title: "Enterprise Excellence",
-      description: "Achieved major enterprise status with £50M+ portfolio value, 150%+ revenue growth, and seven specialized departments managing 120+ UK hotels with industry-leading operational excellence."
+      description: "Achieved major enterprise status with £50M+ portfolio value, 150%+ revenue growth, and seven specialized departments managing 1000+ keys in UK with industry-leading operational excellence."
     }
   ];
 
@@ -173,7 +173,7 @@ export default function About() {
             className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 px-4"
             variants={itemVariants}
           >
-            What began as a family venture answering guest calls has grown into a major hospitality enterprise—managing 120+ UK hotels with a 120+ person team across seven specialized departments, all while maintaining our family-built culture of excellence.
+            What began as a family venture answering guest calls has grown into a major hospitality enterprise—managing 1000+ keys in UK with a 120+ person team across seven specialized departments, all while maintaining our family-built culture of excellence.
           </motion.p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto animate-fade-in-up-delay-3 px-4">
@@ -195,7 +195,7 @@ export default function About() {
               <div className="relative">
                 <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
                   <CountUpNumber 
-                    endValue={120} 
+                    endValue={1000} 
                     format={formatters.plus} 
                     delay={700}
                     duration={2000}
@@ -203,7 +203,7 @@ export default function About() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">UK Hotels</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wider">keys managed in UK</div>
             </div>
             <div className="text-center group">
               <div className="relative">
@@ -254,7 +254,7 @@ export default function About() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 What began as a family venture with two founders answering guest calls has transformed into a major hospitality enterprise. 
                 Our family-built foundation provided the trust, dedication, and personal touch that enabled us to scale from a small operation 
-                to managing a £50M+ portfolio of 120+ UK hotels with a 120+ person team.
+                to managing a £50M+ portfolio of 1000+ keys in UK with a 120+ person team.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Today, we're a full-scale hospitality enterprise operating seven specialized departments from our Alexandria headquarters. 
@@ -661,8 +661,8 @@ export default function About() {
                   <div className="text-gray-300 text-sm uppercase tracking-wider">Team Members</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-400 mb-2">120+</div>
-                  <div className="text-gray-300 text-sm uppercase tracking-wider">UK Hotels</div>
+                  <div className="text-3xl font-bold text-amber-400 mb-2">1000+</div>
+                  <div className="text-gray-300 text-sm uppercase tracking-wider">keys managed in UK</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-amber-400 mb-2">24/7</div>

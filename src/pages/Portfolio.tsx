@@ -115,7 +115,7 @@ export default function Portfolio() {
             variants={containerVariants}
           >
             {[
-              { number: "120+", label: "Hotels in UK" },
+              { number: "1000+", label: "keys managed in UK" },
               { number: "120+", label: "Team in Alexandria" },
               { number: "1M+", label: "Operational Tickets Resolved" },
               { number: "24/7", label: "Operations Coverage" }

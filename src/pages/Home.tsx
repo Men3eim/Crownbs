@@ -34,7 +34,7 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { k: '120+', v: 'Hotels in UK' },
+                  { k: '1000+', v: 'keys managed in UK' },
                   { k: '120+', v: 'Team in Alexandria' },
                   { k: '24/7', v: 'Customer Operations' },
                   { k: 'End‑to‑End', v: 'Accounting • CS • Revenue' },
@@ -106,7 +106,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
                 { number: '120+', label: 'Team Members', icon: '👥' },
-                { number: '120+', label: 'UK Hotels', icon: '🏨' },
+                { number: '1000+', label: 'keys managed in UK', icon: '🏨' },
                 { number: '24/7', label: 'Operations', icon: '⏰' },
                 { number: '7', label: 'Departments', icon: '🏢' }
               ].map((stat, index) => (
