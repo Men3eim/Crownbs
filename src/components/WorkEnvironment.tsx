@@ -365,7 +365,7 @@ export default function WorkEnvironment() {
             { number: '120+', label: 'Team Members', icon: '👥' },
             { number: '24/7', label: 'Operations', icon: '⏰' },
             { number: '7', label: 'Departments', icon: '🏢' },
-            { number: '100+', label: 'UK Hotels Managed', icon: '🏨' }
+            { number: '120+', label: 'UK Hotels Managed', icon: '🏨' }
           ].map((stat, index) => (
             <motion.div
               key={index}

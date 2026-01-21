@@ -63,15 +63,6 @@ export default function AssetInfrastructure() {
       ]
     },
     {
-      industry: "Retail",
-      applications: [
-        "Store maintenance efficiency and equipment management",
-        "Asset lifecycle management and replacement planning",
-        "Safety compliance and risk management",
-        "Multi-location facility standardization"
-      ]
-    },
-    {
       industry: "Manufacturing",
       applications: [
         "Plant maintenance optimization and equipment reliability",

@@ -61,24 +61,6 @@ export default function OperationalExcellence() {
         "Workflow automation and digital transformation",
         "Performance management and productivity enhancement"
       ]
-    },
-    {
-      industry: "Retail",
-      applications: [
-        "Store operations optimization and efficiency improvement",
-        "Customer service excellence programs",
-        "Inventory management and supply chain optimization",
-        "Multi-location consistency and standardization"
-      ]
-    },
-    {
-      industry: "Healthcare",
-      applications: [
-        "Patient experience enhancement and care quality improvement",
-        "Facility operations optimization and compliance management",
-        "Staff efficiency and workflow optimization",
-        "Cost management while maintaining care standards"
-      ]
     }
   ];
 

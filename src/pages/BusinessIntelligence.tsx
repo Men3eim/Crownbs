@@ -54,30 +54,12 @@ export default function BusinessIntelligence() {
       ]
     },
     {
-      industry: "E-commerce",
-      applications: [
-        "Customer analytics and segmentation strategies",
-        "Sales optimization and conversion funnel analysis",
-        "Inventory forecasting and demand planning",
-        "Marketing ROI analysis and campaign optimization"
-      ]
-    },
-    {
       industry: "Corporate",
       applications: [
         "Operational KPIs and performance tracking",
         "Strategic planning support and scenario modeling",
         "Employee productivity and engagement analytics",
         "Financial performance analysis and forecasting"
-      ]
-    },
-    {
-      industry: "Retail",
-      applications: [
-        "Customer insights and shopping behavior analysis",
-        "Inventory optimization and demand forecasting",
-        "Market trend analysis and competitive intelligence",
-        "Store performance comparison and optimization"
       ]
     }
   ];

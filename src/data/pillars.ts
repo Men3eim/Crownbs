@@ -23,9 +23,7 @@ export const businessPillars: BusinessPillar[] = [
     ],
     applications: [
       "Hospitality: OTA optimization, dynamic room pricing, revenue per available room (RevPAR) maximization",
-      "E-commerce: Dynamic product pricing, marketplace optimization, conversion rate optimization",
-      "SaaS: Subscription pricing optimization, customer lifetime value maximization, churn reduction",
-      "Retail: Omnichannel revenue management, seasonal pricing strategies, inventory turnover optimization"
+      "SaaS: Subscription pricing optimization, customer lifetime value maximization, churn reduction"
     ]
   },
   {
@@ -43,9 +41,7 @@ export const businessPillars: BusinessPillar[] = [
     ],
     applications: [
       "Hospitality: Guest experience management, service delivery optimization, staff productivity enhancement",
-      "Corporate: Office operations streamlining, employee experience improvement, workflow automation",
-      "Retail: Store operations optimization, customer service excellence, inventory management",
-      "Healthcare: Patient experience enhancement, facility operations, compliance management"
+      "Corporate: Office operations streamlining, employee experience improvement, workflow automation"
     ]
   },
   {
@@ -64,7 +60,6 @@ export const businessPillars: BusinessPillar[] = [
     applications: [
       "Hospitality: Property maintenance excellence, facility operations optimization, guest safety compliance",
       "Corporate: Office buildings management, facility optimization, workplace safety programs",
-      "Retail: Store maintenance efficiency, equipment lifecycle management, safety compliance",
       "Manufacturing: Plant maintenance optimization, asset performance tracking, regulatory compliance"
     ]
   },
@@ -83,9 +78,7 @@ export const businessPillars: BusinessPillar[] = [
     ],
     applications: [
       "Hospitality: Guest behavior analysis, market intelligence, revenue optimization insights",
-      "E-commerce: Customer analytics, sales optimization, conversion funnel analysis",
-      "Corporate: Operational KPIs, performance tracking, strategic planning support",
-      "Retail: Customer insights, inventory optimization, market trend analysis"
+      "Corporate: Operational KPIs, performance tracking, strategic planning support"
     ]
   },
   {
@@ -103,7 +96,6 @@ export const businessPillars: BusinessPillar[] = [
     ],
     applications: [
       "Hospitality: OTA management, travel partnerships, global booking platform integration",
-      "Retail: Distribution channels optimization, marketplace partnerships, international expansion",
       "B2B: Channel partner management, reseller network development, strategic alliances",
       "Technology: Integration partnerships, API management, global reseller networks"
     ]

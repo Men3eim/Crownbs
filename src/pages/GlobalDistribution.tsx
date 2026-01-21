@@ -54,15 +54,6 @@ export default function GlobalDistribution() {
       ]
     },
     {
-      industry: "Retail",
-      applications: [
-        "Distribution channels optimization and management",
-        "Marketplace partnerships and integration",
-        "International expansion and localization",
-        "Omnichannel distribution strategies"
-      ]
-    },
-    {
       industry: "B2B",
       applications: [
         "Channel partner management and development",
