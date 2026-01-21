@@ -121,8 +121,8 @@ export default function About() {
       icon: "🔧"
     },
     {
-      name: "Software Engineering",
-      description: "Custom solutions and technology development",
+      name: "Technology",
+      description: "Automation, integrations, and software systems that improve daily operations",
       icon: "💻"
     }
   ];

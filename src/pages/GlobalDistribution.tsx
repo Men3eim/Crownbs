@@ -37,8 +37,8 @@ export default function GlobalDistribution() {
       icon: "💼"
     },
     {
-      title: "Cross-Border Commerce",
-      description: "Cross-border commerce solutions and international market entry strategies",
+      title: "OTA & Metasearch Expansion",
+      description: "Expand visibility through OTAs and metasearch with localized content, targeted promos, and performance tracking",
       icon: "✈️"
     }
   ];
@@ -59,7 +59,7 @@ export default function GlobalDistribution() {
         "Channel partner management and development",
         "Reseller network development and support",
         "Strategic alliances and joint ventures",
-        "Global partner ecosystem management"
+        "Global partner ecosystem management with onboarding, enablement, governance, and performance reporting"
       ]
     },
     {
@@ -74,39 +74,19 @@ export default function GlobalDistribution() {
   ];
 
   return (
-    <PageWrapper className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <PageWrapper className="min-h-screen">
       {/* Hero Section */}
-      <motion.section 
-        className="pt-32 pb-16 sm:pt-40 sm:pb-20 relative overflow-hidden"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-transparent" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-50 to-indigo-100/50 border border-indigo-200/50 mb-8 backdrop-blur-sm shadow-lg">
-              <span className="text-6xl mr-4">🌐</span>
-              <span className="text-indigo-800 text-sm font-medium tracking-wide">Profitable Channel Mix</span>
-            </div>
-
-            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
-              <AnimatedText
-                text="Fill Calendars with Profitable Channel Mix"
-                highlightWords={["Profitable", "Channel"]}
-                highlightClassName="bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 bg-clip-text text-transparent"
-                delay={0.3}
-              />
-            </div>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Fill calendars profitably with content standards, parity checks, and promotions cadence—
-              monitored by conversion, parity error rate, and channel mix profitability.
-            </p>
-          </motion.div>
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8">
+            <AnimatedText text="Fill Calendars with Profitable Channel Mix" highlightWords={["Profitable", "Channel"]} delay={0.3} />
+          </div>
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Fill calendars profitably with content standards, parity checks, and promotions cadence—
+            monitored by conversion, parity error rate, and channel mix profitability.
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Key Capabilities */}
       <motion.section 

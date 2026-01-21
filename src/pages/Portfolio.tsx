@@ -117,7 +117,7 @@ export default function Portfolio() {
             {[
               { number: "120+", label: "Hotels in UK" },
               { number: "120+", label: "Team in Alexandria" },
-              { number: "1M+", label: "Operational Tasks Resolved" },
+              { number: "1M+", label: "Operational Tickets Resolved" },
               { number: "24/7", label: "Operations Coverage" }
             ].map((stat, index) => (
               <motion.div

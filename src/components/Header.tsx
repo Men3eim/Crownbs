@@ -24,7 +24,7 @@ export default function Header() {
     { name: "Data & Analytics", href: "/solutions/business-intelligence" },
     { name: "Profitable Channel Mix", href: "/solutions/global-distribution" },
     { name: "Marketing", href: "/solutions/marketing" },
-    { name: "Software Engineering", href: "/solutions/software-engineering" },
+    { name: "Technology", href: "/solutions/software-engineering" },
   ];
 
   const isActive = (href: string) => location.pathname === href;

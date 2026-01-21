@@ -1,18 +1,24 @@
 import PageWrapper from '../components/PageWrapper';
 import AnimatedText from '../components/AnimatedText';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function SoftwareEngineering() {
+  usePageMeta(
+    'Technology | Crown Business Solutions',
+    'Technology that improves hospitality operations: integrations, automation, data, reliability, and security that protect the guest experience and drive performance.'
+  );
+
   return (
     <PageWrapper className="min-h-screen">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8">
-            <AnimatedText text="Software Engineering Excellence" highlightWords={["Excellence"]} delay={0.3} />
+            <AnimatedText text="Technology That Improves the Business" highlightWords={["Technology", "Business"]} delay={0.3} />
           </div>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Where cutting-edge technology meets operational mastery. Our elite software engineering team 
-            transforms hospitality through intelligent automation, AI-driven insights, and seamless digital experiences.
+            We build and run the systems behind distribution, revenue, guest service, finance, and maintenance—
+            turning SOPs into reliable workflows, connecting tools into one ecosystem, and delivering clear operational visibility.
           </p>
         </div>
       </section>
@@ -22,44 +28,44 @@ export default function SoftwareEngineering() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Engineering Excellence That Drives Results
+              Technology That Makes Operations Run Better
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our software engineering department is the technological backbone that powers every aspect 
-              of our hospitality operations, delivering measurable value through innovation and precision.
+              Software is the delivery mechanism—but our focus is business outcomes: fewer manual touches, faster resolution,
+              cleaner data, better channel performance, and a consistent guest experience across the portfolio.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Operational Intelligence',
-                description: 'Advanced AI and machine learning algorithms that analyze real-time operational data, predict guest behavior patterns, and optimize resource allocation across all properties.',
+                title: 'Workflow Automation',
+                description: 'Turn SOPs into automated workflows: ticketing, approvals, escalations, QA sign‑offs, and follow-ups—so teams move faster with less friction.',
                 icon: '🧠'
               },
               {
-                title: 'Seamless Automation',
-                description: 'Sophisticated workflow automation that eliminates manual processes, reduces human error, and accelerates response times across guest services and internal operations.',
+                title: 'Systems Integration',
+                description: 'Connect PMS, channel manager, OTAs, payments, CRM, and internal tools—so data stays consistent and actions happen in the right system, automatically.',
                 icon: '⚡'
               },
               {
-                title: 'Digital Guest Experience',
-                description: 'Revolutionary guest interaction platforms powered by conversational AI, predictive analytics, and personalized service delivery that exceeds luxury expectations.',
+                title: 'Data & Visibility',
+                description: 'A single source of truth for occupancy, revenue, service performance, and compliance—delivered through dashboards and alerts people actually use.',
                 icon: '💎'
               },
               {
-                title: 'Business Intelligence',
-                description: 'Advanced data analytics and visualization platforms that transform raw operational data into actionable insights, driving strategic decisions and revenue optimization.',
+                title: 'Reliability & Monitoring',
+                description: 'Uptime, observability, and incident response: monitoring, alerting, runbooks, and change control that keep critical workflows running 24/7.',
                 icon: '📊'
               },
               {
-                title: 'Integration Mastery',
-                description: 'Seamless connectivity between all systems - from OTAs and PMS to CRM and payment platforms - creating a unified ecosystem that operates flawlessly.',
+                title: 'Security & Compliance',
+                description: 'Protect guest and payment data with secure design, least-privilege access, audit trails, and compliance controls aligned to hospitality requirements.',
                 icon: '🔗'
               },
               {
-                title: 'Innovation Leadership',
-                description: 'Continuous research and development of next-generation hospitality technologies, staying ahead of industry trends and setting new standards for excellence.',
+                title: 'Continuous Improvement',
+                description: 'Iterate what matters: measure outcomes, remove bottlenecks, and ship improvements that reduce costs, protect reviews, and support growth.',
                 icon: '🚀'
               }
             ].map((value, index) => (
@@ -82,11 +88,10 @@ export default function SoftwareEngineering() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Cutting-Edge Technology Arsenal
+              How We Apply Technology in the Business
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We leverage the most advanced technologies and methodologies to deliver enterprise-grade solutions 
-              that scale with our business and exceed industry standards.
+              Practical, operations-first technology—built to reduce manual work, improve accuracy, and keep teams aligned across departments.
             </p>
           </div>
 
@@ -94,25 +99,25 @@ export default function SoftwareEngineering() {
             <div className="space-y-8">
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="text-3xl mr-3">🤖</span>
-                  AI & Machine Learning
+                  <span className="text-3xl mr-3">🔗</span>
+                  Integrations & APIs
                 </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Predictive analytics for revenue optimization and demand forecasting</span>
+                    <span>Connect PMS/channel manager/OTAs so rates, availability, and content stay consistent</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Natural language processing for enhanced guest communication</span>
+                    <span>Automate handoffs between departments (Revenue → CS → Ops → Finance)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Computer vision for property management and quality assurance</span>
+                    <span>Reduce errors with validation, retries, and audit trails</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Intelligent automation for dynamic pricing and inventory management</span>
+                    <span>Standardize integrations so new properties onboard faster</span>
                   </li>
                 </ul>
               </div>
@@ -120,24 +125,24 @@ export default function SoftwareEngineering() {
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <span className="text-3xl mr-3">⚙️</span>
-                  Advanced Automation
+                  Automation & Orchestration
                 </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Intelligent workflow orchestration across all operational touchpoints</span>
+                    <span>Workflow templates aligned to SOPs (triage, escalation, QA, sign‑off)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Real-time monitoring and automated incident response systems</span>
+                    <span>Queue-based processing for reliability under load</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Smart resource allocation and capacity optimization</span>
+                    <span>Automated reminders and follow-ups to reduce leakage</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Automated quality assurance and compliance monitoring</span>
+                    <span>Role-based approvals and documentation for compliance</span>
                   </li>
                 </ul>
               </div>
@@ -146,25 +151,25 @@ export default function SoftwareEngineering() {
             <div className="space-y-8">
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="text-3xl mr-3">📱</span>
-                  Digital Innovation
+                  <span className="text-3xl mr-3">📊</span>
+                  Data, Reporting & Controls
                 </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Next-generation guest mobile applications with AI-powered features</span>
+                    <span>Dashboards for occupancy, revenue, service KPIs, and compliance</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Immersive virtual reality property tours and experiences</span>
+                    <span>Alerts for exceptions: parity issues, SLA breaches, and repeat faults</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Voice-activated concierge services and smart room controls</span>
+                    <span>Daily/weekly controls packs for management review</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Blockchain-based loyalty programs and secure transactions</span>
+                    <span>Clean data pipelines for consistent decision-making</span>
                   </li>
                 </ul>
               </div>
@@ -172,24 +177,24 @@ export default function SoftwareEngineering() {
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <span className="text-3xl mr-3">🔒</span>
-                  Enterprise Security
+                  Reliability & Security
                 </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Zero-trust security architecture with advanced threat detection</span>
+                    <span>Monitoring, alerting, and runbooks for critical systems</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>End-to-end encryption for all guest data and communications</span>
+                    <span>Secure access control and audit trails for sensitive actions</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Compliance automation for GDPR, PCI-DSS, and industry standards</span>
+                    <span>Compliance controls aligned to GDPR and PCI requirements</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-amber-500 mr-3 mt-1">▶</span>
-                    <span>Continuous security monitoring and automated vulnerability management</span>
+                    <span>Change management to reduce incidents and regressions</span>
                   </li>
                 </ul>
               </div>
@@ -203,20 +208,19 @@ export default function SoftwareEngineering() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Measurable Impact on Operations
+              Measurable Operational Impact
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our software engineering excellence translates directly into operational improvements 
-              and business value across all properties.
+              Technology is only valuable when it improves outcomes—speed, accuracy, compliance, and guest experience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { metric: '95%', label: 'Operational Efficiency Increase', description: 'Through intelligent automation and process optimization' },
-              { metric: '40%', label: 'Faster Response Times', description: 'Automated systems and AI-powered decision making' },
-              { metric: '99.9%', label: 'System Uptime', description: 'Enterprise-grade reliability and monitoring' },
-              { metric: '60%', label: 'Cost Reduction', description: 'Streamlined workflows and automated resource management' }
+              { metric: '99.9%', label: 'System Uptime', description: 'Monitoring, alerting, and resilient workflows' },
+              { metric: '2x', label: 'Faster Resolution', description: 'Automated triage, escalation, and visibility' },
+              { metric: '30%', label: 'Fewer Manual Touches', description: 'Integrations and standardized automation' },
+              { metric: '24/7', label: 'Operational Coverage', description: 'Always-on workflows for critical operations' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-5xl md:text-6xl font-bold text-amber-400 mb-4">
@@ -238,11 +242,11 @@ export default function SoftwareEngineering() {
       <section className="py-20 bg-gradient-to-r from-amber-600 to-amber-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Experience Engineering Excellence?
+            Ready to Improve Your Tech-Enabled Operations?
           </h2>
           <p className="text-xl text-amber-100 mb-8">
-            Discover how our software engineering expertise can transform your hospitality operations 
-            and deliver unprecedented value through technology innovation.
+            See how integrations, automation, and clear reporting can reduce friction, protect the guest experience,
+            and help the business scale.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-amber-700 px-8 py-4 rounded-xl font-semibold hover:bg-amber-50 transition-colors">

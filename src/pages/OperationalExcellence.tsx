@@ -65,39 +65,19 @@ export default function OperationalExcellence() {
   ];
 
   return (
-    <PageWrapper className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <PageWrapper className="min-h-screen">
       {/* Hero Section */}
-      <motion.section 
-        className="pt-32 pb-16 sm:pt-40 sm:pb-20 relative overflow-hidden"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 border border-blue-200/50 mb-8 backdrop-blur-sm shadow-lg">
-              <span className="text-6xl mr-4">🏢</span>
-              <span className="text-blue-800 text-sm font-medium tracking-wide">Reduce Time‑to‑Resolution</span>
-            </div>
-
-            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
-              <AnimatedText
-                text="Reduce Time‑to‑Resolution, Raise Standards"
-                highlightWords={["Reduce", "Standards"]}
-                highlightClassName="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent"
-                delay={0.3}
-              />
-            </div>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Cut time‑to‑resolution, reduce repeat issues, and raise standards with SOPs, checklists,
-              and escalation paths—measured by response/resolve SLAs and review sentiment.
-            </p>
-          </motion.div>
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8">
+            <AnimatedText text="Reduce Time‑to‑Resolution, Raise Standards" highlightWords={["Reduce", "Standards"]} delay={0.3} />
+          </div>
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Cut time‑to‑resolution, reduce repeat issues, and raise standards with SOPs, checklists,
+            and escalation paths—measured by response/resolve SLAs and review sentiment.
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Key Capabilities */}
       <motion.section 

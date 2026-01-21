@@ -65,39 +65,19 @@ export default function BusinessIntelligence() {
   ];
 
   return (
-    <PageWrapper className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <PageWrapper className="min-h-screen">
       {/* Hero Section */}
-      <motion.section 
-        className="pt-32 pb-16 sm:pt-40 sm:pb-20 relative overflow-hidden"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-50 to-purple-100/50 border border-purple-200/50 mb-8 backdrop-blur-sm shadow-lg">
-              <span className="text-6xl mr-4">📊</span>
-              <span className="text-purple-800 text-sm font-medium tracking-wide">Business Intelligence & Analytics</span>
-            </div>
-
-            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
-              <AnimatedText
-                text="See Issues Early, Decide Faster"
-                highlightWords={["Decide", "Faster"]}
-                highlightClassName="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent"
-                delay={0.3}
-              />
-            </div>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Detect anomalies early, forecast accurately, and shorten decision time—
-              with data quality SLAs and alerts routed to Revenue and Operations.
-            </p>
-          </motion.div>
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8">
+            <AnimatedText text="See Issues Early, Decide Faster" highlightWords={["Decide", "Faster"]} delay={0.3} />
+          </div>
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Detect anomalies early, forecast accurately, and shorten decision time—
+            with data quality SLAs and alerts routed to Revenue and Operations.
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Key Capabilities */}
       <motion.section 

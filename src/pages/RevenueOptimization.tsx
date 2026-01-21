@@ -44,39 +44,19 @@ export default function RevenueOptimization() {
   ];
 
   return (
-    <PageWrapper className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <PageWrapper className="min-h-screen">
       {/* Hero Section */}
-      <motion.section
-        className="pt-32 pb-16 sm:pt-40 sm:pb-20 relative overflow-hidden"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 to-transparent" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 to-amber-100/50 border border-amber-200/50 mb-8 backdrop-blur-sm shadow-lg">
-              <span className="text-6xl mr-4">🎯</span>
-              <span className="text-amber-800 text-sm font-medium tracking-wide">Grow RevPAR</span>
-            </div>
-
-            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
-              <AnimatedText
-                text="Grow RevPAR with Precision Pricing"
-                highlightWords={["Grow", "RevPAR"]}
-                highlightClassName="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent"
-                delay={0.3}
-              />
-            </div>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Lift RevPAR 6–12% with daily pricing playbooks, parity audits, and forecast‑driven rules—
-              executed within SLA windows and aligned with Operations and Accounting.
-            </p>
-          </motion.div>
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8">
+            <AnimatedText text="Grow RevPAR with Precision Pricing" highlightWords={["Grow", "RevPAR"]} delay={0.3} />
+          </div>
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Lift RevPAR 6–12% with daily pricing playbooks, parity audits, and forecast‑driven rules—
+            executed within SLA windows and aligned with Operations and Accounting.
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Key Capabilities */}
       <motion.section
