@@ -77,36 +77,12 @@ export default function ContactPage() {
           </div>
 
           <motion.p
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 px-4"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
             variants={itemVariants}
           >
             Ready to transform your business?
             Connect with our global team of experts for a personalized consultation on our industry-adaptable solutions.
           </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto animate-fade-in-up-delay-3 px-4">
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Global Support</div>
-            </div>
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">&lt;1hr</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Response Time</div>
-            </div>
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="text-gray-600 text-sm uppercase tracking-wider">Countries Covered</div>
-            </div>
-          </div>
         </motion.div>
       </section>
 
