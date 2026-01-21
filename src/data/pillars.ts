@@ -59,8 +59,7 @@ export const businessPillars: BusinessPillar[] = [
     ],
     applications: [
       "Hospitality: Property maintenance excellence, facility operations optimization, guest safety compliance",
-      "Corporate: Office buildings management, facility optimization, workplace safety programs",
-      "Manufacturing: Plant maintenance optimization, asset performance tracking, regulatory compliance"
+      "Corporate: Office buildings management, facility optimization, workplace safety programs"
     ]
   },
   {
@@ -73,7 +72,7 @@ export const businessPillars: BusinessPillar[] = [
       "Real-time performance dashboards and KPI visualization",
       "Predictive analytics and machine learning forecasting",
       "Strategic decision support and scenario modeling",
-      "Data integration and warehouse management",
+      "Data integration and data warehousing",
       "Business performance benchmarking and competitive analysis"
     ],
     applications: [
@@ -92,7 +91,6 @@ export const businessPillars: BusinessPillar[] = [
       "Global market expansion and localization strategies",
       "Distribution network optimization and performance tracking",
       "Partner relationship management and support systems",
-      "Cross-border commerce and international market entry"
     ],
     applications: [
       "Hospitality: OTA management, travel partnerships, global booking platform integration",

@@ -108,9 +108,9 @@ export default function Portfolio() {
           viewport={{ once: true, amount: 0.3 }}
         >
           {[
-            { value: "500+", label: "Properties Under Management" },
+            { value: "1900+", label: "Units Under Management" },
             { value: "89%", label: "Average Occupancy Rate" },
-            { value: "$150M", label: "Annual Revenue Generated" }
+            { value: "$150M", label: "Revenue Generated" }
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -189,7 +189,7 @@ export default function Portfolio() {
                       {item.metric || `$${((item.revenue || 0) / 1000000).toFixed(1)}M`}
                     </div>
                     <div className="text-xs text-gray-500 uppercase tracking-wider">
-                      {item.metric ? "Global Reach" : "Annual Revenue"}
+                      {item.metric ? "Global Reach" : "Revenue"}
                     </div>
                   </div>
                 </div>

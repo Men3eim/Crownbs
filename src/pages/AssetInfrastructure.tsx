@@ -61,15 +61,6 @@ export default function AssetInfrastructure() {
         "Energy efficiency and sustainability initiatives",
         "Maintenance cost reduction and asset optimization"
       ]
-    },
-    {
-      industry: "Manufacturing",
-      applications: [
-        "Plant maintenance optimization and equipment reliability",
-        "Asset performance tracking and predictive maintenance",
-        "Regulatory compliance and safety management",
-        "Production facility optimization and efficiency"
-      ]
     }
   ];
 
