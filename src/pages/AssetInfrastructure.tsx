@@ -37,8 +37,8 @@ export default function AssetInfrastructure() {
       icon: "🌱"
     },
     {
-      title: "Vendor Management",
-      description: "Vendor SLAs, performance tracking, and cost control for consistent service delivery and quality",
+      title: "Contractor Management",
+      description: "Contractor SLAs, performance tracking, and cost control for consistent service delivery and quality",
       icon: "🤝"
     }
   ];
@@ -51,7 +51,7 @@ export default function AssetInfrastructure() {
         "Guest safety checks, statutory compliance, and documented audit trails",
         "Ticketing workflows, SLA tracking, and quality assurance sign‑offs",
         "Utilities and energy controls to reduce cost without compromising comfort",
-        "Vendor management and service quality assurance across property partners"
+        "Contractor management and service quality assurance across property partners"
       ]
     }
   ];
@@ -85,7 +85,7 @@ export default function AssetInfrastructure() {
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
               Hospitality-first maintenance that keeps rooms sale-ready and protects reviews.
-              We implement preventive schedules, vendor SLAs, and lifecycle controls—tracked with MTTR, preventive/reactive ratio, and cost per room.
+              We implement preventive schedules, contractor SLAs, and lifecycle controls—tracked with MTTR, preventive/reactive ratio, and cost per room.
             </p>
           </motion.div>
         </div>
@@ -190,7 +190,7 @@ export default function AssetInfrastructure() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>Ticket → Triage → Assign → Resolve → QA → Sign‑off</li>
-                <li>Vendor dispatch with SLA and cost controls</li>
+                <li>Contractor dispatch with SLA and cost controls</li>
                 <li>Lifecycle updates for FF&E and critical systems</li>
               </ul>
             </div>
@@ -199,7 +199,7 @@ export default function AssetInfrastructure() {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>Out-of-order rooms, uptime, and MTTR</li>
                 <li>Preventive vs. reactive ratio and repeat-fault rate</li>
-                <li>Cost per room and vendor SLA hit rate</li>
+                <li>Cost per room and contractor SLA hit rate</li>
               </ul>
             </div>
           </div>

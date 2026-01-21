@@ -55,7 +55,7 @@ export const businessPillars: BusinessPillar[] = [
       "Complete asset lifecycle management and tracking",
       "Compliance and safety management systems",
       "Energy efficiency and sustainability initiatives",
-      "Vendor management and contract optimization"
+      "Contractor management and contract optimization"
     ],
     applications: [
       "Hospitality: Property maintenance excellence, facility operations optimization, guest safety compliance",

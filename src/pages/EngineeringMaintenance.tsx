@@ -120,7 +120,7 @@ export default function EngineeringMaintenance() {
                   "IoT sensor integration",
                   "Machine learning failure prediction",
                   "Automated work order generation",
-                  "Vendor management automation",
+                  "Contractor management automation",
                   "Cost optimization algorithms"
                 ],
                 benefits: "Prevents 90% of equipment failures and reduces maintenance costs by 40%"
