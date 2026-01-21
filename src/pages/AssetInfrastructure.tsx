@@ -7,38 +7,38 @@ import { usePageMeta } from '../hooks/usePageMeta';
 export default function AssetInfrastructure() {
   usePageMeta(
     'Asset & Infrastructure Management | Crown Business Solutions',
-    'Comprehensive facility management, maintenance optimization, and asset lifecycle solutions that maximize asset value and operational uptime.'
+    'Hospitality-focused facility management, preventive maintenance, and asset lifecycle controls that protect the guest experience and maximize operational uptime.'
   );
 
   const capabilities = [
     {
-      title: "Strategic Facility Management",
-      description: "Comprehensive facility management and space optimization to maximize efficiency and reduce costs",
+      title: "Hospitality Facility Standards",
+      description: "Brand-standard facility routines and room-readiness controls to protect guest experience across the estate",
       icon: "🏗️"
     },
     {
-      title: "Predictive Maintenance",
-      description: "Advanced predictive and preventive maintenance programs to minimize downtime and extend asset life",
+      title: "Preventive Maintenance Programs",
+      description: "Planned preventive schedules that reduce downtime, extend asset life, and keep rooms sale-ready",
       icon: "🔧"
     },
     {
-      title: "Asset Lifecycle Management",
-      description: "Complete asset lifecycle tracking and management from acquisition to disposal",
+      title: "Asset Lifecycle Controls",
+      description: "Lifecycle tracking for FF&E and critical systems with budgets, renewals, and replacement planning",
       icon: "📋"
     },
     {
-      title: "Compliance & Safety",
-      description: "Comprehensive compliance and safety management systems to ensure regulatory adherence",
+      title: "Guest Safety & Compliance",
+      description: "Safety checks, statutory compliance, and audit trails that reduce risk and improve incident readiness",
       icon: "🛡️"
     },
     {
-      title: "Energy Efficiency",
-      description: "Energy efficiency initiatives and sustainability programs to reduce environmental impact",
+      title: "Energy & Utilities Optimization",
+      description: "Energy and utilities monitoring to reduce waste while maintaining comfort and service levels",
       icon: "🌱"
     },
     {
       title: "Vendor Management",
-      description: "Strategic vendor management and contract optimization for cost-effective service delivery",
+      description: "Vendor SLAs, performance tracking, and cost control for consistent service delivery and quality",
       icon: "🤝"
     }
   ];
@@ -47,19 +47,11 @@ export default function AssetInfrastructure() {
     {
       industry: "Hospitality",
       applications: [
-        "Property maintenance excellence and guest safety compliance",
-        "Facility operations optimization and energy management",
-        "Preventive maintenance scheduling and cost control",
-        "Vendor management and service quality assurance"
-      ]
-    },
-    {
-      industry: "Corporate",
-      applications: [
-        "Office buildings management and space optimization",
-        "Facility optimization and workplace safety programs",
-        "Energy efficiency and sustainability initiatives",
-        "Maintenance cost reduction and asset optimization"
+        "Room-readiness standards and preventative maintenance to reduce out-of-order rooms",
+        "Guest safety checks, statutory compliance, and documented audit trails",
+        "Ticketing workflows, SLA tracking, and quality assurance sign‑offs",
+        "Utilities and energy controls to reduce cost without compromising comfort",
+        "Vendor management and service quality assurance across property partners"
       ]
     }
   ];
@@ -84,16 +76,16 @@ export default function AssetInfrastructure() {
 
             <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-normal px-2">
               <AnimatedText
-                text="Increase Uptime, Lower Maintenance Cost"
-                highlightWords={["Uptime", "Cost"]}
+                text="Protect the Guest Experience. Reduce Downtime."
+                highlightWords={["Guest", "Downtime"]}
                 highlightClassName="bg-gradient-to-r from-green-500 via-green-600 to-green-700 bg-clip-text text-transparent"
                 delay={0.3}
               />
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-              Increase uptime and lower total cost with preventive schedules, vendor SLAs, and lifecycle controls—
-              tracked with MTTR, preventive/reactive ratio, and cost per unit.
+              Hospitality-first maintenance that keeps rooms sale-ready and protects reviews.
+              We implement preventive schedules, vendor SLAs, and lifecycle controls—tracked with MTTR, preventive/reactive ratio, and cost per room.
             </p>
           </motion.div>
         </div>
@@ -189,25 +181,25 @@ export default function AssetInfrastructure() {
             <div className="bg-white rounded-2xl p-6 border border-green-100">
               <h3 className="text-xl font-bold text-gray-900 mb-3">SOPs & SLAs</h3>
               <ul className="space-y-2 text-sm text-gray-700">
-                <li>Preventive schedules per asset class</li>
-                <li>Response times by fault severity</li>
-                <li>Safety and compliance controls</li>
+                <li>Room-readiness checks and preventive schedules by asset class</li>
+                <li>Response times by severity (guest-impact first)</li>
+                <li>Safety, statutory compliance, and inspection logs</li>
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-green-100">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Workflow</h3>
               <ul className="space-y-2 text-sm text-gray-700">
-                <li>Ticket → Assign → Resolve → QA → Sign‑off</li>
-                <li>Vendor dispatch with SLA tracking</li>
-                <li>Lifecycle updates and cost capture</li>
+                <li>Ticket → Triage → Assign → Resolve → QA → Sign‑off</li>
+                <li>Vendor dispatch with SLA and cost controls</li>
+                <li>Lifecycle updates for FF&E and critical systems</li>
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-green-100">
               <h3 className="text-xl font-bold text-gray-900 mb-3">KPIs</h3>
               <ul className="space-y-2 text-sm text-gray-700">
-                <li>Uptime and mean time to repair (MTTR)</li>
-                <li>Preventive vs. reactive ratio</li>
-                <li>Cost per room/unit and vendor SLA hit rate</li>
+                <li>Out-of-order rooms, uptime, and MTTR</li>
+                <li>Preventive vs. reactive ratio and repeat-fault rate</li>
+                <li>Cost per room and vendor SLA hit rate</li>
               </ul>
             </div>
           </div>
@@ -225,10 +217,10 @@ export default function AssetInfrastructure() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready to Optimize Your Assets?
+              Ready to Improve Property Uptime?
             </h2>
             <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-              Maximize asset value and operational efficiency with our comprehensive infrastructure management solutions.
+              Keep rooms sale-ready, reduce downtime, and improve compliance with a hospitality-first maintenance and asset program.
             </p>
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
@@ -238,7 +230,7 @@ export default function AssetInfrastructure() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
-                Get Asset Assessment
+                Request a Maintenance Audit
               </motion.a>
               <motion.a
                 href="/solutions"
