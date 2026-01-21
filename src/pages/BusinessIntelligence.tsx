@@ -33,7 +33,7 @@ export default function BusinessIntelligence() {
     },
     {
       title: "Data Integration",
-      description: "Comprehensive data integration and warehouse management for unified business intelligence",
+      description: "Comprehensive data integration and Data-warehousing for unified business intelligence",
       icon: "🔗"
     },
     {

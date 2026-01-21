@@ -18,16 +18,16 @@ export default function Portfolio() {
       website: "https://www.stayzltd.com/",
       description: "Premium hospitality management and luxury accommodation solutions",
       category: "Hospitality Management",
-      services: ["Luxury Accommodations", "Property Management", "Guest Experience"]
+      services: ["Property Management", "Guest Experience"]
     },
     {
       name: "HFS",
       alt: "HFS",
       src: "/logos-partnerships/HFS.png",
       website: "https://www.hfs.london/" ,
-      description: "Strategic hospitality and facilities management partnership",
-      category: "Facilities Management",
-      services: ["Facilities Management", "Operational Excellence", "Strategic Consulting"]
+      description: "Premium hospitality management and luxury accommodation solutions",
+      category: "Hospitality Management",
+      services: ["Property Management", "Guest Experience"]
     },
     {
       name: "Irwin Estates",

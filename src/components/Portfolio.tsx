@@ -19,7 +19,7 @@ export default function Portfolio() {
       type: "Service Excellence",
       location: "Worldwide Operations",
       description: "Comprehensive hospitality management solutions delivering exceptional guest experiences across international markets.",
-      achievement: "98% Client Satisfaction",
+      achievement: "96% Meeting Target",
       metric: "50+ Countries",
       services: ["Revenue Optimization", "Operational Excellence", "Global Distribution & Partnerships"],
       image: globalHospitalityImg,

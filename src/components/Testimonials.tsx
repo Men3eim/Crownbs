@@ -165,7 +165,7 @@ export default function Testimonials() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-amber-600 mb-2">98%</div>
+              <div className="text-4xl font-bold text-amber-600 mb-2">96%</div>
               <div className="text-gray-600 text-sm uppercase tracking-wider">Meeting Target</div>
             </div>
             <div className="text-center">

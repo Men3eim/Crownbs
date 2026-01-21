@@ -195,7 +195,7 @@ export default function About() {
               <div className="relative">
                 <div className="text-3xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
                   <CountUpNumber 
-                    endValue={100} 
+                    endValue={120} 
                     format={formatters.plus} 
                     delay={700}
                     duration={2000}
@@ -307,10 +307,10 @@ export default function About() {
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Client Satisfaction</span>
+                    <span className="text-gray-600">Meeting Target</span>
                     <span className="font-bold text-amber-600">
                       <CountUpNumber 
-                        endValue={98} 
+                        endValue={96} 
                         format={formatters.percentage} 
                         delay={800}
                         duration={2000}
@@ -458,15 +458,10 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="text-5xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-4">
-                <CountUpNumber 
-                  endValue={150} 
-                  format={formatters.plus} 
-                  delay={500}
-                  duration={2000}
-                />
+                $150M+
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Revenue Growth</h3>
-              <p className="text-gray-600">Year-over-year growth in annual revenue</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Revenue Optimized</h3>
+              <p className="text-gray-600">Revenue optimized across the managed portfolio</p>
             </motion.div>
 
             <motion.div
@@ -478,14 +473,14 @@ export default function About() {
             >
               <div className="text-5xl font-bold bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent mb-4">
                 <CountUpNumber 
-                  endValue={98} 
+                  endValue={96} 
                   format={formatters.percentage} 
                   delay={700}
                   duration={2000}
                 />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Client Satisfaction</h3>
-              <p className="text-gray-600">Client satisfaction rating across all managed properties</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Meeting Target</h3>
+              <p className="text-gray-600">Meeting operational targets across all managed properties</p>
             </motion.div>
           </div>
 

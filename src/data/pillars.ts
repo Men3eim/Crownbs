@@ -72,7 +72,7 @@ export const businessPillars: BusinessPillar[] = [
       "Real-time performance dashboards and KPI visualization",
       "Predictive analytics and machine learning forecasting",
       "Strategic decision support and scenario modeling",
-      "Data integration and data warehousing",
+      "Data integration and Data-warehousing",
       "Business performance benchmarking and competitive analysis"
     ],
     applications: [
